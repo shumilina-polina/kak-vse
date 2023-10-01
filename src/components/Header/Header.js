@@ -17,7 +17,7 @@ const Header = () => {
           href={'/'}
           className={s.link}
         >
-          <Ellipse color={'#FFADDE'} size={32}/>
+          <SvgSelector svg={'link-opportunities'}/>
           <p>Ваши возможности</p>
         </Link>
 
@@ -25,7 +25,7 @@ const Header = () => {
           href={'/'}
           className={s.link}
         >
-          <Ellipse color={'#A7EAFF'} size={32}/>
+          <SvgSelector svg={'link-advices'}/>
           <p>Ваши возможности</p>
         </Link>
 
@@ -33,7 +33,7 @@ const Header = () => {
           href={'/'}
           className={s.link}
         >
-          <Ellipse color={'#FFECA7'} size={32}/>
+          <SvgSelector svg={'link-success'}/>
           <p>Ваши возможности</p>
         </Link>
 

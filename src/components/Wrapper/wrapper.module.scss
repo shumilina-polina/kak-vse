@@ -3,8 +3,10 @@
 .container {
   max-width: $desktop-width;
   height: 100%;
-  margin: auto;
+  margin: 100px auto auto;
+
   padding: 0;
+
   @include laptop {
     max-width: 95%;
   }
