@@ -3,14 +3,16 @@ import s from '../styles/pages/index.module.scss'
 import {Wrapper} from "@/components/Wrapper/Wrapper";
 import SvgSelector from "@/components/SvgSelector";
 import CardVideo from "@/components/cardVideo/CardVideo";
-import {VIDEO} from "@/shared/data";
+import {VIDEO, ARTICLE} from "@/shared/data";
+import CardArticle from "@/components/cardArticle/CardArticle";
 
 const Index = () => {
   const load = false
   return (
     <Wrapper>
+      <title>Узнайте больше про обучение, трудоустройство и социализацию людей с инвалидностью в России</title>
       <h1 className={'title'}>
-        Узнайте больше про обучение, трудоустройство и социализацию людей с инвалидностью в России
+        Узнайте больше про обучение, трудоустройство и социализацию людей с инвалидностью в России
       </h1>
       {/*image*/}
       <div className={s.first}>
@@ -34,6 +36,15 @@ const Index = () => {
         tags={VIDEO[0].tags}
         title={VIDEO[0].title}
         url={VIDEO[0].url}
+        loaded={load}
+      />
+      <CardArticle
+        Category={ARTICLE[0].Category}
+        author={ARTICLE[0].author}
+        image={ARTICLE[0].image}
+        title={ARTICLE[0].title}
+        previewText={ARTICLE[0].previewText}
+        url={ARTICLE[0].url}
         loaded={load}
       />
     </Wrapper>

@@ -7,16 +7,19 @@ const CardArticle = ({Category, author, image, title, previewText, url, loaded})
       style={{
         borderColor: Category = 0 ? "#FFADDE" : Category = 1 ? '#A7EAFF' : '#FFECA7',
       }}
+      className={s.card}
     >
-      <div>
-        <Image src={image} alt={'author'}/>
-        <div>
-          <p>{author}</p>
+      <div className={s.title}>
+        <Image
+          src={image}
+          alt={'author'}
+        />
+        <div className={s.title_text}>
+          <p className={'label'}>{author}</p>
           <h2>{title}</h2>
         </div>
       </div>
-      <p>{previewText}</p>
-      <button ref={url}/>
+      <p className={s.text}>{previewText}</p>
     </div>
   );
 };
