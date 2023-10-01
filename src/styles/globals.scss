@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  //border: 1px solid red;
+  border: 1px solid red;
 }
 #root{
   width: 100%;
@@ -36,7 +36,7 @@ h1{
   letter-spacing: -0.96px;
 }
 h2{
-  font-family: Manrope;
+  @include Manrope();
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -61,4 +61,14 @@ h2{
   font-weight: 400;
   line-height: 28px; /* 116.667% */
   letter-spacing: -0.48px;
+}
+
+.label {
+  @include Manrope();
+  color: #626262;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px;
 }

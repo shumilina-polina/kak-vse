@@ -2,8 +2,11 @@ import React from 'react';
 import s from '../styles/pages/index.module.scss'
 import {Wrapper} from "@/components/Wrapper/Wrapper";
 import SvgSelector from "@/components/SvgSelector";
+import CardVideo from "@/components/cardVideo/CardVideo";
+import {VIDEO} from "@/shared/data";
 
 const Index = () => {
+  const load = false
   return (
     <Wrapper>
       <h1 className={'title'}>
@@ -26,7 +29,13 @@ const Index = () => {
           </p>
         </div>
       </div>
-
+      <CardVideo
+        Category={0}
+        tags={VIDEO[0].tags}
+        title={VIDEO[0].title}
+        url={VIDEO[0].url}
+        loaded={load}
+      />
     </Wrapper>
   );
 };
