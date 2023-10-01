@@ -1,0 +1,44 @@
+@import "./varibles/varible";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //border: 1px solid red;
+}
+#root{
+  width: 100%;
+}
+
+html{
+  background-color: $white;
+  color: $black;
+
+  width: 100vw;
+  scroll-behavior: smooth;
+}
+
+body{
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1{
+  @include Golos();
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px; /* 104.167% */
+  letter-spacing: -0.96px;
+}
+h2{
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 120% */
+}
