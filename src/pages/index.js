@@ -1,9 +1,10 @@
 import React from 'react';
 import s from '../styles/pages/index.module.scss'
+import {Wrapper} from "@/components/Wrapper/Wrapper";
 
 const Index = () => {
   return (
-    <>
+    <Wrapper>
       <h1>Узнайте больше про обучение, трудоустройство и социализацию людей с инвалидностью в России</h1>
       {/*image*/}
       <div>
@@ -16,7 +17,7 @@ const Index = () => {
           достижений, где они учились, кто на этом пути их поддерживал и к кому вы можете обратиться.
         </p>
       </div>
-    </>
+    </Wrapper>
   );
 };
 

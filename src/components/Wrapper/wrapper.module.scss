@@ -1,0 +1,11 @@
+@import "src/styles/varibles/varible";
+
+.container {
+  max-width: $desktop-width;
+  height: 100%;
+  margin: auto;
+  padding: 0;
+  @include laptop {
+    max-width: 95%;
+  }
+}
