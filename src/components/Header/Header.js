@@ -8,13 +8,13 @@ const Header = () => {
   return (
     <div className={s.header}>
 
-      <div className={s.logo}>
+      <Link href={'/'} className={s.logo}>
         <SvgSelector svg={"logo"} />
-      </div>
+      </Link>
 
       <div className={s.tabs}>
         <Link
-          href={'/'}
+          href={'/opportunities'}
           className={s.link}
         >
           <SvgSelector svg={'link-opportunities'}/>
@@ -22,7 +22,7 @@ const Header = () => {
         </Link>
 
         <Link
-          href={'/'}
+          href={'/advices'}
           className={s.link}
         >
           <SvgSelector svg={'link-advices'}/>
@@ -30,7 +30,7 @@ const Header = () => {
         </Link>
 
         <Link
-          href={'/'}
+          href={'/success'}
           className={s.link}
         >
           <SvgSelector svg={'link-success'}/>
@@ -38,7 +38,7 @@ const Header = () => {
         </Link>
 
         <Link
-          href={'/'}
+          href={'/service'}
           className={s.link}
         >
           <Ellipse color={'#A7FFCA'} size={32}/>

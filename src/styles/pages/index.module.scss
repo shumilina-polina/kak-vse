@@ -1,1 +1,27 @@
 @import "../varibles/varible";
+
+.first {
+  border-radius: 40px;
+  border: 1px solid $grey;
+  background: $white;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  //flex-wrap: wrap;
+
+  padding: 33px 0 80px 46px;
+
+  &_left {
+    display: flex;
+
+    flex-direction: column;
+    gap: 23px;
+  }
+  &_right {
+    display: flex;
+
+    flex-direction: column;
+    gap: 14px;
+  }
+}
