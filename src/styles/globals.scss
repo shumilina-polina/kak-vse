@@ -25,10 +25,15 @@ body{
 
 a{
   text-decoration: none;
+  color: $black;
 }
 
 button {
   border-style: none;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 //
 //h1{

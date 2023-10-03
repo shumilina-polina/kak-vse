@@ -7,6 +7,7 @@ import '../styles/style.scss'
 import {VersionContext} from "@/components/Context";
 
 const _App = ({ Component, pageProps }) => {
+
   return (
     <>
       <VersionContext.Provider value={{color: 'color', size: 'normal'}}>

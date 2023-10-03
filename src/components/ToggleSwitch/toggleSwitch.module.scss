@@ -1,0 +1,46 @@
+@import "src/styles/varibles/varible";
+
+.label {
+  position: relative;
+  width: 69px;
+  height: 36px;
+
+  border-radius: 18px;
+  border: 1px solid $white;
+  &:hover {
+    cursor: pointer;
+  }
+  .slider {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    transition: 0.2s;
+    border-radius: 100%;
+    background-color: $white;
+    margin: 3px;
+    &_left_color {
+      left: 0;
+      transform: rotate(45deg);
+      background: linear-gradient(
+                      180deg,
+                      #FFADDE 0%,
+                      #FFECA7 40.63%,
+                      #A7FFCA 66.15%,
+                      #A7EAFF 100%
+      );
+    }
+    &_right_color {
+      left: 33px;
+    }
+    &_left_text {
+      left: 0;
+    }
+    &_right_text {
+      left: 33px;
+    }
+
+
+
+  }
+
+}

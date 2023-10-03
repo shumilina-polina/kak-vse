@@ -1,11 +1,15 @@
 import { createContext } from 'react';
 
-export const VersionContext = createContext({color: 'color', size: 'normal'});
+let letColor = 'color'
+let letSize = 'normal'
 
-export  const setColor = (state) => ({
-  color: state ?  'grey' : 'color'
-})
+export const setColor = (state) => {
+  letColor = state ? 'grey' : 'color'
+}
+export const setSize = (state) => {
+  letSize = state ? 'normal' : 'large'
+}
+export const VersionContext = createContext({color: letColor, size: letSize});
 
-export  const setSize = (state) => ({
-  size: state ?  'large' : 'normal'
-})
+
+

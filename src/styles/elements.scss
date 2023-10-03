@@ -1,5 +1,5 @@
 @import "./varibles/varible";
-
+//--text--\\
 .desktop {
   &_normal {
     &_h1 {
@@ -22,7 +22,14 @@
       line-height: 28px; /* 116.667% */
       letter-spacing: -0.48px;
     }
-
+    &_t4 {
+      /* Desktop/t4 */
+      @include Golos();
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
   }
   &_large {
     &_h1 {
@@ -54,7 +61,7 @@
       line-height: 16px; /* 100% */
     }
     &_t1 {
-      /* Desktop/t1 */
+      /* Desktop/t1+ */
       @include Golos();
       font-size: 30px;
       font-style: normal;
@@ -63,7 +70,7 @@
       letter-spacing: -0.6px;
     }
     &_t2 {
-      /* Desktop/t1 */
+      /* Desktop/t2 */
       @include Golos();
       font-size: 30px;
       font-style: normal;
@@ -91,3 +98,5 @@
     }
   }
 }
+
+//--buttons--\\

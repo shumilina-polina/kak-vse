@@ -1,73 +1,75 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import s from './header.module.scss'
 import SvgSelector from "@/components/SvgSelector";
 import Link from "next/link";
 import Ellipse from "@/components/Ellipse/Ellipse";
-import {Button} from "@mui/material";
+import {Button, ToggleButton} from "@mui/material";
+import cn from 'classnames'
+import {VersionContext} from "@/components/Context";
+import {ToggleSwitchColor, ToggleSwitchText} from "@/components/ToggleSwitch/ToggleSwitch";
 
 const Header = () => {
   const [show, setShow] = useState(true)
+  const version = useContext(VersionContext)
   return (
-    <header className={s.wrapper}
-      style={{
-        height: show ? '100px;' : '180px;',
-      }}
-    >
-
-      <div className={s.die}>
-
-      </div>
-
-      <div className={s.header}>
+    <div className={cn(s.wrapper, show && s.show)}>
+      <header>
         <Link href={'/'} className={s.logo}>
-          <SvgSelector svg={"logo"}/>
+          <SvgSelector svg={'logo'}/>
         </Link>
 
-        <div className={s.tabs}>
+        <div className={s.links}>
           <Link
             href={'/opportunities'}
             className={s.link}
           >
-            <SvgSelector svg={'link-opportunities'}/>
-            <p>Ваши возможности</p>
+            <SvgSelector svg={`link-opportunities-${version.color}`}/>
+            <p className={`desktop_${version.size}_h4`}>Ваши возможности</p>
           </Link>
 
           <Link
             href={'/advices'}
             className={s.link}
           >
-            <SvgSelector svg={'link-advices'}/>
-            <p>Полезные советы</p>
+            <SvgSelector svg={`link-advices-${version.color}`}/>
+            <p className={`desktop_${version.size}_h4`}>Полезные советы</p>
           </Link>
 
           <Link
             href={'/success'}
             className={s.link}
           >
-            <SvgSelector svg={'link-success'}/>
-            <p>Истории успеха</p>
+            <SvgSelector svg={`link-success-${version.color}`}/>
+            <p className={`desktop_${version.size}_h4`}>Истории успеха</p>
           </Link>
 
           <Link
             href={'/service'}
             className={s.link}
           >
-            <Ellipse color={'#A7FFCA'} size={32}/>
-            <p>Ответы на впоросы</p>
+            <SvgSelector svg={`link-service-${version.color}`}/>
+            <p className={`desktop_${version.size}_h4`}>Ответы на впоросы</p>
           </Link>
-
         </div>
 
-        <div className={s.unvisually}>
-          <p>Версия для<br/>слабовидящих</p>
-          <Button onClick={(e) =>{setShow(!show)}}>
-            <SvgSelector svg={'unvisually'}/>
-          </Button>
+        <button
+          onClick={()=>setShow(!show)}
+          className={s.unvisible}
+        >
+          <p className={`desktop_${version.size}_t4`}>Версия для слабовидящих</p>
+          <SvgSelector svg={`unvisually-${show? 'open' : 'close'}`}/>
+        </button>
 
-        </div>
+      </header>
 
+      <div className={s.die}>
+        <p className={`desktop_${version.size}_t1`}>Размер</p>
+        <ToggleSwitchText/>
+        <p className={`desktop_${version.size}_t1`}>Цвет</p>
+        <ToggleSwitchColor/>
       </div>
-    </header>
+    </div>
+
 
   );
 };
