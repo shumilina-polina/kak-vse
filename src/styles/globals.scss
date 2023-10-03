@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid red;
+  //border: 1px solid red;
 }
 #root{
   width: 100%;
@@ -29,17 +29,16 @@ a{
 
 button {
   border-style: none;
-
 }
-
-h1{
-  @include Golos();
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 50px; /* 104.167% */
-  letter-spacing: -0.96px;
-}
+//
+//h1{
+//  @include Golos();
+//  font-size: 48px;
+//  font-style: normal;
+//  font-weight: 500;
+//  line-height: 50px; /* 104.167% */
+//  letter-spacing: -0.96px;
+//}
 h2{
   @include Manrope();
   font-size: 20px;
