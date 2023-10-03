@@ -1,0 +1,24 @@
+@import "../../styles/varibles/varible";
+
+.title {
+  display: flex;
+  width: 1120px;
+  justify-content: space-between;
+  align-items: flex-end;
+  &_text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    button {
+      display: flex;
+      height: 40px;
+      padding: 0px 12px 2px 16px;
+      align-items: center;
+      gap: 8px;
+
+      border-radius: 40px;
+    }
+  }
+}
+
