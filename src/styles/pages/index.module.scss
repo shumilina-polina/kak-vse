@@ -12,7 +12,9 @@
   padding: 50px 50px 70px 50px;
   align-items: flex-start;
   gap: 36px;
-
+  @include mobile {
+    flex-direction: column;
+  }
 
 
   &_left {

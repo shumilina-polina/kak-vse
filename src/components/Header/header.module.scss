@@ -50,6 +50,12 @@
           border-radius: 40px;
           border: 1px solid $grey;
           background: $white;
+          p {
+            white-space: nowrap;
+          }
+          svg {
+            flex-shrink: 0;
+          }
           &:hover {
 
           }
@@ -67,6 +73,7 @@
         height: 100%;
         gap: 8px;
         p{
+          width: fit-content;
           text-align: left;
         }
         svg {
