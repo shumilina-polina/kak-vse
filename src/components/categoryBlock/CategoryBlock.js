@@ -29,14 +29,14 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
       ? '/advices'
       : '/success';
   const text1 = Category === 0
-    ? "Полезные советы →"
+    ? "Ваши возможности →"
     : Category === 1
-      ? 'Ваши возможности →'
+      ? 'Полезные советы →'
       : 'Истории успеха →';
   const text_title = Category === 0
     ? "Найди свой путь самореализации"
     : Category === 1
-      ? 'Познакомься с полезными советами от экспертов'
+      ? 'Познакомься с полезными советами от экспертов'
       : 'Найди вдохновение в историях успеха';
   const svgIcon = Category === 0
     ? "opportunities-color"

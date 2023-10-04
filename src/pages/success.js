@@ -12,7 +12,7 @@ const Success = () => {
       </Head>
       <Wrapper>
         <h1 className={'normal_title'}>
-          Найди вдохновение в историях успеха
+          Найди вдохновение<br/> в историях успеха
         </h1>
         <CategoryPage
           Category={2}

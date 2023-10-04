@@ -13,54 +13,56 @@ const Header = () => {
   const version = useContext(VersionContext)
   return (
     <div className={cn(s.wrapper, show && s.show)}>
-      <header>
-        <Link href={'/'} className={s.logo}>
-          <SvgSelector svg={'logo'}/>
-        </Link>
-
-        <div className={s.links}>
-          <Link
-            href={'/opportunities'}
-            className={s.link}
-          >
-            <SvgSelector svg={`link-opportunities-${version.color}`}/>
-            <p className={`${version.size}_h4`}>Ваши возможности</p>
+      <div className={s.wr}>
+        <header>
+          <Link href={'/'} className={s.logo}>
+            <SvgSelector svg={'logo'}/>
           </Link>
 
-          <Link
-            href={'/advices'}
-            className={s.link}
+          <div className={s.links}>
+            <Link
+              href={'/opportunities'}
+              className={s.link}
+            >
+              <SvgSelector svg={`link-opportunities-${version.color}`}/>
+              <p className={`${version.size}_h4`}>Ваши возможности</p>
+            </Link>
+
+            <Link
+              href={'/advices'}
+              className={s.link}
+            >
+              <SvgSelector svg={`link-advices-${version.color}`}/>
+              <p className={`${version.size}_h4`}>Полезные советы</p>
+            </Link>
+
+            <Link
+              href={'/success'}
+              className={s.link}
+            >
+              <SvgSelector svg={`link-success-${version.color}`}/>
+              <p className={`${version.size}_h4`}>Истории успеха</p>
+            </Link>
+
+            <Link
+              href={'/service'}
+              className={s.link}
+            >
+              <SvgSelector svg={`link-service-${version.color}`}/>
+              <p className={`${version.size}_h4`}>Ответы на впоросы</p>
+            </Link>
+          </div>
+
+          <button
+            onClick={()=>setShow(!show)}
+            className={s.unvisible}
           >
-            <SvgSelector svg={`link-advices-${version.color}`}/>
-            <p className={`${version.size}_h4`}>Полезные советы</p>
-          </Link>
+            <p className={`${version.size}_t4`}>Версия для <br/>слабовидящих</p>
+            <SvgSelector svg={`unvisually-${show? 'open' : 'close'}`}/>
+          </button>
 
-          <Link
-            href={'/success'}
-            className={s.link}
-          >
-            <SvgSelector svg={`link-success-${version.color}`}/>
-            <p className={`${version.size}_h4`}>Истории успеха</p>
-          </Link>
-
-          <Link
-            href={'/service'}
-            className={s.link}
-          >
-            <SvgSelector svg={`link-service-${version.color}`}/>
-            <p className={`${version.size}_h4`}>Ответы на впоросы</p>
-          </Link>
-        </div>
-
-        <button
-          onClick={()=>setShow(!show)}
-          className={s.unvisible}
-        >
-          <p className={`${version.size}_t4`}>Версия для <br/>слабовидящих</p>
-          <SvgSelector svg={`unvisually-${show? 'open' : 'close'}`}/>
-        </button>
-
-      </header>
+        </header>
+      </div>
 
       <div className={s.die}>
         <p className={`${version.size}_t1`}>Размер</p>

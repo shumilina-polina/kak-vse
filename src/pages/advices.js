@@ -12,7 +12,7 @@ const Advices = () => {
       </Head>
       <Wrapper>
         <h1 className={'normal_title'}>
-          Познакомься с полезными советами от экспертов
+          Познакомься с полезными<br/>советами от экспертов
         </h1>
         <CategoryPage
           Category={1}

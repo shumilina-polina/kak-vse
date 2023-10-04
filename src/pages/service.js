@@ -12,7 +12,7 @@ const Service = () => {
       </Head>
       <Wrapper>
         <h1 className={'normal_title'}>
-          Полезная информация для достижения цели
+          Полезная информация<br/>для достижения цели
         </h1>
 
       </Wrapper>

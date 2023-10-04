@@ -1,4 +1,3 @@
-
 //---colors---\\
 
 $pink: #FFADDE;
@@ -26,34 +25,26 @@ $KK: #F7F7F7;
 @font-face {
   font-family: "Golos";
   src: url("./fonts/GolosText-VariableFont_wght.ttf");
-  font-weight: 400;
-  font-style: normal;
 }
 
 @font-face {
   font-family: "Manrope";
   src: url("./fonts/Manrope-VariableFont_wght.ttf");
-  font-weight: 400;
-  font-style: normal;
 }
 
 @mixin Golos {
   font-family: "Golos", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 @mixin Manrope {
   font-family: "Manrope", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 //---BrakePoints---\\
 
 $desktop-width: 1120px;
 $laptop-width: 900px;
-$mobile-width: 520px;
+$mobile-width: 320px;
 
 @mixin laptop {
   @media (max-width: #{$desktop-width}) {

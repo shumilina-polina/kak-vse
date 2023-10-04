@@ -12,66 +12,71 @@
   top: 0;
 
   transition: 0.5s;
-  header {
+  .wr {
     width: 100%;
-    height: 100px;
-
+    display: flex;
+    justify-content: center;
     background-color: $KK;
     border-bottom: 1px solid $grey;
+    header {
+      width: 1280px;
+      height: 100px;
 
-    padding: 14px 20px;
+      padding: 14px 20px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-    .logo {
-      width: fit-content;
-      height: fit-content;
       display: flex;
-      justify-content: center;
-    }
-    .links{
-      display: flex;
-      align-items: flex-start;
-      width: fit-content;
-      height: fit-content;
-      gap: 15px;
-      .link {
-        display: flex;
-        height: 40px;
-        padding: 0 12px 2px 8px;
-        align-items: center;
-        gap: 8px;
-
-        border-radius: 40px;
-        border: 1px solid $grey;
-        background: $white;
-        &:hover {
-
-        }
-
-        &:focus {
-
-        }
-      }
-    }
-    .unvisible {
-      background-color: $KK;
-      display: flex;
+      justify-content: space-between;
       align-items: center;
-      //width: 160px;
-      height: 100%;
-      gap: 8px;
-      p{
-        text-align: left;
+      align-self: stretch;
+      .logo {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
       }
-      svg {
-        width: 100%;
+      .links{
+        display: flex;
+        align-items: flex-start;
+        width: fit-content;
+        height: fit-content;
+        gap: 15px;
+        .link {
+          display: flex;
+          height: 40px;
+          padding: 0 12px 2px 8px;
+          align-items: center;
+          gap: 8px;
+
+          border-radius: 40px;
+          border: 1px solid $grey;
+          background: $white;
+          &:hover {
+
+          }
+
+          &:focus {
+
+          }
+        }
+      }
+      .unvisible {
+        background-color: $KK;
+        display: flex;
+        align-items: center;
+        //width: 160px;
         height: 100%;
+        gap: 8px;
+        p{
+          text-align: left;
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
+
 
   .die {
     width: 100%;
