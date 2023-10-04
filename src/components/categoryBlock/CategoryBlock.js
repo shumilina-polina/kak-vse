@@ -49,7 +49,6 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
             }}
             className={s.link}
             href={link}
-
           >
             <p className={'normal_caption'}>{text1}</p>
           </Link>
@@ -68,6 +67,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
                 title={path.title}
                 url={path.url}
                 loaded={loaded}
+                key={i}
               />
             ))}
           </div>
@@ -82,15 +82,16 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
           >
             <div className={s.articles}>
               {ARTICLE_DATA.filter((elem) => (elem.Category === Category)).slice(0, 3).map((path, i) => (
-                <div className={s.article_row}>
+                <div className={s.article_row} key={`row${i}`}>
                   <Image
                     src={path.image}
                     alt={'author'}
                     className={s.image}
+                    key={`image${i}`}
                   />
                   <div className={s.text}>
-                    <p className={'normal_label'}>{path.author}</p>
-                    <h3 className={'normal_h3'}>{path.title}</h3>
+                    <p className={'normal_label'} key={`author${i}`}>{path.author}</p>
+                    <h3 className={'normal_h3'} key={`title${i}`}>{path.title}</h3>
                   </div>
                 </div>
               ))}

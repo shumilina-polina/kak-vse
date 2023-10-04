@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './cardVideo.module.scss'
 import SvgSelector from "@/components/SvgSelector";
-const CardVideo = ({Category, tags, title, url, loaded}) => {
+const CardVideo = ({Category, tags, title, url,  loaded}) => {
   const copy = () => {
 
     navigator.clipboard.writeText(url)
@@ -13,6 +13,7 @@ const CardVideo = ({Category, tags, title, url, loaded}) => {
         borderColor: Category === 0 ? "#FFADDE" : Category === 1 ? '#A7EAFF' : '#FFECA7',
       }}
       className={s.card}
+
     >
       <iframe
         width={"340"}
@@ -24,6 +25,7 @@ const CardVideo = ({Category, tags, title, url, loaded}) => {
         frameBorder={"0"}
         allow={"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"}
         allowFullScreen
+
       />
       <p className={'normal_label'}>{tags}</p>
       <h2 className={'normal_h2'}>{title}</h2>
@@ -52,11 +54,6 @@ const CardVideo = ({Category, tags, title, url, loaded}) => {
           >
             <SvgSelector svg={'share-desktop'}/>
           </a>
-
-
-
-
-
         </div>
         <p className={'normal_label'}>Поделитесь</p>
       </div>
