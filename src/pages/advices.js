@@ -9,7 +9,7 @@ const Advices = () => {
         <title>Как все - Полезные советы</title>
       </Head>
       <Wrapper>
-        <h1 className={'title'}>
+        <h1 className={'desktop_normal_title'}>
           Познакомься с полезными советами от экспертов
         </h1>
       </Wrapper>

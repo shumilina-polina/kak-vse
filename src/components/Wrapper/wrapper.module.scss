@@ -2,12 +2,12 @@
 
 .container {
   max-width: $desktop-width;
+  width: 100vw;
   height: 100%;
   margin: 100px auto auto;
-
+  display: flex;
+  flex-direction: column;
   padding: 0;
 
-  @include laptop {
-    max-width: 95%;
-  }
+
 }

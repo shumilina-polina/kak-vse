@@ -23,7 +23,7 @@ export const ToggleSwitchText = () => {
       onClick={()=>{
         setTextValue(!textValue)
         setSize(textValue)
-        console.log(textValue)
+        //console.log(textValue)
       }}
     >
       <div className={cn(s.slider, textValue ? s.slider_left_text : s.slider_right_text)}/>

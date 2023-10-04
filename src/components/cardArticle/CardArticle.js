@@ -5,7 +5,7 @@ const CardArticle = ({Category, author, image, title, previewText, url, loaded})
   return (
     <div
       style={{
-        borderColor: Category = 0 ? "#FFADDE" : Category = 1 ? '#A7EAFF' : '#FFECA7',
+        borderColor: Category === 0 ? "#FFADDE" : Category === 1 ? '#A7EAFF' : '#FFECA7',
       }}
       className={s.card}
     >

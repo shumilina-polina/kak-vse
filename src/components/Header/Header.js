@@ -9,7 +9,7 @@ import {VersionContext} from "@/components/Context";
 import {ToggleSwitchColor, ToggleSwitchText} from "@/components/ToggleSwitch/ToggleSwitch";
 
 const Header = () => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const version = useContext(VersionContext)
   return (
     <div className={cn(s.wrapper, show && s.show)}>
@@ -24,7 +24,7 @@ const Header = () => {
             className={s.link}
           >
             <SvgSelector svg={`link-opportunities-${version.color}`}/>
-            <p className={`desktop_${version.size}_h4`}>Ваши возможности</p>
+            <p className={`${version.size}_h4`}>Ваши возможности</p>
           </Link>
 
           <Link
@@ -32,7 +32,7 @@ const Header = () => {
             className={s.link}
           >
             <SvgSelector svg={`link-advices-${version.color}`}/>
-            <p className={`desktop_${version.size}_h4`}>Полезные советы</p>
+            <p className={`${version.size}_h4`}>Полезные советы</p>
           </Link>
 
           <Link
@@ -40,7 +40,7 @@ const Header = () => {
             className={s.link}
           >
             <SvgSelector svg={`link-success-${version.color}`}/>
-            <p className={`desktop_${version.size}_h4`}>Истории успеха</p>
+            <p className={`${version.size}_h4`}>Истории успеха</p>
           </Link>
 
           <Link
@@ -48,7 +48,7 @@ const Header = () => {
             className={s.link}
           >
             <SvgSelector svg={`link-service-${version.color}`}/>
-            <p className={`desktop_${version.size}_h4`}>Ответы на впоросы</p>
+            <p className={`${version.size}_h4`}>Ответы на впоросы</p>
           </Link>
         </div>
 
@@ -56,16 +56,16 @@ const Header = () => {
           onClick={()=>setShow(!show)}
           className={s.unvisible}
         >
-          <p className={`desktop_${version.size}_t4`}>Версия для слабовидящих</p>
+          <p className={`${version.size}_t4`}>Версия для <br/>слабовидящих</p>
           <SvgSelector svg={`unvisually-${show? 'open' : 'close'}`}/>
         </button>
 
       </header>
 
       <div className={s.die}>
-        <p className={`desktop_${version.size}_t1`}>Размер</p>
+        <p className={`${version.size}_t1`}>Размер</p>
         <ToggleSwitchText/>
-        <p className={`desktop_${version.size}_t1`}>Цвет</p>
+        <p className={`${version.size}_t1`}>Цвет</p>
         <ToggleSwitchColor/>
       </div>
     </div>

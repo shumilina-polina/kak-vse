@@ -1,9 +1,45 @@
 @import "./varibles/varible";
 //--text--\\
-.desktop {
-  &_normal {
-    &_h1 {
 
+  .normal {
+    &_title {
+      /* Desktop/title */
+      @include Golos();
+      text-align: center;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 50px; /* 104.167% */
+      letter-spacing: -0.96px;
+
+      padding: 40px 0;
+    }
+    &_h1 {
+      /* Desktop/h1 */
+      @include Golos();
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 50px; /* 104.167% */
+      letter-spacing: -0.96px;
+    }
+    &_h2 {
+      /* Desktop/h2 */
+      @include Manrope();
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px; /* 120% */
+    }
+    &_h3 {
+      /* Desktop/h3 */
+
+      @include Golos();
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px; /* 125% */
+      letter-spacing: -0.32px;
     }
     &_h4 {
       /* Desktop/h4 */
@@ -30,8 +66,26 @@
       font-weight: 600;
       line-height: normal;
     }
+    &_label {
+      /* Desktop/label */
+      @include Manrope();
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 12px; /* 100% */
+    }
+    &_caption {
+      /* Desktop/caption */
+      @include Golos();
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 12px; /* 100% */
+      letter-spacing: 0.48px;
+      text-transform: uppercase;
+    }
   }
-  &_large {
+  .large {
     &_h1 {
       /* Desktop/h1+ */
       @include Golos();
@@ -97,6 +151,6 @@
       letter-spacing: -0.6px;
     }
   }
-}
+
 
 //--buttons--\\

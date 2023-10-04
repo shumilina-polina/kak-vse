@@ -9,7 +9,7 @@ const Success = () => {
         <title>Как все - Истории успеха</title>
       </Head>
       <Wrapper>
-        <h1 className={'title'}>
+        <h1 className={'desktop_normal_title'}>
           Найди вдохновение в историях успеха
         </h1>
       </Wrapper>

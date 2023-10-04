@@ -9,7 +9,7 @@ const Opportunities = () => {
         <title>Как все - Ваши возможности</title>
       </Head>
       <Wrapper>
-        <h1 className={'title'}>
+        <h1 className={'desktop_normal_title'}>
           Найди свой путь самореализации!
         </h1>
       </Wrapper>
