@@ -15,8 +15,8 @@ const CardArticle = ({Category, author, image, title, previewText, url, loaded})
           alt={'author'}
         />
         <div className={s.title_text}>
-          <p className={'label'}>{author}</p>
-          <h2>{title}</h2>
+          <p className={'normal_label'}>{author}</p>
+          <h2 className={'normal_h2'}>{title}</h2>
         </div>
       </div>
       <p className={s.text}>{previewText}</p>

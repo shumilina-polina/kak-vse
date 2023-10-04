@@ -16,10 +16,8 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
 
     >
       <iframe
-        width={"340"}
         id={"ytplayer"}
         type={"text/html"}
-        height={"192"}
         src={url}
         title={"YouTube video player"}
         frameBorder={"0"}

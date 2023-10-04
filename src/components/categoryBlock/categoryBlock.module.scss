@@ -8,9 +8,9 @@
   gap: 44px;
   .title {
     display: flex;
-    width: 1120px;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-end;
+    width: 100%;
     &_text {
       display: flex;
       flex-direction: column;

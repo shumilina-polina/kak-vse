@@ -38,6 +38,11 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
     : Category === 1
       ? 'Познакомься с полезными советами от экспертов'
       : 'Найди вдохновение в историях успеха';
+  const svgIcon = Category === 0
+    ? "opportunities-color"
+    : Category === 1
+      ? 'advices-color'
+      : 'success-color';
 
   return (
     <div className={s.block}>
@@ -54,6 +59,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
           </Link>
           <h1 className={'normal_h1'}>{text_title}</h1>
         </div>
+        <SvgSelector svg={svgIcon}/>
       </div>
 
       <div className={s.content}>
