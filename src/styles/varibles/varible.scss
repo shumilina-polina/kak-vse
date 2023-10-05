@@ -44,7 +44,7 @@ $KK: #F7F7F7;
 
 $desktop-width: 1120px;
 $laptop-width: 900px;
-$mobile-width: 320px;
+$mobile-width: 480px;
 
 @mixin laptop {
   @media (max-width: #{$desktop-width}) {
