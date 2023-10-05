@@ -7,6 +7,11 @@
 
   border-radius: 18px;
   border: 1px solid $white;
+  @include mobile {
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+  }
   &:hover {
     cursor: pointer;
   }
@@ -18,6 +23,12 @@
     border-radius: 100%;
     background-color: $white;
     margin: 3px;
+    @include mobile {
+      width: 16px;
+      height: 16px;
+      margin: 1px;
+      border-radius: 10px;
+    }
     &_left_color {
       left: 0;
       transform: rotate(45deg);
@@ -31,12 +42,18 @@
     }
     &_right_color {
       left: 33px;
+      @include mobile {
+        left: 20px;
+      }
     }
     &_left_text {
       left: 0;
     }
     &_right_text {
       left: 33px;
+      @include mobile {
+        left: 20px;
+      }
     }
 
 

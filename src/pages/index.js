@@ -13,11 +13,13 @@ import cn from "classnames";
 
 
 
+
 const Index = () => {
 
   const version = useContext(VersionContext)
-
   const load = false
+
+
   return (
     <>
       <Head>
@@ -61,8 +63,6 @@ const Index = () => {
         />
       </Wrapper>
     </>
-
-
   );
 };
 
