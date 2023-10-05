@@ -2,8 +2,22 @@ import React from 'react';
 import s from './categoryPage.module.scss'
 import CardArticle from "@/components/cardArticle/CardArticle";
 import CardVideo from "@/components/cardVideo/CardVideo";
+import {useMediaQuery} from "@mui/material";
 const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
 
+  const isMobile = useMediaQuery(`(max-width: 480px`);
+
+  // let s = Math.max(VIDEO_DATA.length, ARTICLE_DATA.length)*2,
+  //   d = [VIDEO_DATA,ARTICLE_DATA],
+  //   r = [],
+  //   v, i=-1;
+  //
+  //
+  // while(s-i++){
+  //   v =  d[i%2][(i-i%2)/2];        // или d[i%2][~~(i/2)]
+  //   if(v !== undefined) r.push(v);
+  // }
+  // console.log(r)
 
   return (
     <div className={s.category}>
