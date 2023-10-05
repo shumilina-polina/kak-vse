@@ -13,7 +13,13 @@
   align-items: flex-start;
   gap: 36px;
   @include mobile {
+    border-radius: 15.305px;
     flex-direction: column;
+    padding: 32px 15px;
+    svg {
+      width: 44px;
+      height: 44px;
+    }
   }
 
 
@@ -22,11 +28,17 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 23px;
+    @include mobile {
+      gap: 11px;
+    }
   }
   &_right {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+    @include mobile {
+      gap: 11px;
+    }
   }
 }

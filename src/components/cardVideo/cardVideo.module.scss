@@ -15,10 +15,18 @@
   height: fit-content;
 
   background-color: $white;
+  @include mobile {
+    max-width: 289px;
+  }
   iframe {
     width: 340px;
     height: 192px;
     border-radius: 30px;
+    @include mobile {
+      width: 272px;
+      height: 153px;
+      border-radius: 24px;
+    }
   }
   &_bottom {
     display: flex;
