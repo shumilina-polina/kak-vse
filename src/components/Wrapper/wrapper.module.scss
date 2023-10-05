@@ -9,6 +9,7 @@
   flex-direction: column;
   padding: 0;
   @include mobile {
+    margin: 60px auto auto;
     width: 288px;
   }
 
