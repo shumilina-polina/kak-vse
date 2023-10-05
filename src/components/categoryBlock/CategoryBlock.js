@@ -25,7 +25,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
         colorDark: "#7FCFE9",
         link: '/advices',
         text1: 'Полезные советы →',
-        textTitle: 'Познакомься с полезными советами от экспертов',
+        textTitle: 'Познакомься с полезными советами от экспертов',
         svgIcon: 'advices-color'
       }
       : {
@@ -34,11 +34,13 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
         colorDark: "#F5DC85",
         link: '/success',
         text1: 'Истории успеха →',
-        textTitle: 'Найди вдохновение в историях успеха',
+        textTitle: 'Найди вдохновение в историях успеха',
         svgIcon: 'success-color'
       };
 
   const isMobile = useMediaQuery(`(max-width: 480px`);
+  const cardVideo = VIDEO_DATA.filter((elem) => (elem.Category === Category)).slice(0, 2)
+
 
   if (!isMobile) {
     return ( //----------------------------------------------------------------------desktop
@@ -144,60 +146,61 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
             <SvgSelector svg={category.svgIcon}/>
           </div>
           <h1 className={'normal_h1'}>{category.textTitle}</h1>
-
         </div>
 
         <div className={s.content}>
-          <div className={s.content_video}>
-            <div className={s.content_video_wrapper}>
-              {VIDEO_DATA.filter((elem) => (elem.Category === Category)).slice(0, 2).map((path, i) => (
-                <CardVideo
-                  Category={Category}
-                  tags={path.tags}
-                  title={path.title}
-                  url={path.url}
-                  loaded={loaded}
-                  key={i}
-                />
+          <CardVideo
+            Category={Category}
+            tags={cardVideo[0].tags}
+            title={cardVideo[0].title}
+            url={cardVideo[0].url}
+            loaded={loaded}
+            key={'video1'}
+          />
+          <div
+            className={s.content_article_wrapper}
+            style={{
+              borderColor: category.color,
+            }}
+          >
+            <div className={s.articles}>
+              {ARTICLE_DATA.filter((elem) => (elem.Category === Category)).slice(0, 3).map((path, i) => (
+                <div className={s.article_row} key={`row${i}`}>
+                  <Image
+                    src={path.image}
+                    alt={'author'}
+                    className={s.image}
+                    key={`image${i}`}
+                  />
+                  <div className={s.text}>
+                    <p className={'normal_label'} key={`author${i}`}>{path.author}</p>
+                    <h3 className={'normal_h3'} key={`title${i}`}>{path.title}</h3>
+                  </div>
+                </div>
               ))}
             </div>
-          </div>
-          <div className={s.content_article}>
-            <div
-              className={s.content_article_wrapper}
+            <Link
+              href={category.link}
+              className={s.link}
               style={{
-                borderColor: category.color,
+                backgroundColor: category.colorLight
               }}
             >
-              <div className={s.articles}>
-                {ARTICLE_DATA.filter((elem) => (elem.Category === Category)).slice(0, 3).map((path, i) => (
-                  <div className={s.article_row} key={`row${i}`}>
-                    <Image
-                      src={path.image}
-                      alt={'author'}
-                      className={s.image}
-                      key={`image${i}`}
-                    />
-                    <div className={s.text}>
-                      <p className={'normal_label'} key={`author${i}`}>{path.author}</p>
-                      <h3 className={'normal_h3'} key={`title${i}`}>{path.title}</h3>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <Link
-                href={category.link}
-                className={s.link}
-                style={{
-                  backgroundColor: category.colorLight
-                }}
-
-              >
-                <h3 className={'normal_h3'}>Читать все →</h3>
-              </Link>
-            </div>
+              <h3 className={'normal_h3'}>Читать все →</h3>
+            </Link>
           </div>
+          {cardVideo.length !== 1 &&
+            <CardVideo
+              Category={Category}
+              tags={cardVideo[1].tags}
+              title={cardVideo[1].title}
+              url={cardVideo[1].url}
+              loaded={loaded}
+              key={'video2'}
+            />
+          }
+
+
         </div>
 
 

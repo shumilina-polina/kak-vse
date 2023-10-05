@@ -15,6 +15,7 @@
     "@mui/material": "^5.14.11",
     "classnames": "^2.3.2",
     "next": "latest",
+    "normalize.css": "^8.0.1",
     "react": "latest",
     "react-dom": "latest",
     "react-markdown": "^9.0.0",
