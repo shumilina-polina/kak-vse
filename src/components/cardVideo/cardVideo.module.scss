@@ -16,6 +16,8 @@
 
   background-color: $white;
   @include mobile {
+    padding: 8px 8px 12.8px 8px;
+    border-radius: 32px;
     max-width: 289px;
   }
   iframe {
@@ -30,11 +32,16 @@
   }
   &_bottom {
     display: flex;
-    height: 136px;
+    height: fit-content;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     padding: 0 6px;
+    gap: 20px;
+    @include mobile {
+      gap: 16px;
+
+    }
     &_text {
       display: flex;
       flex-direction: column;
@@ -67,6 +74,12 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      @include mobile {
+        svg {
+          width: 38px;
+          height: 38px;
+        }
+      }
     }
     p {
       width: 100%;
