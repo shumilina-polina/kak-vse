@@ -14,7 +14,7 @@ const Header = () => {
   const version = useContext(VersionContext)
   const isMobile = useMediaQuery(`(max-width: 480px`);
 
-  if (isMobile === false) {
+  if (!isMobile) {
     return ( //-------------------------------------------------------------------------desktop
       <div className={cn(s.wrapper, show && s.show)}>
         <div className={s.wr}>
@@ -89,7 +89,7 @@ const Header = () => {
             // marginTop: show ? '112px' : '60px',
             height: menuOpen ? '100vh' : '0vh',
             top: menuOpen ? '0' : '-220px',
-            opacity: menuOpen ? '1' : '0',
+
         }}
         >
           <Link
