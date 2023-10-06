@@ -53,8 +53,7 @@
     padding: 0 6px;
     gap: 20px;
     @include mobile {
-      gap: 16px;
-
+      gap: 12px;
     }
 
     &_text {
@@ -64,6 +63,9 @@
       gap: 8px;
       @include laptop {
         gap: 0.71vw;
+      }
+      @include mobile {
+        gap: 6px;
       }
     }
   }
