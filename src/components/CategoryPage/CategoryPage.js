@@ -22,7 +22,6 @@ const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
     //console.log(r)
   }, []);
 
-
   return (
     <div className={s.category}>
       <div className={s.category_articles}>
