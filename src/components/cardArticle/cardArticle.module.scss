@@ -30,6 +30,10 @@
 
     img {
       border-radius: 100%;
+      @include laptop {
+        width: 4.73vw;
+        height: 4.73vw;
+      }
       @include mobile {
         width: 40px;
         height: 40px;

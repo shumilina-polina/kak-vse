@@ -12,8 +12,8 @@
   padding: 50px 50px 70px 50px;
   align-items: flex-start;
   gap: 36px;
-  @include tablet {
-    flex-direction: column;
+  @include laptop {
+    padding: 4.46vw 4.46vw 6.25vw 4.46vw;
     svg {
       width: clamp(44px, 5.71vw, 64px);
       height: clamp(44px, 5.71vw, 64px);

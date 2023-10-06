@@ -50,8 +50,8 @@
       font-weight: 700;
       line-height: 24px; /* 120% */
       @include laptop {
-        font-size: clamp(16px, 1.79vw, 20px);
-        line-height: clamp(19px, 2.14vw, 24px);
+        font-size: 1.79vw;
+        line-height: 2.14vw;
       }
       @include mobile {
         font-size: 16px;
@@ -68,8 +68,8 @@
       line-height: 20px; /* 125% */
       letter-spacing: -0.32px;
       @include laptop {
-        font-size: clamp(12px, 1.43vw, 16px);
-        line-height: clamp(16px, 1.79vw, 20px);
+        font-size: 1.43vw;
+        line-height: 1.79vw;
       }
       @include mobile {
         font-size: 12.8px;
@@ -143,8 +143,8 @@
       font-weight: 500;
       line-height: 12px; /* 100% */
       @include laptop {
-        font-size: clamp(9px, 1.07vw, 12px);
-        line-height: clamp(9px, 1.07vw, 12px);
+        font-size: 1.07vw;
+        line-height: 1.07vw;
       }
       @include mobile {
         font-size: 9.6px;

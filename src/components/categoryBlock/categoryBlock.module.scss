@@ -7,6 +7,10 @@
   padding: 60px 0;
   gap: 44px;
   height: fit-content;
+  @include laptop {
+    padding: 5.36vw 0;
+    gap: 3.93vw;
+  }
   @include mobile {
     gap: 34px;
     padding: 32px 0;
@@ -17,6 +21,11 @@
 
     justify-content: space-between;
     width: 100%;
+    @include laptop {
+      svg {
+        height: 6.25vw;
+      }
+    }
     @include mobile {
       display: flex;
       flex-direction: column;
@@ -29,6 +38,10 @@
       align-items: flex-start;
       gap: 12px;
       width: 80%;
+      @include laptop{
+        gap: 1.07vw;
+
+      }
 
       @include mobile {
         width: 100%;
@@ -61,6 +74,7 @@
         }
       }
     }
+
   }
 
   .content {
@@ -72,13 +86,14 @@
     align-items: stretch;
     gap: 20px;
     @include laptop {
+      gap: 1.79vw;
       display: grid;
       height: 100%;
       grid-template-columns: 2fr 1fr;
     }
     @include tablet {
       display: flex;
-      flex-direction: column;
+      //flex-direction: column;
     }
     @include mobile {
       display: flex;
@@ -89,15 +104,17 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 20px;
+      @include laptop {
+        gap: 1.79vw;
+      }
 
       &_wrapper {
         display: flex;
         align-items: flex-start;
         gap: 20px;
         @include tablet {
-          gap: 1vw;
+          gap: 1.79vw;
         }
-
         @include mobile {
           flex-direction: column;
         }
@@ -109,6 +126,9 @@
       align-items: flex-start;
       height: initial;
       gap: 20px;
+      @include laptop {
+        gap: 1.79vw
+      }
       &_wrapper {
         display: flex;
         width: 360px;
@@ -126,8 +146,10 @@
         background-color: $white;
         @include laptop {
           align-items: start;
+          padding: 1.79vw 1.43vw;
           gap: 1.79vw;
           width: 100%;
+          border-radius: 3.57vw;
         }
         @include mobile {
           width: 100%;
@@ -152,7 +174,10 @@
             align-items: center;
             gap: 12px;
             .image {
-
+              @include laptop {
+                width: 4.73vw;
+                height: 4.73vw;
+              }
             }
             .text {
               display: flex;
@@ -186,6 +211,10 @@
       align-items: center;
 
       border-radius: 20px;
+      @include laptop {
+        border-radius: 1.79vw;
+        height: 4.29vw;
+      }
       @include mobile {
         height: 38px;
         border-radius: 16px;
@@ -202,6 +231,10 @@
 
     border-radius: 40px;
     border: 1px solid;
+    @include laptop {
+      padding: 2.50vw 3.57vw;
+      border-radius: 3.57vw;
+    }
     @include mobile {
       height: 64px;
       padding: 22px 0px;

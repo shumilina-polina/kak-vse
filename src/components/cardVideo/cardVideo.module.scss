@@ -16,8 +16,9 @@
 
   background-color: $white;
   @include laptop {
-    padding: 10px 10px 1.43vw 10px;
-    max-width: 100%;
+    padding: 0.89vw 0.89vw 1.43vw 0.89vw;
+    border-radius: 3.57vw;
+    max-width: 32.14vw;
     width: 100%;
   }
   @include mobile {
@@ -32,10 +33,9 @@
     height: auto;
     border-radius: 30px;
     @include laptop {
-      aspect-ratio: 16/9;
+      border-radius: 2.68vw;
       width: 100%;
       height: auto;
-
     }
     @include mobile {
       width: 272px;
@@ -62,6 +62,9 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 8px;
+      @include laptop {
+        gap: 0.71vw;
+      }
     }
   }
 
@@ -89,26 +92,28 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      @include laptop {
+        gap: 0.71vw;
+      }
       svg {
         @include laptop {
-          width: 100%;
+          width: 4.46vw;
+          height: 4.46vw;
         }
         @include mobile {
           width: 38px;
           height: 38px;
         }
       }
-
-
     }
 
     p {
       width: 100%;
       text-align: center;
       @include laptop {
-        width: fit-content;
-        margin: 0 10px;
+        margin: 0 0.89vw;
       }
+
     }
   }
 }
