@@ -3,7 +3,6 @@ import s from './cardVideo.module.scss'
 import SvgSelector from "@/components/SvgSelector";
 const CardVideo = ({Category, tags, title, url,  loaded}) => {
   const copy = () => {
-
     navigator.clipboard.writeText(url)
     alert('ссылка скопирована')
   }

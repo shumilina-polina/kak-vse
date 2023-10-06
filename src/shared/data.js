@@ -4,7 +4,7 @@ export const VIDEO = [
     Category: 0,
     tags: 'Иван Иванов HR-специалист Медиацентр',
     title: 'Как помочь человеку с инвалидностью раскрыть свой творческий и профессиональный потенциал',
-    url: 'https://www.youtube.com/embed/nwibL__1Ux4?si=fAZ5mfK1MGjlbFJU&amp;controls=0',
+    url: 'https://rutube.ru/play/embed/d715c0c5cd0efc464f4514067d1d9708?skinColor=ffffff?Сontrols=0',
   },
   {
     Category: 0,

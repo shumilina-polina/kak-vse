@@ -19,7 +19,7 @@ const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
       v =  d[i%2][(i-i%2)/2];        // или d[i%2][~~(i/2)]
       if(v !== undefined) r.push(v);
     }
-    console.log(r)
+    //console.log(r)
   }, []);
 
 
