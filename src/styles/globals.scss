@@ -23,6 +23,8 @@ body{
   width: 100%;
   overflow-x: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-stroke:1px transparent;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a{

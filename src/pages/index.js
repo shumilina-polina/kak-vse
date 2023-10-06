@@ -27,7 +27,7 @@ const Index = () => {
       </Head>
       <Wrapper>
         <h1 className={'normal_title'}>
-          Узнайте больше про обучение,<br/> трудоустройство и социализацию людей с инвалидностью в России
+          Узнайте больше про обучение,<br/> трудоустройство и социализацию людей с инвалидностью в России
         </h1>
         <div className={s.first_block}>
           <div className={s.first_block_left}>
