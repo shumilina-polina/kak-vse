@@ -12,6 +12,13 @@
   padding: 50px 50px 70px 50px;
   align-items: flex-start;
   gap: 36px;
+  @include tablet {
+    flex-direction: column;
+    svg {
+      width: clamp(44px, 5.71vw, 64px);
+      height: clamp(44px, 5.71vw, 64px);
+    }
+  }
   @include mobile {
     border-radius: 15.305px;
     flex-direction: column;

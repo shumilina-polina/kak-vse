@@ -8,6 +8,9 @@
   display: flex;
   flex-direction: column;
   padding: 0;
+  @include laptop {
+    width: 95%;
+  }
   @include mobile {
     margin: 60px auto auto;
     width: 288px;

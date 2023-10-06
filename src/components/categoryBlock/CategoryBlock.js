@@ -25,7 +25,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
         colorDark: "#7FCFE9",
         link: '/advices',
         text1: 'Полезные советы →',
-        textTitle: 'Познакомься с полезными советами от экспертов',
+        textTitle: `Познакомься с полезными советами от экспертов`,
         svgIcon: 'advices-color'
       }
       : {

@@ -28,6 +28,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 12px;
+      width: 80%;
 
       @include mobile {
         width: 100%;
@@ -70,7 +71,17 @@
     justify-content: space-between;
     align-items: stretch;
     gap: 20px;
+    @include laptop {
+      display: grid;
+      height: 100%;
+      grid-template-columns: 2fr 1fr;
+    }
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
     @include mobile {
+      display: flex;
       flex-direction: column;
     }
     &_video {
@@ -83,6 +94,10 @@
         display: flex;
         align-items: flex-start;
         gap: 20px;
+        @include tablet {
+          gap: 1vw;
+        }
+
         @include mobile {
           flex-direction: column;
         }
@@ -109,6 +124,11 @@
         //gap: 20px;
 
         background-color: $white;
+        @include laptop {
+          align-items: start;
+          gap: 1.79vw;
+          width: 100%;
+        }
         @include mobile {
           width: 100%;
           gap: 16px;
@@ -123,6 +143,9 @@
           justify-content: center;
           align-items: center;
           gap: 16px;
+          @include tablet {
+            align-items: start;
+          }
 
           .article_row {
             display: flex;
@@ -137,6 +160,19 @@
               align-items: flex-start;
               gap: 4px;
               flex: 1 0 0;
+
+              h3 {
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                display: -moz-box;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
+                -moz-box-orient: vertical;
+                -webkit-box-orient: vertical;
+                box-orient: vertical;
+              }
             }
           }
         }
