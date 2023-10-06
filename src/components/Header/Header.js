@@ -24,37 +24,37 @@ const Header = () => {
             </Link>
 
             <div className={s.links}>
-              <div
+              <Link
                 href={'/opportunities'}
                 className={s.link}
               >
                 <SvgSelector svg={`link-opportunities-${version.color}`}/>
                 <p className={`${version.size}_h4`}>Ваши возможности</p>
-              </div>
+              </Link>
 
-              <div
+              <Link
                 href={'/advices'}
                 className={s.link}
               >
                 <SvgSelector svg={`link-advices-${version.color}`}/>
                 <p className={`${version.size}_h4`}>Полезные советы</p>
-              </div>
+              </Link>
 
-              <div
+              <Link
                 href={'/success'}
                 className={s.link}
               >
                 <SvgSelector svg={`link-success-${version.color}`}/>
                 <p className={`${version.size}_h4`}>Истории успеха</p>
-              </div>
+              </Link>
 
-              <div
+              <Link
                 href={'/service'}
                 className={s.link}
               >
                 <SvgSelector svg={`link-service-${version.color}`}/>
                 <p className={`normal_h4`}>Ответы на вопросы</p>
-              </div>
+              </Link>
             </div>
 
             <button
