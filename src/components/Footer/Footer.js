@@ -7,7 +7,10 @@ const Footer = () => {
       <footer>
         <SvgSelector svg={'footer-logo'}/>
         <div className={s.social}>
-          <SvgSelector svg={'footer-vk'}/>
+          <a href={'https://vk.com/kakvseinfo'} target={'_blank'}>
+            <SvgSelector svg={'footer-vk'}/>
+          </a>
+
           <SvgSelector svg={'footer-dzen'}/>
           <SvgSelector svg={'footer-rutube'}/>
         </div>
