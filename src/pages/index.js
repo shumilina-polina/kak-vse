@@ -10,10 +10,6 @@ import cs from 'classnames'
 import Head from "next/head";
 import {VersionContext} from "@/components/Context";
 import cn from "classnames";
-
-
-
-
 const Index = () => {
 
   const version = useContext(VersionContext)

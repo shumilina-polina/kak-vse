@@ -134,6 +134,10 @@
       font-style: normal;
       font-weight: 600;
       line-height: normal;
+      @include laptop {
+        font-size: 1.07vw;
+      }
+
     }
     &_label {
       /* Desktop/label */

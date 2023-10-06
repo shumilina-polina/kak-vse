@@ -5,7 +5,6 @@
   top: 0;
   width: 100%;
 
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +14,7 @@
   background-color: $KK;
   transition: 1s;
   z-index: 0;
+
   .link {
     display: flex;
     height: 40px;
@@ -74,6 +74,10 @@
       justify-content: space-between;
       align-items: center;
       align-self: stretch;
+      @include laptop {
+        width: 100vw;
+        padding: 1.09vw 1.56vw;
+      }
       @include mobile {
         height: 60px;
       }
@@ -82,10 +86,18 @@
         height: fit-content;
         display: flex;
         justify-content: center;
+        @include laptop {
+          svg {
+            width: 5.63vw;
+            height: 5.63vw;
+          }
+        }
         @include mobile {
           width: 40px;
+
           svg {
-            height: auto;
+            width: 40px;
+            height: 40px;
           }
         }
       }
@@ -95,6 +107,9 @@
         width: fit-content;
         height: fit-content;
         gap: 15px;
+        @include laptop {
+          gap: 1.17vw;
+        }
         .link {
           display: flex;
           height: 40px;
@@ -105,11 +120,20 @@
           border-radius: 40px;
           border: 1px solid $grey;
           background: $white;
+          @include laptop {
+            gap: 0.71vw;
+            padding: 0 0.94vw 0.16vw 0.63vw;
+            height: 3.13vw;
+          }
           p {
             white-space: nowrap;
           }
           svg {
             flex-shrink: 0;
+            @include laptop {
+              width: auto;
+              height: 2.86vw;
+            }
           }
           &:hover {
 
@@ -140,6 +164,9 @@
         width: fit-content;
         height: 100%;
         gap: 8px;
+        @include laptop {
+          gap: 0.63vw;
+        }
         p{
           width: fit-content;
           text-align: left;
@@ -147,6 +174,10 @@
         svg {
           width: 100%;
           height: 100%;
+          @include laptop {
+            width: 5vw;
+            height: 5vw;
+          }
           @include mobile {
             width: 40px;
             height: 40px;
