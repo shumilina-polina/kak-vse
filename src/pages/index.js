@@ -14,12 +14,10 @@ import {useQuery} from "@apollo/client";
 import {GET_DATA_INDEX} from "@/services/gqlService";
 import Faqs from "@/components/FAQ/FAQS";
 const Index = () => {
-  //const { data, loading, error} = useQuery(GET_DATA_INDEX)
+  const { data, loading, error} = useQuery(GET_DATA_INDEX)
   const version = useContext(VersionContext)
   const load = false
 
-
-  //console.log(data, loading)
   return (
     <>
       <Head>
@@ -48,18 +46,24 @@ const Index = () => {
         </div>
         <CategoryBlock
           Category={0}
-          VIDEO_DATA={VIDEO}
+          VIDEO_DATA={data?.advicesVideos.data}
           ARTICLE_DATA={ARTICLE}
+          loaded={loading}
+          error={error}
         />
         <CategoryBlock
           Category={1}
-          VIDEO_DATA={VIDEO}
+          VIDEO_DATA={data?.opportunitiesVideos.data}
           ARTICLE_DATA={ARTICLE}
+          loaded={loading}
+          error={error}
         />
         <CategoryBlock
           Category={2}
-          VIDEO_DATA={VIDEO}
+          VIDEO_DATA={data?.successVideos.data}
           ARTICLE_DATA={ARTICLE}
+          loaded={loading}
+          error={error}
         />
 
         <Faqs/>

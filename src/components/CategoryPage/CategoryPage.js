@@ -4,23 +4,22 @@ import CardArticle from "@/components/cardArticle/CardArticle";
 import CardVideo from "@/components/cardVideo/CardVideo";
 import {useMediaQuery} from "@mui/material";
 const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
-
   const isMobile = useMediaQuery(`(max-width: 480px`);
-  useEffect(() => {
-    let a = VIDEO_DATA
-    let b = ARTICLE_DATA
-    let s = Math.max(a.length, b.length)*2,
-      d = [a,b],
-      r = [],
-      v, i=-1;
-
-
-    while(s-i++){
-      v =  d[i%2][(i-i%2)/2];        // или d[i%2][~~(i/2)]
-      if(v !== undefined) r.push(v);
-    }
-    //console.log(r)
-  }, []);
+  // useEffect(() => {
+  //   let a = VIDEO_DATA
+  //   let b = ARTICLE_DATA
+  //   let s = Math.max(a.length, b.length)*2,
+  //     d = [a,b],
+  //     r = [],
+  //     v, i=-1;
+  //
+  //
+  //   while(s-i++){
+  //     v =  d[i%2][(i-i%2)/2];        // или d[i%2][~~(i/2)]
+  //     if(v !== undefined) r.push(v);
+  //   }
+  //   //console.log(r)
+  // }, []);
 
   return (
     <div className={s.category}>
@@ -42,12 +41,13 @@ const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
       </div>
 
       <div className={s.category_videos}>
-        {VIDEO_DATA.filter((elem) => (elem.Category === Category)).map((path, i) => (
+        {VIDEO_DATA?.map((path, i) => (
           <CardVideo
             Category={Category}
-            tags={path.tags}
-            title={path.title}
-            url={path.url}
+            tags={path.attributes.tags}
+            title={path.attributes.title}
+            url={path.attributes.urlEmbed}
+            loaded={loaded}
             loaded={loaded}
             key={i}
           />

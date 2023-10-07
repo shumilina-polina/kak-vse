@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {useMediaQuery} from "@mui/material";
 
-const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
+const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
 
   const category = Category === 0
     ? {
@@ -39,49 +39,127 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
       };
 
   const isMobile = useMediaQuery(`(max-width: 480px`);
-  const cardVideo = VIDEO_DATA.filter((elem) => (elem.Category === Category)).slice(0, 2)
-
+  //console.log(VIDEO_DATA[0]?.attributes.title, error)
 
   return (
     <>
       {
         !isMobile
           ? //----------------------------------------------------------------------desktop
-          <div className={s.block}>
-            <div className={s.title}>
-              <div className={s.title_text}>
-                <Link
-                  style={{
-                    backgroundColor: category.colorLight
-                  }}
-                  className={s.link}
-                  href={category.link}
-                >
-                  <p className={'normal_caption'}>{category.text1}</p>
-                </Link>
-                <h1 className={'normal_h1'}>{category.textTitle}</h1>
+          (
+            <div className={s.block}>
+              <div className={s.title}>
+                <div className={s.title_text}>
+                  <Link
+                    style={{
+                      backgroundColor: category.colorLight
+                    }}
+                    className={s.link}
+                    href={category.link}
+                  >
+                    <p className={'normal_caption'}>{category.text1}</p>
+                  </Link>
+                  <h1 className={'normal_h1'}>{category.textTitle}</h1>
+                </div>
+                <SvgSelector svg={category.svgIcon}/>
               </div>
-              <SvgSelector svg={category.svgIcon}/>
-            </div>
 
-            <div className={s.content}>
-              <div className={s.content_video}>
-                <label><p className={'normal_label'}>Видео</p></label>
-                <div className={s.content_video_wrapper}>
-                  {VIDEO_DATA.filter((elem) => (elem.Category === Category)).slice(0, 2).map((path, i) => (
-                    <CardVideo
-                      Category={Category}
-                      tags={path.tags}
-                      title={path.title}
-                      url={path.url}
-                      loaded={loaded}
-                      key={i}
-                    />
-                  ))}
+              <div className={s.content}>
+                <div className={s.content_video}>
+                  <label><p className={'normal_label'}>Видео</p></label>
+                  <div className={s.content_video_wrapper}>
+                    {VIDEO_DATA?.map((path, i) => (
+                      <CardVideo
+                        Category={Category}
+                        tags={path.attributes.tags}
+                        title={path.attributes.title}
+                        url={path.attributes.urlEmbed}
+                        loaded={loaded}
+                        key={i}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <div className={s.content_article}>
+                  <label><p className={'normal_label'}>Статьи</p></label>
+                  <div
+                    className={s.content_article_wrapper}
+                    style={{
+                      borderColor: category.color,
+                    }}
+                  >
+                    <div className={s.articles}>
+                      {ARTICLE_DATA.filter((elem) => (elem.Category === Category)).slice(0, 3).map((path, i) => (
+                        <div className={s.article_row} key={`row${i}`}>
+                          <Image
+                            src={path.image}
+                            alt={'author'}
+                            className={s.image}
+                            key={`image${i}`}
+                          />
+                          <div className={s.text}>
+                            <p className={'normal_label'} key={`author${i}`}>{path.author}</p>
+                            <h3 className={'normal_h3'} key={`title${i}`}>{path.title}</h3>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <Link
+                      href={category.link}
+                      className={s.link}
+                      style={{
+                        backgroundColor: category.colorLight
+                      }}
+
+                    >
+                      <h3 className={'normal_h3'}>Читать все →</h3>
+                    </Link>
+                  </div>
                 </div>
               </div>
-              <div className={s.content_article}>
-                <label><p className={'normal_label'}>Статьи</p></label>
+
+              <Link
+                style={{
+                  backgroundColor: category.color,
+                  borderColor: category.colorDark
+                }}
+                href={category.link}
+                className={s.large_link}
+              >
+                <h2 className={'normal_h2'}>Больше видео и статей →</h2>
+              </Link>
+            </div>
+          )
+
+          : //----------------------------------------------------------------------mobile
+          (
+            <div className={s.block}>
+              <div className={s.title}>
+                <div className={s.title_text}>
+                  <Link
+                    style={{
+                      backgroundColor: category.colorLight
+                    }}
+                    className={s.link}
+                    href={category.link}
+                  >
+                    <p className={'normal_caption'}>{category.text1}</p>
+                  </Link>
+                  <SvgSelector svg={category.svgIcon}/>
+                </div>
+                <h1 className={'normal_h1'}>{category.textTitle}</h1>
+              </div>
+
+              <div className={s.content}>
+                <CardVideo
+                  Category={Category}
+                  tags={VIDEO_DATA[0]?.attributes.tags}
+                  title={VIDEO_DATA[0]?.attributes.title}
+                  url={VIDEO_DATA[0]?.attributes.urlEmbed}
+                  loaded={loaded}
+                  key={'video_1'}
+                />
                 <div
                   className={s.content_article_wrapper}
                   style={{
@@ -104,118 +182,43 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
                       </div>
                     ))}
                   </div>
-
                   <Link
                     href={category.link}
                     className={s.link}
                     style={{
                       backgroundColor: category.colorLight
                     }}
-
                   >
                     <h3 className={'normal_h3'}>Читать все →</h3>
                   </Link>
                 </div>
+                {VIDEO_DATA.length !== 1 &&
+                  <CardVideo
+                    Category={Category}
+                    tags={VIDEO_DATA[1]?.attributes.tags}
+                    title={VIDEO_DATA[1]?.attributes.title}
+                    url={VIDEO_DATA[1]?.attributes.urlEmbed}
+                    loaded={loaded}
+                    key={'video_2'}
+                  />
+                }
+
+
               </div>
-            </div>
 
 
-            <Link
-              style={{
-                backgroundColor: category.color,
-                borderColor: category.colorDark
-              }}
-              href={category.link}
-              className={s.large_link}
-            >
-              <h2 className={'normal_h2'}>Больше видео и статей →</h2>
-            </Link>
-          </div>
-          : //----------------------------------------------------------------------mobile
-          <div className={s.block}>
-            <div className={s.title}>
-              <div className={s.title_text}>
-                <Link
-                  style={{
-                    backgroundColor: category.colorLight
-                  }}
-                  className={s.link}
-                  href={category.link}
-                >
-                  <p className={'normal_caption'}>{category.text1}</p>
-                </Link>
-                <SvgSelector svg={category.svgIcon}/>
-              </div>
-              <h1 className={'normal_h1'}>{category.textTitle}</h1>
-            </div>
-
-            <div className={s.content}>
-              <CardVideo
-                Category={Category}
-                tags={cardVideo[0].tags}
-                title={cardVideo[0].title}
-                url={cardVideo[0].url}
-                loaded={loaded}
-                key={'video1'}
-              />
-              <div
-                className={s.content_article_wrapper}
+              <Link
                 style={{
-                  borderColor: category.color,
+                  backgroundColor: category.color,
+                  borderColor: category.colorDark
                 }}
+                href={category.link}
+                className={s.large_link}
               >
-                <div className={s.articles}>
-                  {ARTICLE_DATA.filter((elem) => (elem.Category === Category)).slice(0, 3).map((path, i) => (
-                    <div className={s.article_row} key={`row${i}`}>
-                      <Image
-                        src={path.image}
-                        alt={'author'}
-                        className={s.image}
-                        key={`image${i}`}
-                      />
-                      <div className={s.text}>
-                        <p className={'normal_label'} key={`author${i}`}>{path.author}</p>
-                        <h3 className={'normal_h3'} key={`title${i}`}>{path.title}</h3>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  href={category.link}
-                  className={s.link}
-                  style={{
-                    backgroundColor: category.colorLight
-                  }}
-                >
-                  <h3 className={'normal_h3'}>Читать все →</h3>
-                </Link>
-              </div>
-              {cardVideo.length !== 1 &&
-                <CardVideo
-                  Category={Category}
-                  tags={cardVideo[1].tags}
-                  title={cardVideo[1].title}
-                  url={cardVideo[1].url}
-                  loaded={loaded}
-                  key={'video2'}
-                />
-              }
-
-
+                <h2 className={'normal_h2'}>Больше видео и статей →</h2>
+              </Link>
             </div>
-
-
-            <Link
-              style={{
-                backgroundColor: category.color,
-                borderColor: category.colorDark
-              }}
-              href={category.link}
-              className={s.large_link}
-            >
-              <h2 className={'normal_h2'}>Больше видео и статей →</h2>
-            </Link>
-          </div>
+          )
       }
     </>
   );

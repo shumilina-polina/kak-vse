@@ -16,7 +16,7 @@ const FaqsBlock = ({data}) => {
       onClick={() => setClose(!close)}
     >
       <h2 className={'normal_h2'}><Markdown>{data.title}</Markdown></h2>
-      <button className={s.arrow}>
+      <button className={s.arrow} style={{transform: close ? 'rotate(0)' : 'rotate(180deg)'}}>
         <SvgSelector svg={'arrow'}/>
       </button>
       <div className={s.categoryBlock_questions}>

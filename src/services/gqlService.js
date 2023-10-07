@@ -212,8 +212,7 @@ export const GET_DATA_INDEX = gql`
         }
       }
     }
-  } 
-  
+  }   
 }
 
 `;

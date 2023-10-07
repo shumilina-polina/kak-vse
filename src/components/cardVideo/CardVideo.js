@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './cardVideo.module.scss'
 import SvgSelector from "@/components/SvgSelector";
+import Markdown from "react-markdown";
 const CardVideo = ({Category, tags, title, url,  loaded}) => {
   const copy = () => {
     navigator.clipboard.writeText(url)
@@ -26,8 +27,8 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
       />
       <div className={s.card_bottom}>
         <div className={s.card_bottom_text}>
-          <p className={'normal_label'}>{tags}</p>
-          <h2 className={'normal_h2'}>{title}</h2>
+          <p className={'normal_label'}><Markdown>{tags}</Markdown></p>
+          <h2 className={'normal_h2'}><Markdown>{title}</Markdown></h2>
         </div>
         <div className={s.share}>
           <div className={s.share_links}>
