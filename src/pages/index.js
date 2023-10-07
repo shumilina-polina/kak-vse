@@ -10,12 +10,18 @@ import cs from 'classnames'
 import Head from "next/head";
 import {VersionContext} from "@/components/Context";
 import cn from "classnames";
+import {useQuery} from "@apollo/client";
+import {GET_DATA_INDEX} from "@/services/gqlService";
 const Index = () => {
-
+  const { data, loading, error} = useQuery(GET_DATA_INDEX,{
+    variables: {
+      count: 'opportunities'
+    }
+  })
   const version = useContext(VersionContext)
   const load = false
 
-
+  console.log(data?.videos.data, loading)
   return (
     <>
       <Head>

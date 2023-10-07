@@ -61,19 +61,18 @@ export const GET_DATA = gql`
 `;
 
 export const GET_DATA_INDEX = gql`
-  query {  
-  videos (limit: 3) {
-    data{
-      id
+  query ($count: String) {
+  videos  {
+    data {
       attributes {
         title
         category
         urlEmbed
         tags
         urlShare
-        onMainPage
+        onMainPage 
       }
     }
-  }  
+  }
 }
 `;
