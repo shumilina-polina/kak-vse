@@ -1,0 +1,107 @@
+@import "src/styles/varibles/varible";
+
+.faqs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 18px;
+  margin-bottom: 60px;
+  @include laptop {
+    gap: 1.61vw;
+    margin-bottom: 5.36vw;
+  }
+  .categoryBlock {
+    position: relative;
+    width: 100%;
+
+    padding: 28px 40px 40px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 10px;
+
+    border-radius: 40px;
+    border: 1px solid $dark-green;
+    background-color: $green;
+
+    overflow: hidden;
+    transition: 0.5s;
+    &:hover {
+      cursor: pointer;
+      background-color: $light-green;
+    }
+    @include laptop {
+      border-radius: 3.57vw;
+      gap: 0.89vw;
+      padding: 2.50vw 3.57vw 3.57vw 3.57vw;
+    }
+    &_close {
+      max-height: 80px;
+      @include laptop {
+        max-height: 7.14vw;
+      }
+      .categoryBlock_questions {
+        button{
+          transition: 0.5s;
+          opacity: 0;
+        }
+      }
+    }
+    &_open {
+      max-height: 500px;
+      @include laptop {
+        max-height: 44.64vw;
+      }
+      .categoryBlock_questions {
+        button{
+          transition: 0.5s;
+          opacity: 1;
+        }
+
+      }
+    }
+    .arrow {
+      position: absolute;
+      right: 40px;
+      top: 24px;
+      width: 27px;
+      height: 24px;
+      transition: 0.5s;
+      background-color: rgba(0, 0, 0, 0);
+      @include laptop {
+        right: 3.57vw;
+        top: 2.14vw;
+        width: 2.41vw;
+        height: 2.14vw;
+        svg {
+          width: 2.41vw;
+          height: 2.14vw;
+        }
+      }
+    }
+    &_questions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      transition: 0.5s;
+      margin-top: 10px;
+      @include laptop {
+        gap: 0.89vw;
+        margin-top: 0.89vw;
+      }
+      button {
+        background-color: rgba(0, 0, 0, 0);
+        &:hover {
+          p{
+            transition: 0.5s;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

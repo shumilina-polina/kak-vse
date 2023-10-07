@@ -1,8 +1,8 @@
 import React from 'react';
 import {Wrapper} from "@/components/Wrapper/Wrapper";
 import Head from "next/head";
-import {ARTICLE, VIDEO} from "@/shared/data";
-import CategoryPage from "@/components/CategoryPage/CategoryPage";
+import FAQS from "@/components/FAQ/FaqsBlock";
+import Faqs from "@/components/FAQ/FAQS";
 
 const Service = () => {
   return (
@@ -14,6 +14,8 @@ const Service = () => {
         <h1 className={'normal_title'}>
           Полезная информация<br/>для достижения цели
         </h1>
+
+        <Faqs/>
 
       </Wrapper>
     </>

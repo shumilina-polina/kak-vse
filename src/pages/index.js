@@ -12,17 +12,14 @@ import {VersionContext} from "@/components/Context";
 import cn from "classnames";
 import {useQuery} from "@apollo/client";
 import {GET_DATA_INDEX} from "@/services/gqlService";
+import Faqs from "@/components/FAQ/FAQS";
 const Index = () => {
-  const { data, loading, error} = useQuery(GET_DATA_INDEX,{
-    variables: {
-      category: 'opportunities'
-    }
-  })
+  //const { data, loading, error} = useQuery(GET_DATA_INDEX)
   const version = useContext(VersionContext)
   const load = false
 
 
-  console.log(data?.videos.data, loading)
+  //console.log(data, loading)
   return (
     <>
       <Head>
@@ -64,6 +61,8 @@ const Index = () => {
           VIDEO_DATA={VIDEO}
           ARTICLE_DATA={ARTICLE}
         />
+
+        <Faqs/>
       </Wrapper>
     </>
   );
