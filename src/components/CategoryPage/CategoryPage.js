@@ -48,7 +48,6 @@ const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
             title={path.attributes.title}
             url={path.attributes.urlEmbed}
             loaded={loaded}
-            loaded={loaded}
             key={i}
           />
         ))}

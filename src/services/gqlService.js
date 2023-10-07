@@ -7,53 +7,18 @@ export const client = new ApolloClient({
   ssrMode: false,
 });
 
-export const GET_DATA = gql`
-  query {
-  articles {
+export const GET_CATEGORY = gql`
+  query ($category: String) {  
+  categoryVideos: videos (     
+    filters: {category: {eq: $category}}
+  ) { 
     data {
-      id
-      attributes {
-        slug
-        title
-        content
-        image {
-          data {
-            attributes {
-              url
-              blurhash
-            }
-          }
-        }
-        author_name
-        author_photo {
-          data {
-            attributes {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-  videos {
-    data {
-      id
       attributes {
         title
-        category
+        category 
         urlEmbed
         tags
-        urlShare
-        onMainPage
-      }
-    }
-  }
-  faqs {
-    data {
-      attributes {
-        title
-        content
-        slug
+        urlShare        
       }
     }
   }

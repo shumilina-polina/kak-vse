@@ -3,8 +3,13 @@ import {Wrapper} from "@/components/Wrapper/Wrapper";
 import Head from "next/head";
 import {ARTICLE, VIDEO} from "@/shared/data";
 import CategoryPage from "@/components/CategoryPage/CategoryPage";
+import {useQuery} from "@apollo/client";
+import {GET_CATEGORY} from "@/services/gqlService";
 
 const Success = () => {
+  const { data, loading, error} = useQuery(GET_CATEGORY, {
+    variables: {category: "success"}
+  })
   return (
     <>
       <Head>
@@ -16,7 +21,7 @@ const Success = () => {
         </h1>
         <CategoryPage
           Category={2}
-          VIDEO_DATA={VIDEO}
+          VIDEO_DATA={data?.categoryVideos.data}
           ARTICLE_DATA={ARTICLE}
         />
       </Wrapper>

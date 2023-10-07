@@ -4,14 +4,14 @@ import Head from "next/head";
 import CategoryPage from "@/components/CategoryPage/CategoryPage";
 import {ARTICLE, VIDEO} from "@/shared/data";
 import {useQuery} from "@apollo/client";
-import {GET_DATA_INDEX} from "@/services/gqlService";
+import {GET_CATEGORY} from "@/services/gqlService";
 
 
 const Opportunities = () => {
-  const { data, loading, error} = useQuery(GET_DATA_INDEX)
-  {
-    loading && console.log(data)
-  }
+  const { data, loading, error} = useQuery(GET_CATEGORY, {
+    variables: {category: "opportunities"}
+  })
+
   return (
     <>
       <Head>
@@ -24,7 +24,7 @@ const Opportunities = () => {
 
         <CategoryPage
           Category={0}
-          VIDEO_DATA={data?.opportunitiesVideos.data}
+          VIDEO_DATA={data?.categoryVideos.data}
           ARTICLE_DATA={ARTICLE}
           loaded={loading}
         />
