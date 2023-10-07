@@ -15,11 +15,12 @@ import {GET_DATA_INDEX} from "@/services/gqlService";
 const Index = () => {
   const { data, loading, error} = useQuery(GET_DATA_INDEX,{
     variables: {
-      count: 'opportunities'
+      category: 'opportunities'
     }
   })
   const version = useContext(VersionContext)
   const load = false
+
 
   console.log(data?.videos.data, loading)
   return (

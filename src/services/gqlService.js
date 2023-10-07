@@ -61,12 +61,17 @@ export const GET_DATA = gql`
 `;
 
 export const GET_DATA_INDEX = gql`
-  query ($count: String) {
-  videos  {
+  query ($category : String) {
+  videos ( 
+    pagination: {limit: 2}   
+    filters: {      
+      category: {eq: $category}
+    }
+  ){
     data {
-      attributes {
+      attributes  {
         title
-        category
+        category 
         urlEmbed
         tags
         urlShare
