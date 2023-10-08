@@ -25,6 +25,23 @@ export const GET_CATEGORY = gql`
 }
 `;
 
+export const GET_ARTICLE = gql `
+query ($id: int) {  
+  articleID: faqs (
+    filters: {id: {eq: $id}}
+  ) {
+    data {
+      id
+      attributes {
+        title
+        content 
+        slug
+      }
+    }
+  }
+}
+`;
+
 export const GET_FAQS = gql `
 query {  
   faqCategories {

@@ -12,7 +12,7 @@ const Header = () => {
   const [show, setShow] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const version = useContext(VersionContext)
-  const isMobile = useMediaQuery(`(max-width: 480px`);
+  const isMobile = useMediaQuery(`(max-width: 480px)`);
 
   if (!isMobile) {
     return ( //-------------------------------------------------------------------------desktop

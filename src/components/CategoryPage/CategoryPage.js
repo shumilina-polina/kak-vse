@@ -4,7 +4,7 @@ import CardArticle from "@/components/cardArticle/CardArticle";
 import CardVideo from "@/components/cardVideo/CardVideo";
 import {useMediaQuery} from "@mui/material";
 const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
-  const isMobile = useMediaQuery(`(max-width: 480px`);
+  const isMobile = useMediaQuery(`(max-width: 480px)`);
   // useEffect(() => {
   //   let a = VIDEO_DATA
   //   let b = ARTICLE_DATA

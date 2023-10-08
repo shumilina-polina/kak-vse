@@ -38,7 +38,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
         svgIcon: 'success-color'
       };
 
-  const isMobile = useMediaQuery(`(max-width: 480px`);
+  const isMobile = useMediaQuery(`(max-width: 480px)`);
   //console.log(VIDEO_DATA[0]?.attributes.title, error)
 
   return (
@@ -152,14 +152,17 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
               </div>
 
               <div className={s.content}>
+
                 <CardVideo
                   Category={Category}
-                  tags={VIDEO_DATA[0]?.attributes.tags}
-                  title={VIDEO_DATA[0]?.attributes.title}
-                  url={VIDEO_DATA[0]?.attributes.urlEmbed}
+                  tags={!loaded && VIDEO_DATA[0]?.attributes.tags}
+                  title={!loaded && VIDEO_DATA[0]?.attributes.title}
+                  url={!loaded && VIDEO_DATA[0]?.attributes.urlEmbed}
                   loaded={loaded}
                   key={'video_1'}
                 />
+
+
                 <div
                   className={s.content_article_wrapper}
                   style={{
@@ -192,7 +195,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                     <h3 className={'normal_h3'}>Читать все →</h3>
                   </Link>
                 </div>
-                {VIDEO_DATA.length !== 1 &&
+                {!loaded && VIDEO_DATA?.length !== 1 &&
                   <CardVideo
                     Category={Category}
                     tags={VIDEO_DATA[1]?.attributes.tags}
