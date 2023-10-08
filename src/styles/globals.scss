@@ -49,6 +49,8 @@ a {
 
 button {
   border-style: none;
+  color: $black;
+  background-color: rgba(0,0,0,0);
 
   &:hover {
     cursor: pointer;
