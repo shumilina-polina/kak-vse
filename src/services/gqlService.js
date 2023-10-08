@@ -2,7 +2,7 @@ import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 import { apiUrl } from "@/shared/constants/config";
 
 export const client = new ApolloClient({
-  uri: apiUrl,
+  uri: apiUrl + "/graphql",
   cache: new InMemoryCache(),
   ssrMode: false,
 });
@@ -26,13 +26,20 @@ export const GET_CATEGORY = gql`
 `;
 
 export const GET_ARTICLE = gql `
-query ($id: int) {  
-  articleID: faqs (
-    filters: {id: {eq: $id}}
+query ($slug: String) {  
+  articleID: articles (
+    filters: {slug: {eq: $slug}}
   ) {
     data {
       id
       attributes {
+        image {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
         title
         content 
         slug

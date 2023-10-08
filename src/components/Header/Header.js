@@ -49,7 +49,7 @@ const Header = () => {
               </Link>
 
               <Link
-                href={'/service'}
+                href={'/article'}
                 className={s.link}
               >
                 <SvgSelector svg={`link-service-${version.color}`}/>
@@ -117,7 +117,7 @@ const Header = () => {
           </Link>
 
           <Link
-            href={'/service'}
+            href={'/article'}
             className={s.link}
           >
             <SvgSelector svg={`link-service-${version.color}`}/>
