@@ -38,10 +38,18 @@
       gap: 0.89vw;
       padding: 2.50vw 3.57vw 3.57vw 3.57vw;
     }
+    @include mobile {
+      padding: 24px;
+      padding-right: 40px;
+      border-radius: 31.794px;
+    }
     &_close {
       max-height: 80px;
       @include laptop {
         max-height: 7.14vw;
+      }
+      @include mobile {
+        max-height: 87px;
       }
       .categoryBlock_questions {
         button{
@@ -96,8 +104,12 @@
       }
       button {
         background-color: rgba(0, 0, 0, 0);
+        p {
+          text-align: start;
+        }
         &:hover {
           p{
+
             transition: 0.5s;
             text-decoration: underline;
           }

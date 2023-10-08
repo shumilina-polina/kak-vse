@@ -12,9 +12,12 @@ const Footer = () => {
           <a href={'https://vk.com/kakvseinfo'} target={'_blank'}>
             <SvgSelector svg={'footer-vk'}/>
           </a>
-
-          <SvgSelector svg={'footer-dzen'}/>
-          <SvgSelector svg={'footer-rutube'}/>
+          <a href={'https://dzen.ru/kakvse'} target={'_blank'}>
+            <SvgSelector svg={'footer-dzen'}/>
+          </a>
+          <a href={'https://rutube.ru/channel/31625794/'} target={'_blank'}>
+            <SvgSelector svg={'footer-rutube'}/>
+          </a>
         </div>
         <p className={'normal_label'}>©{nowDate.getFullYear()}</p>
       </footer>
