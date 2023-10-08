@@ -49,6 +49,22 @@ query ($slug: String) {
 }
 `;
 
+export const GET_ANSWER = gql `
+query ($slug: String) {  
+  answerID: faqs (
+    filters: {slug: {eq: $slug}}
+  ) {
+    data {
+      attributes {
+        slug
+        title
+        content
+      }
+    }
+  }
+}
+`;
+
 export const GET_FAQS = gql `
 query {  
   faqCategories {

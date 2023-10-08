@@ -1,0 +1,39 @@
+@import "src/styles/varibles/varible";
+
+.answerWrapper {
+  margin: 100px auto;
+
+  max-width: 622px;
+  .content {
+    .text {
+      p {
+        margin-bottom: 24px;
+        /* Desktop/t content */
+        @include Golos;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+      }
+      h2 {
+        margin-bottom: 24px;
+        /* Desktop/quote */
+        @include Golos;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px; /* 133.333% */
+      }
+      blockquote {
+        margin-bottom: 24px;
+        /* Desktop/quote */
+        @include Golos;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px; /* 133.333% */
+      }
+    }
+
+  }
+}
