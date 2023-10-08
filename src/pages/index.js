@@ -19,6 +19,7 @@ const Index = () => {
   const version = useContext(VersionContext)
   const load = false
 
+
   return (
     <>
       <Head>
@@ -49,21 +50,21 @@ const Index = () => {
         <CategoryBlock
           Category={0}
           VIDEO_DATA={data?.advicesVideos.data}
-          ARTICLE_DATA={ARTICLE}
+          ARTICLE_DATA={data?.advicesArticles.data}
           loaded={loading}
           error={error}
         />
         <CategoryBlock
           Category={1}
           VIDEO_DATA={data?.opportunitiesVideos.data}
-          ARTICLE_DATA={ARTICLE}
+          ARTICLE_DATA={data?.opportunitiesArticles.data}
           loaded={loading}
           error={error}
         />
         <CategoryBlock
           Category={2}
           VIDEO_DATA={data?.successVideos.data}
-          ARTICLE_DATA={ARTICLE}
+          ARTICLE_DATA={data?.successArticles.data}
           loaded={loading}
           error={error}
         />

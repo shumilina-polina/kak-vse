@@ -9,7 +9,7 @@ import {apiUrl} from "@/shared/constants/config";
 import Markdown from "react-markdown";
 import Head from "next/head";
 
-const article = () => {
+const Article = () => {
   const router = useRouter();
   const {id} = router.query;
   const {data, loading, error} = useQuery(GET_ARTICLE, {
@@ -31,13 +31,16 @@ const article = () => {
             <><h1>error</h1></>
           ) : (
             <div className={s.content}>
-              {/*<Image*/}
-              {/*  src={apiUrl + data?.articleID.data[0].attributes.image.data.attributes.url}*/}
-              {/*  alt={'image'}*/}
-              {/*  width={100}*/}
-              {/*  height={100}*/}
-              {/*  priority={false}*/}
-              {/*/>*/}
+              <div style={{width: '300px', height: 'auto'}}>
+                <Image
+                  src={apiUrl + data?.articleID.data[0].attributes.image.data.attributes.url}
+                  alt={'image'}
+                  width={100}
+                  height={100}
+                  priority={false}
+                />
+              </div>
+
               <h1 className={'normal_h1'}><Markdown>{data?.articleID.data[0].attributes.title}</Markdown></h1>
               <div className={s.text}><Markdown>{data?.articleID.data[0].attributes.content}</Markdown></div>
             </div>
@@ -49,4 +52,4 @@ const article = () => {
   );
 };
 
-export default article;
+export default Article;

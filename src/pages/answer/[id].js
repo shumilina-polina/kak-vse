@@ -5,13 +5,13 @@ import {GET_ANSWER} from "@/services/gqlService";
 import Head from "next/head";
 import s from './answerID.module.scss'
 import Markdown from "react-markdown";
-const answer = () => {
+const Answer = () => {
   const router = useRouter();
   const {id} = router.query;
   const {data, loading, error} = useQuery(GET_ANSWER, {
     variables: {slug: id}
   })
-  console.log(data?.answerID.data[0].attributes.title)
+  // console.log(data?.answerID.data[0].attributes.title)
   return (
     <>
       <Head>
@@ -38,4 +38,4 @@ const answer = () => {
   );
 };
 
-export default answer;
+export default Answer;

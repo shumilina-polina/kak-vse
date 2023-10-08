@@ -124,6 +124,7 @@ export const GET_DATA_INDEX = gql`
           data {
             attributes {
               url
+              blurhash
             }
           }
         }
@@ -168,6 +169,7 @@ export const GET_DATA_INDEX = gql`
           data {
             attributes {
               url
+              blurhash
             }
           }
         }
@@ -212,6 +214,7 @@ export const GET_DATA_INDEX = gql`
           data {
             attributes {
               url
+              blurhash
             }
           }
         }

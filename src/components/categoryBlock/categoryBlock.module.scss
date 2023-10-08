@@ -91,10 +91,7 @@
       height: 100%;
       grid-template-columns: 2fr 1fr;
     }
-    @include tablet {
-      display: flex;
-      //flex-direction: column;
-    }
+
     @include mobile {
       display: flex;
       flex-direction: column;
@@ -180,6 +177,13 @@
             align-items: center;
             gap: 12px;
             .image {
+              img {
+                width: 100%;
+                height: 100%;
+              }
+              width: 52px;
+              height: 52px;
+              border-radius: 100%;
               @include laptop {
                 width: 4.73vw;
                 height: 4.73vw;
@@ -195,7 +199,6 @@
               align-items: flex-start;
               gap: 4px;
               flex: 1 0 0;
-
               h3 {
                 overflow: hidden;
                 text-overflow: ellipsis;

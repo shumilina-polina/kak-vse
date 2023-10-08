@@ -5,6 +5,8 @@ import SvgSelector from "@/components/SvgSelector";
 import Link from "next/link";
 import Image from "next/image";
 import {useMediaQuery} from "@mui/material";
+import {apiUrl} from "@/shared/constants/config";
+import Markdown from "react-markdown";
 
 const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
 
@@ -88,22 +90,30 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                       borderColor: category.color,
                     }}
                   >
-                    <div className={s.articles}>
-                      {ARTICLE_DATA.filter((elem) => (elem.Category === Category)).slice(0, 3).map((path, i) => (
+                    <button className={s.articles} >
+                      {ARTICLE_DATA?.map((path, i) => (
                         <div className={s.article_row} key={`row${i}`}>
                           <Image
-                            src={path.image}
+                            src={apiUrl + path.attributes.author_photo.data.attributes.url}
                             alt={'author'}
                             className={s.image}
                             key={`image${i}`}
+                            width={40}
+                            height={40}
+                            placeholder={'blur'}
+                            blurDataURL={path.attributes.author_photo.data.attributes.blurhash}
                           />
                           <div className={s.text}>
-                            <p className={'normal_label'} key={`author${i}`}>{path.author}</p>
-                            <h3 className={'normal_h3'} key={`title${i}`}>{path.title}</h3>
+                            <p className={'normal_label'} key={`author${i}`}>
+                              <Markdown>{path.attributes.author_name}</Markdown>
+                            </p>
+                            <h3 className={'normal_h3'} key={`title${i}`}>
+                              <Markdown>{path.attributes.title}</Markdown>
+                            </h3>
                           </div>
                         </div>
                       ))}
-                    </div>
+                    </button>
 
                     <Link
                       href={category.link}
@@ -170,17 +180,25 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                   }}
                 >
                   <div className={s.articles}>
-                    {ARTICLE_DATA.filter((elem) => (elem.Category === Category)).slice(0, 3).map((path, i) => (
+                    {ARTICLE_DATA?.map((path, i) => (
                       <div className={s.article_row} key={`row${i}`}>
                         <Image
-                          src={path.image}
+                          src={apiUrl + path.attributes.author_photo.data.attributes.url}
                           alt={'author'}
                           className={s.image}
                           key={`image${i}`}
+                          width={40}
+                          height={40}
+                          placeholder={'blur'}
+                          blurDataURL={path.attributes.author_photo.data.attributes.blurhash}
                         />
                         <div className={s.text}>
-                          <p className={'normal_label'} key={`author${i}`}>{path.author}</p>
-                          <h3 className={'normal_h3'} key={`title${i}`}>{path.title}</h3>
+                          <p className={'normal_label'} key={`author${i}`}>
+                            <Markdown>{path.attributes.author_name}</Markdown>
+                          </p>
+                          <h3 className={'normal_h3'} key={`title${i}`}>
+                            <Markdown>{path.attributes.title}</Markdown>
+                          </h3>
                         </div>
                       </div>
                     ))}
