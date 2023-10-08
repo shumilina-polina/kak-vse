@@ -8,10 +8,10 @@ export const client = new ApolloClient({
 });
 
 export const GET_CATEGORY = gql`
-  query ($category: String) {  
+query ($category: String) {  
   categoryVideos: videos (     
     filters: {category: {eq: $category}}
-  ) { 
+   ) { 
     data {
       attributes {
         title
@@ -19,6 +19,35 @@ export const GET_CATEGORY = gql`
         urlEmbed
         tags
         urlShare        
+      }
+    }
+  }
+  categoryArticles: articles (     
+    filters: {category: {eq: $category}}
+   ) { 
+    data {      
+      attributes {
+        slug
+        title        
+        category
+        content
+        image {
+          data {
+            attributes {
+              url
+              blurhash
+            }
+          }
+        }
+        author_name
+        author_photo {
+          data {
+            attributes {
+              url
+              hash
+            }
+          }
+        }
       }
     }
   }

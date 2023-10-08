@@ -22,7 +22,7 @@ const Success = () => {
         <CategoryPage
           Category={2}
           VIDEO_DATA={data?.categoryVideos.data}
-          ARTICLE_DATA={ARTICLE}
+          ARTICLE_DATA={data?.categoryArticles.data}
         />
       </Wrapper>
     </>

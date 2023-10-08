@@ -3,6 +3,7 @@ import s from './cardArticle.module.scss'
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
+import Markdown from "react-markdown";
 const CardArticle = ({Category, author, image, title, previewText, url, loaded}) => {
   return (
     <div
@@ -15,15 +16,17 @@ const CardArticle = ({Category, author, image, title, previewText, url, loaded})
         <Image
           src={image}
           alt={'author'}
+          width={52}
+          height={52}
         />
         <div className={s.title_text}>
-          <p className={'normal_label'}>{author}</p>
-          <h3 className={'normal_h3'}>{title}</h3>
+          <Markdown className={'normal_label'}>{author}</Markdown>
+          <Markdown className={'normal_h3'}>{title}</Markdown>
         </div>
       </div>
-      <p className={classNames(s.text, 'normal_t3')}>{previewText}</p>
+      <Markdown className={classNames(s.text, 'normal_t3')}>{previewText}</Markdown>
       <Link
-        href={url}
+        href={`/articles/${url}`}
         className={s.button}
         style={{
           backgroundColor: Category === 0 ? "#FFADDE" : Category === 1 ? '#A7EAFF' : '#FFECA7',

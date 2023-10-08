@@ -27,7 +27,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
       />
       <div className={s.card_bottom}>
         <div className={s.card_bottom_text}>
-          <p className={'normal_label'}><Markdown>{tags}</Markdown></p>
+          <p className={'normal_label'}>{tags}</p>
           <h2 className={'normal_h2'}><Markdown>{title}</Markdown></h2>
         </div>
         <div className={s.share}>

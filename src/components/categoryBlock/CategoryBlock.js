@@ -27,7 +27,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
         colorDark: "#7FCFE9",
         link: '/advices',
         text1: 'Полезные советы →',
-        textTitle: `Познакомься с полезными советами от экспертов`,
+        textTitle: `Познакомься с полезными \n\n советами от экспертов`,
         svgIcon: 'advices-color'
       }
       : {
@@ -61,7 +61,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                   >
                     <p className={'normal_caption'}>{category.text1}</p>
                   </Link>
-                  <h1 className={'normal_h1'}>{category.textTitle}</h1>
+                  <h1 className={'normal_h1'}><Markdown>{category.textTitle}</Markdown></h1>
                 </div>
                 <SvgSelector svg={category.svgIcon}/>
               </div>

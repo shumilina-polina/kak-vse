@@ -3,6 +3,7 @@ import s from './categoryPage.module.scss'
 import CardArticle from "@/components/cardArticle/CardArticle";
 import CardVideo from "@/components/cardVideo/CardVideo";
 import {useMediaQuery} from "@mui/material";
+import {apiUrl} from "@/shared/constants/config";
 const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
   const isMobile = useMediaQuery(`(max-width: 480px)`);
   // useEffect(() => {
@@ -24,16 +25,15 @@ const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
   return (
     <div className={s.category}>
       <div className={s.category_articles}>
-        {ARTICLE_DATA.filter(
-          (elem)=>(elem.Category === Category)).map(
+        {ARTICLE_DATA?.map(
             (article, index)=>(
               <CardArticle
                 Category={Category}
-                author={article.author}
-                image={article.image}
-                title={article.title}
-                previewText={article.previewText}
-                url={article.url}
+                author={article?.attributes.author_name}
+                image={apiUrl + article?.attributes.author_photo.data.attributes.url}
+                title={article?.attributes.title}
+                previewText={article?.attributes.content}
+                url={article?.attributes.slug}
                 loaded={loaded}
                 key={`article${index}`}
               />

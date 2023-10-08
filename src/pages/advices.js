@@ -22,7 +22,7 @@ const Advices = () => {
         <CategoryPage
           Category={1}
           VIDEO_DATA={data?.categoryVideos.data}
-          ARTICLE_DATA={ARTICLE}
+          ARTICLE_DATA={data?.categoryArticles.data}
         />
       </Wrapper>
     </>

@@ -132,7 +132,7 @@
         width: 360px;
         height: 100%;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         justify-content: space-between;
         padding: 20px 16px;
 
@@ -163,7 +163,7 @@
           height: fit-content;
           flex-direction: column;
           justify-content: center;
-          align-items: center;
+          align-items: start;
           gap: 16px;
           @include tablet {
             align-items: start;

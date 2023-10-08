@@ -25,7 +25,7 @@ const Opportunities = () => {
         <CategoryPage
           Category={0}
           VIDEO_DATA={data?.categoryVideos.data}
-          ARTICLE_DATA={ARTICLE}
+          ARTICLE_DATA={data?.categoryArticles.data}
           loaded={loading}
         />
       </Wrapper>
