@@ -9,7 +9,7 @@ import cn from 'classnames'
 
 const FaqsBlock = ({data}) => {
   const [close, setClose] = useState(true)
-  //console.log(quest)
+  console.log(data);
   return (
     <div
       className={cn(s.categoryBlock, close ? s.categoryBlock_close : s.categoryBlock_open)}
@@ -21,11 +21,17 @@ const FaqsBlock = ({data}) => {
       </button>
       <div className={s.categoryBlock_questions}>
         {data.faqs.data.map((question, jndex) => (
-          <button className={'normal_t2'} key={jndex} style={{transitionDelay: `${jndex/10}s`}}>
+          <Link
+            href={`/answer/${question.attributes.slug}`}
+            className={'normal_t2'}
+            key={jndex}
+            style={{transitionDelay: `${jndex/10}s`}}
+          >
             <p className={'normal_t2'}>{question.attributes.title}</p>
-          </button>
+          </Link>
         ))}
       </div>
+
     </div>
 
   );

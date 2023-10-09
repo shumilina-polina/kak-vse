@@ -69,6 +69,14 @@ query ($slug: String) {
             }
           }
         }
+        author_name
+        author_photo {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
         title
         content 
         slug
@@ -103,7 +111,8 @@ query {
         faqs {
           data {
             attributes {
-              title              
+              title 
+              slug             
             }
           }
         }

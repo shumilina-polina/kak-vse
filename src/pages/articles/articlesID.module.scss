@@ -2,10 +2,85 @@
 
 .articlesWrapper {
   margin: 100px auto;
-
   max-width: 622px;
+  @include laptop {
+    max-width: 95%;
+  }
+
   .content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
+    .title {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .share {
+        display: flex;
+        width: fit-content;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+
+        &_links {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          @include laptop {
+            gap: 0.71vw;
+          }
+
+          svg {
+            @include laptop {
+              width: 4.46vw;
+              height: 4.46vw;
+            }
+            @include mobile {
+              width: 38px;
+              height: 38px;
+            }
+          }
+        }
+        p {
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .image {
+      width: fit-content;
+      aspect-ratio: auto 517.5 / 284.85;
+      max-width: 517.5px;
+      border-radius: 40px;
+      overflow: hidden;
+      background-color: rgba(0,0,0,0);
+      @include laptop {
+        width: 100%;
+        height: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        contain: content;
+        background-color: rgba(0,0,0,0);
+      }
+    }
     .text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 16px;
+      .author{
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        img {
+          border-radius: 100%;
+        }
+        p {margin-bottom: 0;}
+      }
+
       p {
         margin-bottom: 24px;
         /* Desktop/t content */
