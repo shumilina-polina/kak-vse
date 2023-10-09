@@ -1,39 +1,47 @@
-import React, {useState} from 'react';
-import {GET_FAQS} from "@/services/gqlService";
-import {useQuery} from "@apollo/client";
+import React, { useState } from "react";
+import { GET_FAQS } from "@/services/gqlService";
+import { useQuery } from "@apollo/client";
 import Markdown from "react-markdown";
 import Link from "next/link";
-import s from './faqs.module.scss'
+import s from "./faqs.module.scss";
 import SvgSelector from "@/components/SvgSelector";
-import cn from 'classnames'
+import cn from "classnames";
+import { useRouter } from "next/router";
 
-const FaqsBlock = ({data}) => {
-  const [close, setClose] = useState(true)
+const FaqsBlock = ({ data }) => {
+  const { pathname } = useRouter();
+  const [close, setClose] = useState(pathname === "/service" ? false : true);
   console.log(data);
   return (
     <div
-      className={cn(s.categoryBlock, close ? s.categoryBlock_close : s.categoryBlock_open)}
+      className={cn(
+        s.categoryBlock,
+        close ? s.categoryBlock_close : s.categoryBlock_open
+      )}
       onClick={() => setClose(!close)}
     >
-      <h2 className={'normal_h2'}><Markdown>{data.title}</Markdown></h2>
-      <button className={s.arrow} style={{transform: close ? 'rotate(180deg)' : 'rotate(0)'}}>
-        <SvgSelector svg={'arrow'}/>
+      <h2 className={"normal_h2"}>
+        <Markdown>{data.title}</Markdown>
+      </h2>
+      <button
+        className={s.arrow}
+        style={{ transform: close ? "rotate(180deg)" : "rotate(0)" }}
+      >
+        <SvgSelector svg={"arrow"} />
       </button>
       <div className={s.categoryBlock_questions}>
         {data.faqs.data.map((question, jndex) => (
           <Link
             href={`/answer/${question.attributes.slug}`}
-            className={'normal_t2'}
+            className={"normal_t2"}
             key={jndex}
-            style={{transitionDelay: `${jndex/10}s`}}
+            style={{ transitionDelay: `${jndex / 10}s` }}
           >
-            <p className={'normal_t2'}>{question.attributes.title}</p>
+            <p className={"normal_t2"}>{question.attributes.title}</p>
           </Link>
         ))}
       </div>
-
     </div>
-
   );
 };
 
