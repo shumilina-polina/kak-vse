@@ -95,6 +95,7 @@ const Header = () => {
           <Link
             href={'/opportunities'}
             className={s.link}
+            onClick={()=> setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-opportunities-${version.color}`}/>
             <p className={`${version.size}_h4`}>Ваши возможности</p>
@@ -103,6 +104,7 @@ const Header = () => {
           <Link
             href={'/advices'}
             className={s.link}
+            onClick={()=> setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-advices-${version.color}`}/>
             <p className={`${version.size}_h4`}>Полезные советы</p>
@@ -111,6 +113,7 @@ const Header = () => {
           <Link
             href={'/success'}
             className={s.link}
+            onClick={()=> setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-success-${version.color}`}/>
             <p className={`${version.size}_h4`}>Истории успеха</p>
@@ -119,6 +122,7 @@ const Header = () => {
           <Link
             href={'/articles'}
             className={s.link}
+            onClick={()=> setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-service-${version.color}`}/>
             <p className={`normal_h4`}>Ответы на вопросы</p>
