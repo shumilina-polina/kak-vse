@@ -21,7 +21,7 @@ const CardArticle = ({Category, author, image, title, previewText, url, loaded})
         />
         <div className={s.title_text}>
           <Markdown className={'normal_label'}>{author}</Markdown>
-          <Markdown className={'normal_h3'}>{title}</Markdown>
+          <h3><Markdown className={'normal_h3'}>{title}</Markdown></h3>
         </div>
       </div>
       <Markdown className={classNames(s.text, 'normal_t3')}>{previewText}</Markdown>

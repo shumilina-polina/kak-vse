@@ -45,6 +45,7 @@
           @include laptop {
             gap: 0.71vw;
           }
+          a {@include hover();}
 
           svg {
             @include laptop {
@@ -157,6 +158,7 @@
 
         }
         a {
+          @include hover();
           gap: 8px;
           display: flex;
           align-items: center;

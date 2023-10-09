@@ -16,7 +16,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
       colorLight: "#FFD8EF",
       colorDark: "#E089BE",
       link: '/opportunities',
-      text1: 'Ваши возможности →',
+      text1: 'Ваши возможности →',
       textTitle: 'Найди свой путь самореализации',
       svgIcon: 'opportunities-color'
     }
@@ -26,7 +26,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
         colorLight: "#C4F1FF",
         colorDark: "#7FCFE9",
         link: '/advices',
-        text1: 'Полезные советы →',
+        text1: 'Полезные советы →',
         textTitle: `Познакомься с полезными \n\n советами от экспертов`,
         svgIcon: 'advices-color'
       }
@@ -35,7 +35,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
         colorLight: "#FFF3C8",
         colorDark: "#F5DC85",
         link: '/success',
-        text1: 'Истории успеха →',
+        text1: 'Истории успеха →',
         textTitle: 'Найди вдохновение в историях успеха',
         svgIcon: 'success-color'
       };
@@ -103,7 +103,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                             placeholder={'blur'}
                             blurDataURL={path.attributes.author_photo.data.attributes.blurhash}
                           />
-                          <div className={s.text}>
+                          <div className={s.text} >
                             <p className={'normal_label'} key={`author${i}`}>
                               <Markdown>{path.attributes.author_name}</Markdown>
                             </p>
@@ -119,7 +119,8 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                       href={category.link}
                       className={s.link}
                       style={{
-                        backgroundColor: category.colorLight
+                        backgroundColor: category.colorLight,
+                        transition: '0.5s'
                       }}
 
                     >
@@ -134,6 +135,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                   backgroundColor: category.color,
                   borderColor: category.colorDark
                 }}
+
                 href={category.link}
                 className={s.large_link}
               >
@@ -141,7 +143,6 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
               </Link>
             </div>
           )
-
           : //----------------------------------------------------------------------mobile
           (
             <div className={s.block}>

@@ -98,6 +98,7 @@
         gap: 0.71vw;
       }
       svg {
+        @include hover();
         @include laptop {
           width: 4.46vw;
           height: 4.46vw;
