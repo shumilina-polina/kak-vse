@@ -30,25 +30,32 @@ const Index = () => {
         <title>Как все</title>
       </Head>
       <Wrapper>
-
-        <h1 className={'normal_title'}>
-          Узнайте больше про обучение,<br/> трудоустройство и социализацию людей с инвалидностью в России
+        <h1 className={"normal_title"}>
+          Узнайте больше про обучение,
+          <br /> трудоустройство и социализацию людей с инвалидностью в России
         </h1>
-        <MainPageVideos videos={data?.onMainPageVideos.data} loaded={loading} error={error}/>
+        <MainPageVideos
+          videos={data?.onMainPageVideos.data}
+          loaded={loading}
+          error={error}
+        />
         <div className={s.first_block}>
           <div className={s.first_block_left}>
-            <SvgSelector svg={'first-left-icon-color'}/>
-            <p className={'normal_t1'}>
-              Каждый человек, независимо от его особенностей, является полноценным
-              членом общества. Однако многие люди с инвалидностью до сих пор сталкиваются с проблемами в социализации,
-              обучении и трудоустройстве.
+            <SvgSelector svg={"first-left-icon-color"} />
+            <p className={"normal_t1"}>
+              Каждый человек, независимо от его особенностей, является
+              полноценным членом общества. Однако многие люди с инвалидностью до
+              сих пор сталкиваются с проблемами в социализации, обучении и
+              трудоустройстве.
             </p>
           </div>
           <div className={s.first_block_right}>
-            <SvgSelector svg={'first-right-icon-color'}/>
-            <p className={'normal_t1'}>
-              В разделах сайта вы сможете найти примеры того, как реальные люди с особыми потребностями добились своих
-              достижений, где они учились, кто на этом пути их поддерживал и к кому вы можете обратиться.
+            <SvgSelector svg={"first-right-icon-color"} />
+            <p className={"normal_t1"}>
+              В разделах сайта вы сможете найти примеры того, как реальные люди
+              с особыми потребностями добились своих достижений, где они
+              учились, кто на этом пути их поддерживал и к кому вы можете
+              обратиться.
             </p>
           </div>
         </div>
@@ -78,35 +85,39 @@ const Index = () => {
             <div className={s.title_text}>
               <Link
                 style={{
-                  backgroundColor: '#C3FFDB'
+                  backgroundColor: "#C3FFDB",
                 }}
                 className={s.link}
-                href={'/service'}
+                href={"/service"}
               >
-                <p className={'normal_caption'}>Ответы на вопросы →</p>
+                <p className={"normal_caption"}>Ответы на вопросы →</p>
               </Link>
-              <SvgSelector svg={'service-color'}/>
+              <SvgSelector svg={"service-color"} />
             </div>
-            <h1 className={'normal_h1'}>Полезная информация <br/> для достижения цели</h1>
+            <h1 className={"normal_h1"}>
+              Полезная информация <br /> для достижения цели
+            </h1>
           </div>
         ) : (
           <div className={s.title}>
             <div className={s.title_text}>
               <Link
                 style={{
-                  backgroundColor: '#C3FFDB'
+                  backgroundColor: "#C3FFDB",
                 }}
                 className={s.link}
-                href={'/service'}
+                href={"/service"}
               >
-                <p className={'normal_caption'}>Ответы на вопросы →</p>
+                <p className={"normal_caption"}>Ответы на вопросы →</p>
               </Link>
-              <h1 className={'normal_h1'}>Полезная информация <br/> для достижения цели</h1>
+              <h1 className={"normal_h1"}>
+                Полезная информация <br /> для достижения цели
+              </h1>
             </div>
-            <SvgSelector svg={'service-color'}/>
+            <SvgSelector svg={"service-color"} />
           </div>
         )}
-        <Faqs/>
+        <Faqs />
       </Wrapper>
     </>
   );

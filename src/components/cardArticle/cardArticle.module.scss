@@ -78,7 +78,6 @@
         -moz-box-orient: vertical;
         -webkit-box-orient: vertical;
         box-orient: vertical;
-
       }
     }
   }
@@ -95,6 +94,14 @@
     -moz-box-orient: vertical;
     -webkit-box-orient: vertical;
     box-orient: vertical;
+    & > p,
+    blockquote,
+    h2 {
+      display: none;
+    }
+    & > p:first-child {
+      display: block;
+    }
   }
   .button {
     width: 100%;

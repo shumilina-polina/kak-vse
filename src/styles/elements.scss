@@ -47,7 +47,7 @@
       @include Golos();
       font-size: 20px;
       font-style: normal;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 24px; /* 120% */
       @include laptop {
         font-size: 1.79vw;
@@ -83,7 +83,8 @@
       @include Golos();
       font-size: 13px;
       font-style: normal;
-      font-weight: 600;
+      // font-weight: 600;
+      font-weight: 500;
       line-height: 13px; /* 100% */
       @include laptop {
         font-size: 1.25vw;
@@ -148,7 +149,8 @@
       @include Golos();
       font-size: 12px;
       font-style: normal;
-      font-weight: 600;
+      // font-weight: 600;
+      font-weight: 500;
       line-height: normal;
       @include laptop {
         font-size: 1.07vw;
