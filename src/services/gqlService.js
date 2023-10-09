@@ -123,7 +123,7 @@ query {
 `;
 
 export const GET_DATA_INDEX = gql`
-  query {  
+query {  
   advicesVideos: videos ( 
     pagination: {limit: 2}   
     filters: {category: {eq: "advices"}}
@@ -256,6 +256,20 @@ export const GET_DATA_INDEX = gql`
             }
           }
         }
+      }
+    }
+  }
+  onMainPageVideos: videos (     
+    filters: {onMainPage : {eq: true}}
+  ) { 
+    data {
+      attributes {
+        title
+        category 
+        urlEmbed
+        tags
+        urlShare
+        onMainPage 
       }
     }
   }   

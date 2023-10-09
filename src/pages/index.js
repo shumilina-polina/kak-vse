@@ -16,6 +16,7 @@ import Faqs from "@/components/FAQ/FAQS";
 import {useMediaQuery} from "@mui/material";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import MainPageVideos from "@/components/mainPageVideos/MainPageVideos";
 
 const Index = () => {
   const {data, loading, error} = useQuery(GET_DATA_INDEX)
@@ -33,6 +34,7 @@ const Index = () => {
         <h1 className={'normal_title'}>
           Узнайте больше про обучение,<br/> трудоустройство и социализацию людей с инвалидностью в России
         </h1>
+        <MainPageVideos videos={data?.onMainPageVideos.data} loaded={loading} error={error}/>
         <div className={s.first_block}>
           <div className={s.first_block_left}>
             <SvgSelector svg={'first-left-icon-color'}/>
