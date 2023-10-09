@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useQuery} from "@apollo/client";
 import {GET_ARTICLE} from "@/services/gqlService";
 import {useRouter} from "next/router";
@@ -16,7 +16,13 @@ const Article = () => {
   const {data, loading, error} = useQuery(GET_ARTICLE, {
     variables: {slug: id}
   })
-  console.log(data?.articleID.data[0])
+  console.log(data?.articleID.data[0].attributes.label_content.link_multicentr)
+  let linkTitle = data?.articleID.data[0].attributes.label_content.link_multicentr;
+  if (!loading) {
+
+    linkTitle = linkTitle.replace(/https:/g, '');
+    linkTitle = linkTitle.replace(/[^a-zа-яё0-9\s]/gi, ' ');
+  }
 
 
   return (
@@ -65,7 +71,7 @@ const Article = () => {
                       <SvgSelector svg={'ok-desktop'}/>
                     </a>
                     <a
-                      onClick={()=>(copy())}
+                      onClick={() => (copy())}
                     >
                       <SvgSelector svg={'share-desktop'}/>
                     </a>
@@ -89,20 +95,28 @@ const Article = () => {
               </div>
               <div className={s.label}>
                 <p className={'normal_t3'}>
-                  Если вы или ваши близкие также являетесь человеком с инвалидностью или ограниченными возможностями, то вы можете получить всю необходимую помощь и информационную поддержку всеволожского Мультицентра социальной и трудовой интеграции.
+                  <Markdown>
+                    {data?.articleID.data[0].attributes.label_content.content}
+                  </Markdown>
                 </p>
                 <div className={s.links}>
-                  <a href={'https://vk.com/kakvseinfo'} target={'_blank'}>
+                  <a href={data?.articleID.data[0].attributes.label_content.link_vk} target={'_blank'}>
                     <SvgSelector svg={'label-vk'}/>
-                    <p className={'normal_caption'}>Сообщество ВК</p>
+                    <p className={'normal_caption'}>Сообщество ВК</p>
                   </a>
                   <a href={''} target={'_blank'}>
                     <SvgSelector svg={'label-phone'}/>
-                    <p className={'normal_caption'}>Сообщество ВК</p>
+                    <p className={'normal_caption'}>
+                      <Markdown>
+                        {data?.articleID.data[0].attributes.label_content.phone}
+                      </Markdown>
+                    </p>
                   </a>
-                  <a href={'https://multicentr.com'} target={'_blank'}>
+                  <a href={data?.articleID.data[0].attributes.label_content.link_multicentr} target={'_blank'}>
                     <SvgSelector svg={'label-brower'}/>
-                    <p className={'normal_caption'}>Сообщество ВК</p>
+                    <p className={'normal_caption'}><Markdown>
+                      {linkTitle}
+                    </Markdown></p>
                   </a>
                 </div>
 
@@ -129,7 +143,7 @@ const Article = () => {
                       <SvgSelector svg={'ok-desktop'}/>
                     </a>
                     <a
-                      onClick={()=>(copy())}
+                      onClick={() => (copy())}
                     >
                       <SvgSelector svg={'share-desktop'}/>
                     </a>

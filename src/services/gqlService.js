@@ -80,6 +80,12 @@ query ($slug: String) {
         title
         content 
         slug
+        label_content {
+          content
+          link_vk
+          phone
+          link_multicentr
+        }
       }
     }
   }

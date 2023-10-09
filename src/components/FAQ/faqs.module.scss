@@ -44,7 +44,7 @@
       padding: 2.50vw 3.57vw 3.57vw 3.57vw;
     }
     @include mobile {
-      padding: 24px 40px 24px 24px;
+      padding: 24px 50px 24px 24px;
       border-radius: 31.794px;
       gap: 10px;
     }
@@ -57,7 +57,7 @@
         max-height: 87px;
       }
       .categoryBlock_questions {
-        button{
+        a{
           transition: 0.5s;
           opacity: 0;
         }
@@ -69,7 +69,7 @@
         max-height: 44.64vw;
       }
       .categoryBlock_questions {
-        button{
+        a {
           transition: 0.5s;
           opacity: 1;
         }
@@ -116,6 +116,7 @@
       transition: 0.5s;
       margin-top: 10px;
 
+
       @include laptop {
         gap: 0.89vw;
         margin-top: 0.89vw;
@@ -127,6 +128,7 @@
         position: relative;
         background-color: rgba(0, 0, 0, 0);
         margin-left: 24px;
+
         &:before {
           display: block;
           position: absolute;
@@ -138,7 +140,6 @@
         }
         &:hover {
           p{
-
             transition: 0.5s;
             text-decoration: underline;
           }

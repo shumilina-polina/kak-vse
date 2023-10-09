@@ -120,7 +120,7 @@ const Header = () => {
           </Link>
 
           <Link
-            href={'/articles'}
+            href={'/service'}
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >

@@ -9,7 +9,7 @@ class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
           <meta
             name="description"
-            content="Сетка – это лавка искусства художников уличной волны в Санкт-Петербурге"
+            content="Узнайте больше про обучение, трудоустройство и социализацию людей с инвалидностью в России"
           />
           <meta content="origin" id="mref" name="referrer"/>
           <link
