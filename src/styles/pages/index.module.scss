@@ -49,4 +49,67 @@
       gap: 11px;
     }
   }
+
+
 }
+.title {
+   display: flex;
+   align-items: center;
+
+   justify-content: space-between;
+   width: 100%;
+   @include laptop {
+     svg {
+       height: 9.20vw;
+     }
+   }
+   @include mobile {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     flex: 1 0 0;
+   }
+   &_text {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 12px;
+     width: 80%;
+     @include laptop{
+       gap: 1.07vw;
+
+     }
+
+     @include mobile {
+       width: 100%;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+       align-self: stretch;
+       margin-bottom: 12px;
+       svg {
+         width: auto;
+         height: 56px;
+       }
+
+     }
+     .link {
+       display: flex;
+       height: 40px;
+       padding: 0px 12px 0px 16px;
+       align-items: center;
+       gap: 8px;
+       white-space: nowrap;
+
+       border-radius: 40px;
+       @include mobile {
+         height: 30px;
+         border-radius: 30px;
+         padding: 0px 9.6px 0 12.8px;
+
+       }
+     }
+   }
+
+ }

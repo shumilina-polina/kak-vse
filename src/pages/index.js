@@ -13,11 +13,14 @@ import cn from "classnames";
 import {useQuery} from "@apollo/client";
 import {GET_DATA_INDEX} from "@/services/gqlService";
 import Faqs from "@/components/FAQ/FAQS";
+import {useMediaQuery} from "@mui/material";
+import Link from "next/link";
+import Markdown from "react-markdown";
 
 const Index = () => {
   const {data, loading, error} = useQuery(GET_DATA_INDEX)
   const version = useContext(VersionContext)
-  const load = false
+  const isMobile = useMediaQuery(`(max-width: 480px)`);
 
 
   return (
@@ -68,7 +71,39 @@ const Index = () => {
           loaded={loading}
           error={error}
         />
-
+        {isMobile ? (
+          <div className={s.title}>
+            <div className={s.title_text}>
+              <Link
+                style={{
+                  backgroundColor: '#C3FFDB'
+                }}
+                className={s.link}
+                href={'/service'}
+              >
+                <p className={'normal_caption'}>Ответы на вопросы →</p>
+              </Link>
+              <SvgSelector svg={'service-color'}/>
+            </div>
+            <h1 className={'normal_h1'}>Полезная информация <br/> для достижения цели</h1>
+          </div>
+        ) : (
+          <div className={s.title}>
+            <div className={s.title_text}>
+              <Link
+                style={{
+                  backgroundColor: '#C3FFDB'
+                }}
+                className={s.link}
+                href={'/service'}
+              >
+                <p className={'normal_caption'}>Ответы на вопросы →</p>
+              </Link>
+              <h1 className={'normal_h1'}>Полезная информация <br/> для достижения цели</h1>
+            </div>
+            <SvgSelector svg={'service-color'}/>
+          </div>
+        )}
         <Faqs/>
       </Wrapper>
     </>

@@ -13,7 +13,7 @@
 
   background-color: $KK;
   transition: 1s;
-  z-index: 0;
+  z-index: 98;
 
   .link {
     display: flex;
@@ -55,6 +55,7 @@
   top: 0;
 
   transition: 0.5s;
+  z-index: 99;
   @include mobile {
     height: 60px;
   }
