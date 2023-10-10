@@ -66,6 +66,9 @@
         white-space: nowrap;
 
         border-radius: 40px;
+        @include laptop {
+          height: 3.57vw;
+        }
         @include mobile {
           height: 30px;
           border-radius: 30px;
@@ -175,6 +178,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            min-height: 76px;
             .image {
               img {
                 width: 100%;
@@ -210,6 +214,10 @@
                 -webkit-box-orient: vertical;
                 box-orient: vertical;
               }
+            }
+            @include laptop {
+              gap: 1.07vw;
+              min-height: 6.79vw;
             }
           }
         }
