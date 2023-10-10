@@ -68,6 +68,9 @@
       @include laptop {
         max-height: 44.64vw;
       }
+      @include mobile {
+        max-height: 400px;
+      }
       .categoryBlock_questions {
         a {
           transition: 0.5s;
