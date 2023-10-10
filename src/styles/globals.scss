@@ -17,8 +17,6 @@ br {
   &::selection {
     background-color: rgba(123, 240, 170, 0.67);
   }
-
-
 }
 
 #__next {
@@ -31,6 +29,10 @@ html {
 
   width: 100%;
   scroll-behavior: smooth;
+}
+
+.element-selector {
+  font-weight: 200;
 }
 
 body {
