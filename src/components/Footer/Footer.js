@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import s from './footer.module.scss'
 import SvgSelector from "@/components/SvgSelector";
+import {colorContext, sizeContext} from "@/components/Context";
 const Footer = () => {
   const nowDate = new Date()
+  const [colorVersion, setColorVersion] = useContext(colorContext)
+  const [sizeVersion, setSizeVersion] = useContext(sizeContext)
 
   return (
     <div className={s.wrapper}>
@@ -19,7 +22,7 @@ const Footer = () => {
             <SvgSelector svg={'footer-rutube'}/>
           </a>
         </div>
-        <p className={'normal_label'}>©{nowDate.getFullYear()}</p>
+        <p className={`${sizeVersion}_label`}>©{nowDate.getFullYear()}</p>
       </footer>
     </div>
   );

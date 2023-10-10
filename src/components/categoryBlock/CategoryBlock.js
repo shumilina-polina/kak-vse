@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import s from './categoryBlock.module.scss'
 import CardVideo from "@/components/cardVideo/CardVideo";
 import SvgSelector from "@/components/SvgSelector";
@@ -7,8 +7,12 @@ import Image from "next/image";
 import {useMediaQuery} from "@mui/material";
 import {apiUrl} from "@/shared/constants/config";
 import Markdown from "react-markdown";
+import {colorContext, sizeContext} from "@/components/Context";
 
 const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
+  const [colorVersion, setColorVersion] = useContext(colorContext)
+  const [sizeVersion, setSizeVersion] = useContext(sizeContext)
+  const isMobile = useMediaQuery(`(max-width: 480px)`);
 
   const category = Category === 0
     ? {
@@ -40,8 +44,8 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
         svgIcon: 'success-color'
       };
 
-  const isMobile = useMediaQuery(`(max-width: 480px)`);
-  //console.log(VIDEO_DATA[0]?.attributes.title, error)
+
+
 
   return (
     <>
@@ -59,16 +63,16 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                     className={s.link}
                     href={category.link}
                   >
-                    <p className={'normal_caption'}>{category.text1}</p>
+                    <p className={`${sizeVersion}_caption`}>{category.text1}</p>
                   </Link>
-                  <h1 className={'normal_h1'}><Markdown>{category.textTitle}</Markdown></h1>
+                  <h1 className={`${sizeVersion}_h1`}><Markdown>{category.textTitle}</Markdown></h1>
                 </div>
                 <SvgSelector svg={category.svgIcon}/>
               </div>
 
               <div className={s.content}>
                 <div className={s.content_video}>
-                  <label><p className={'normal_label'}>Видео</p></label>
+                  <label><p className={`${sizeVersion}_label`}>Видео</p></label>
                   <div className={s.content_video_wrapper}>
                     {VIDEO_DATA?.map((path, i) => (
                       <CardVideo
@@ -83,7 +87,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                   </div>
                 </div>
                 <div className={s.content_article}>
-                  <label><p className={'normal_label'}>Статьи</p></label>
+                  <label><p className={`${sizeVersion}_label`}>Статьи</p></label>
                   <div
                     className={s.content_article_wrapper}
                     style={{
@@ -104,10 +108,10 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                             blurDataURL={path.attributes.author_photo.data.attributes.blurhash}
                           />
                           <div className={s.text} >
-                            <p className={'normal_label'} key={`author${i}`}>
+                            <p className={`${sizeVersion}_label`} key={`author${i}`}>
                               <Markdown>{path.attributes.author_name}</Markdown>
                             </p>
-                            <h3 className={'normal_h3'} key={`title${i}`}>
+                            <h3 className={`${sizeVersion}_h3`} key={`title${i}`}>
                               <Markdown>{path.attributes.title}</Markdown>
                             </h3>
                           </div>
@@ -124,7 +128,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                       }}
 
                     >
-                      <h3 className={'normal_h3'}>Читать все →</h3>
+                      <h3 className={`${sizeVersion}_h3`}>Читать все →</h3>
                     </Link>
                   </div>
                 </div>
@@ -139,7 +143,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                 href={category.link}
                 className={s.large_link}
               >
-                <h2 className={'normal_h2'}>Больше видео и статей →</h2>
+                <h2 className={`${sizeVersion}_h2`}>Больше видео и статей →</h2>
               </Link>
             </div>
           )
@@ -155,11 +159,11 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                     className={s.link}
                     href={category.link}
                   >
-                    <p className={'normal_caption'}>{category.text1}</p>
+                    <p className={`${sizeVersion}_caption`}>{category.text1}</p>
                   </Link>
                   <SvgSelector svg={category.svgIcon}/>
                 </div>
-                <h1 className={'normal_h1'}>{category.textTitle}</h1>
+                <h1 className={`${sizeVersion}_h1`}>{category.textTitle}</h1>
               </div>
 
               <div className={s.content}>
@@ -194,10 +198,10 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                           blurDataURL={path.attributes.author_photo.data.attributes.blurhash}
                         />
                         <div className={s.text}>
-                          <p className={'normal_label'} key={`author${i}`}>
+                          <p className={`${sizeVersion}_label`} key={`author${i}`}>
                             <Markdown>{path.attributes.author_name}</Markdown>
                           </p>
-                          <h3 className={'normal_h3'} key={`title${i}`}>
+                          <h3 className={`${sizeVersion}_h3`} key={`title${i}`}>
                             <Markdown>{path.attributes.title}</Markdown>
                           </h3>
                         </div>

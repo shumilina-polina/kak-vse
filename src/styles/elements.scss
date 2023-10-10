@@ -60,7 +60,6 @@
     }
     &_h3 {
       /* Desktop/h3 */
-
       @include Golos();
       font-size: 16px;
       font-style: normal;
@@ -162,7 +161,7 @@
       @include Golos();
       font-size: 12px;
       font-style: normal;
-      font-weight: 500;
+      font-weight: 400;
       line-height: 12px; /* 100% */
       @include laptop {
         font-size: 1.07vw;
@@ -195,9 +194,29 @@
       }
     }
 
-
   }
   .large {
+    &_title {
+      /* Desktop/title+ */
+      @include Golos();
+      text-align: center;
+      font-size: 56px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 56px; /* 100% */
+      letter-spacing: -1.12px;
+      padding: 40px 0;
+      @include laptop {
+        font-size:5vw;
+        line-height:5vw;
+      }
+      @include mobile {
+        font-size: 23px;
+        font-weight: 500;
+        line-height: 26px; /* 113.043% */
+        letter-spacing: -0.46px;
+      }
+    }
     &_h1 {
       /* Desktop/h1+ */
       @include Golos();
@@ -206,25 +225,67 @@
       font-weight: 500;
       line-height: 52px; /* 100% */
       letter-spacing: -1.04px;
+      @include laptop {
+        font-size:4.64vw;
+        line-height:4.64vw;
+      }
+      @include mobile {
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px; /* 100% */
+        letter-spacing: -0.52px;
+      }
     }
     &_h2 {
       /* Desktop/h2+ */
       @include Golos();
       font-size: 24px;
       font-style: normal;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 24px; /* 100% */
+      @include laptop {
+        font-size: 1.79vw;
+        line-height: 2.14vw;
+      }
+      @include mobile {
+        font-size: 19.2px;
+        line-height: 19.2px; /* 100% */
+      }
     }
     &_h3 {
-
+      /* Desktop/h3+ */
+      @include Golos();
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px; /* 100% */
+      letter-spacing: -0.4px;
+      @include laptop {
+        font-size: 1.43vw;
+        line-height: 1.79vw;
+      }
+      @include mobile {
+        font-size: 15px;
+        line-height: 16px; /* 106.667% */
+        letter-spacing: -0.3px;
+      }
     }
     &_h4 {
       /* Desktop/h4+ */
       @include Golos();
       font-size: 16px;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 16px; /* 100% */
+      @include laptop {
+        font-size: 1.43vw;
+        line-height: 1.43vw;
+      }
+      @include mobile {
+        font-size: 16px;
+        line-height: 16px; /* 100% */
+      }
     }
     &_t1 {
       /* Desktop/t1+ */
@@ -234,33 +295,93 @@
       font-weight: 400;
       line-height: 36px; /* 120% */
       letter-spacing: -0.6px;
+      @include laptop {
+        font-size: 2.68vw;
+        line-height: 3.21vw;
+      }
+      @include mobile {
+        font-size: 20px;
+        line-height: 24px; /* 120% */
+      }
     }
     &_t2 {
-      /* Desktop/t2 */
+      /* Desktop/t2+ */
       @include Golos();
-      font-size: 30px;
+      font-size: 24px;
       font-style: normal;
-      font-weight: 400;
-      line-height: 36px; /* 120% */
-      letter-spacing: -0.6px;
+      font-weight: 500;
+      line-height: 28px; /* 116.667% */
+      @include laptop {
+        font-size: 1.79vw;
+        line-height: 2.14vw;
+      }
+      @include mobile {
+        font-size: 15px;
+        line-height: 17px; /* 113.333% */
+      }
     }
     &_t3 {
-      /* Desktop/t1 */
+      /* Desktop/t3 */
       @include Golos();
-      font-size: 30px;
+      font-size: 18px;
       font-style: normal;
       font-weight: 400;
-      line-height: 36px; /* 120% */
-      letter-spacing: -0.6px;
+      line-height: 20px; /* 111.111% */
+      @include laptop {
+        font-size: 1.25vw;
+        line-height: 1.79vw;
+      }
+      @include mobile {
+        font-size: 14.378px;
+        line-height: 15.976px; /* 111.111% */
+      }
     }
     &_t4 {
-      /* Desktop/t1 */
+      /* Desktop/t4+ */
       @include Golos();
-      font-size: 30px;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      @include laptop {
+        font-size: 1.07vw;
+      }
+
+    }
+    &_label {
+      /* Desktop/label+ */
+      @include Golos();
+      font-size: 14px;
       font-style: normal;
       font-weight: 400;
-      line-height: 36px; /* 120% */
-      letter-spacing: -0.6px;
+      line-height: 14px; /* 100% */
+      @include laptop {
+        font-size: 1.07vw;
+        line-height: 1.07vw;
+      }
+      @include mobile {
+        font-size: 11.2px;
+        line-height: 11.2px; /* 100% */
+      }
+    }
+    &_caption {
+      /* Desktop/caption+ */
+      @include Golos();
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 14px; /* 100% */
+      letter-spacing: 0.56px;
+      text-transform: uppercase;
+      @include laptop {
+        font-size: 1.25vw;
+        line-height:1.25vw;
+      }
+      @include mobile {
+        font-size: 11px;
+        line-height: 10px; /* 90.909% */
+        letter-spacing: 0.44px;
+      }
     }
   }
 

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import s from './cardVideo.module.scss'
 import SvgSelector from "@/components/SvgSelector";
 import Markdown from "react-markdown";
+import {colorContext, sizeContext} from "@/components/Context";
 const CardVideo = ({Category, tags, title, url,  loaded}) => {
+  const [colorVersion, setColorVersion] = useContext(colorContext)
+  const [sizeVersion, setSizeVersion] = useContext(sizeContext)
   const copy = () => {
     navigator.clipboard.writeText(url)
     alert('ссылка скопирована')
@@ -27,8 +30,8 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
       />
       <div className={s.card_bottom}>
         <div className={s.card_bottom_text}>
-          <p className={'normal_label'}>{tags}</p>
-          <h2 className={'normal_h2'}><Markdown>{title}</Markdown></h2>
+          <p className={`${sizeVersion}_label`}>{tags}</p>
+          <h2 className={`${sizeVersion}_h2`}><Markdown>{title}</Markdown></h2>
         </div>
         <div className={s.share}>
           <div className={s.share_links}>
@@ -56,7 +59,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
               <SvgSelector svg={'share-desktop'}/>
             </a>
           </div>
-          <p className={'normal_label'}>Поделитесь</p>
+          <p className={`${sizeVersion}_label`}>Поделитесь</p>
         </div>
       </div>
 

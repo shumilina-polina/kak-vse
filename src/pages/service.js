@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Wrapper} from "@/components/Wrapper/Wrapper";
 import Head from "next/head";
 import FAQS from "@/components/FAQ/FaqsBlock";
 import Faqs from "@/components/FAQ/FAQS";
 import Header from "@/components/Header/Header";
 import ReactDOMServer from "react-dom/server";
+import {colorContext, sizeContext} from "@/components/Context";
 
 const Service = () => {
-  const HTML = <Header/>
+
+  const [colorVersion, setColorVersion] = useContext(colorContext)
+  const [sizeVersion, setSizeVersion] = useContext(sizeContext)
   return (
     <>
       <Head>
@@ -15,7 +18,7 @@ const Service = () => {
       </Head>
 
       <Wrapper>
-        <h1 className={'normal_title'}>
+        <h1 className={`${sizeVersion}_title`}>
           Полезная информация<br/>для достижения цели
         </h1>
         <Faqs/>

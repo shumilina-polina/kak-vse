@@ -5,14 +5,15 @@ import Link from "next/link";
 import Ellipse from "@/components/Ellipse/Ellipse";
 import {useMediaQuery} from "@mui/material";
 import cn from 'classnames'
-import {VersionContext} from "@/components/Context";
 import {ToggleSwitchColor, ToggleSwitchText} from "@/components/ToggleSwitch/ToggleSwitch";
+import {colorContext, sizeContext} from "@/components/Context";
 
 const Header = () => {
   const [show, setShow] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const version = useContext(VersionContext)
   const isMobile = useMediaQuery(`(max-width: 480px)`);
+  const [colorVersion, setColorVersion] = useContext(colorContext)
+  const [sizeVersion, setSizeVersion] = useContext(sizeContext)
 
   if (!isMobile) {
     return ( //-------------------------------------------------------------------------desktop
@@ -28,32 +29,32 @@ const Header = () => {
                 href={'/opportunities'}
                 className={s.link}
               >
-                <SvgSelector svg={`link-opportunities-${version.color}`}/>
-                <p className={`${version.size}_h4`}>Ваши возможности</p>
+                <SvgSelector svg={`link-opportunities-color`}/>
+                <p className={`${sizeVersion}_h4`}>Ваши возможности</p>
               </Link>
 
               <Link
                 href={'/advices'}
                 className={s.link}
               >
-                <SvgSelector svg={`link-advices-${version.color}`}/>
-                <p className={`${version.size}_h4`}>Полезные советы</p>
+                <SvgSelector svg={`link-advices-color`}/>
+                <p className={`${sizeVersion}_h4`}>Полезные советы</p>
               </Link>
 
               <Link
                 href={'/success'}
                 className={s.link}
               >
-                <SvgSelector svg={`link-success-${version.color}`}/>
-                <p className={`${version.size}_h4`}>Истории успеха</p>
+                <SvgSelector svg={`link-success-color`}/>
+                <p className={`${sizeVersion}_h4`}>Истории успеха</p>
               </Link>
 
               <Link
                 href={'/service'}
                 className={s.link}
               >
-                <SvgSelector svg={`link-service-${version.color}`}/>
-                <p className={`normal_h4`}>Ответы на вопросы</p>
+                <SvgSelector svg={`link-service-color`}/>
+                <p className={`${sizeVersion}_h4`}>Ответы на вопросы</p>
               </Link>
             </div>
 
@@ -61,7 +62,7 @@ const Header = () => {
               onClick={() => setShow(!show)}
               className={s.unvisible}
             >
-              <p className={`${version.size}_t4`}>Версия для <br/>слабовидящих</p>
+              <p className={`${sizeVersion}_t4`}>Версия для <br/>слабовидящих</p>
               <SvgSelector svg={`unvisually-${show ? 'open' : 'close'}`}/>
             </button>
 
@@ -70,11 +71,11 @@ const Header = () => {
 
         <div className={s.die}>
           <div className={s.switch}>
-            <p className={`${version.size}_t1`}>Размер</p>
+            <p className={`${sizeVersion}_t1`}>Размер</p>
             <ToggleSwitchText/>
           </div>
           <div className={s.switch}>
-            <p className={`${version.size}_t1`}>Цвет</p>
+            <p className={`${sizeVersion}_t1`}>Цвет</p>
             <ToggleSwitchColor/>
           </div>
         </div>
@@ -97,8 +98,8 @@ const Header = () => {
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
-            <SvgSelector svg={`link-opportunities-${version.color}`}/>
-            <p className={`${version.size}_h4`}>Ваши возможности</p>
+            <SvgSelector svg={`link-opportunities-color`}/>
+            <p className={`${sizeVersion}_h4`}>Ваши возможности</p>
           </Link>
 
           <Link
@@ -106,8 +107,8 @@ const Header = () => {
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
-            <SvgSelector svg={`link-advices-${version.color}`}/>
-            <p className={`${version.size}_h4`}>Полезные советы</p>
+            <SvgSelector svg={`link-advices-color`}/>
+            <p className={`${sizeVersion}_h4`}>Полезные советы</p>
           </Link>
 
           <Link
@@ -115,8 +116,8 @@ const Header = () => {
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
-            <SvgSelector svg={`link-success-${version.color}`}/>
-            <p className={`${version.size}_h4`}>Истории успеха</p>
+            <SvgSelector svg={`link-success-color`}/>
+            <p className={`${sizeVersion}_h4`}>Истории успеха</p>
           </Link>
 
           <Link
@@ -124,8 +125,8 @@ const Header = () => {
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
-            <SvgSelector svg={`link-service-${version.color}`}/>
-            <p className={`normal_h4`}>Ответы на вопросы</p>
+            <SvgSelector svg={`link-service-color`}/>
+            <p className={`${sizeVersion}_h4`}>Ответы на вопросы</p>
           </Link>
         </div>
         <div className={cn(s.wrapper, show && s.show)}>
@@ -155,11 +156,11 @@ const Header = () => {
 
           <div className={s.die}>
             <div className={s.switch}>
-              <p className={`${version.size}_t1`}>Размер</p>
+              <p className={`${sizeVersion}_t1`}>Размер</p>
               <ToggleSwitchText/>
             </div>
             <div className={s.switch}>
-              <p className={`${version.size}_t1`}>Цвет</p>
+              <p className={`${sizeVersion}_t1`}>Цвет</p>
               <ToggleSwitchColor/>
             </div>
           </div>

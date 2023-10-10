@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {useQuery} from "@apollo/client";
 import {GET_ARTICLE} from "@/services/gqlService";
 import {useRouter} from "next/router";
@@ -9,6 +9,7 @@ import {apiUrl} from "@/shared/constants/config";
 import Markdown from "react-markdown";
 import Head from "next/head";
 import SvgSelector from "@/components/SvgSelector";
+import {colorContext, sizeContext} from "@/components/Context";
 
 const Article = () => {
   const router = useRouter();
@@ -16,14 +17,14 @@ const Article = () => {
   const {data, loading, error} = useQuery(GET_ARTICLE, {
     variables: {slug: id}
   })
-  console.log(data?.articleID.data[0].attributes.label_content.link_multicentr)
   let linkTitle = data?.articleID.data[0].attributes.label_content.link_multicentr;
   if (!loading) {
-
     linkTitle = linkTitle.replace(/https:/g, '');
     linkTitle = linkTitle.replace(/[^a-zа-яё0-9\s]/gi, ' ');
   }
 
+  const [colorVersion, setColorVersion] = useContext(colorContext)
+  const [sizeVersion, setSizeVersion] = useContext(sizeContext)
 
   return (
     <>
@@ -49,7 +50,11 @@ const Article = () => {
               </div>
 
               <div className={s.title}>
-                <h1 className={'normal_h1'}><Markdown>{data?.articleID.data[0].attributes.title}</Markdown></h1>
+                <h1 className={`${sizeVersion}_h1`}>
+                  <Markdown>
+                    {data?.articleID.data[0].attributes.title}
+                  </Markdown>
+                </h1>
                 <div className={s.share}>
                   <div className={s.share_links}>
                     <a
@@ -76,7 +81,7 @@ const Article = () => {
                       <SvgSelector svg={'share-desktop'}/>
                     </a>
                   </div>
-                  <p className={'normal_label'}>Поделитесь</p>
+                  <p className={`${sizeVersion}_label`}>Поделитесь</p>
                 </div>
               </div>
 
@@ -88,13 +93,13 @@ const Article = () => {
                     width={52}
                     height={52}
                   />
-                  <Markdown className={'normal_label'}>{data?.articleID.data[0].attributes.author_name}</Markdown>
+                  <Markdown className={`${sizeVersion}_label`}>{data?.articleID.data[0].attributes.author_name}</Markdown>
                 </div>
 
                 <Markdown>{data?.articleID.data[0].attributes.content}</Markdown>
               </div>
               <div className={s.label}>
-                <p className={'normal_t3'}>
+                <p className={`${sizeVersion}_t3`}>
                   <Markdown>
                     {data?.articleID.data[0].attributes.label_content.content}
                   </Markdown>
@@ -102,11 +107,11 @@ const Article = () => {
                 <div className={s.links}>
                   <a href={data?.articleID.data[0].attributes.label_content.link_vk} target={'_blank'}>
                     <SvgSelector svg={'label-vk'}/>
-                    <p className={'normal_caption'}>Сообщество ВК</p>
+                    <p className={`${sizeVersion}_caption`}>Сообщество ВК</p>
                   </a>
                   <a href={''} target={'_blank'}>
                     <SvgSelector svg={'label-phone'}/>
-                    <p className={'normal_caption'}>
+                    <p className={`${sizeVersion}_caption`}>
                       <Markdown>
                         {data?.articleID.data[0].attributes.label_content.phone}
                       </Markdown>
@@ -114,7 +119,7 @@ const Article = () => {
                   </a>
                   <a href={data?.articleID.data[0].attributes.label_content.link_multicentr} target={'_blank'}>
                     <SvgSelector svg={'label-brower'}/>
-                    <p className={'normal_caption'}><Markdown>
+                    <p className={`${sizeVersion}_caption`}><Markdown>
                       {linkTitle}
                     </Markdown></p>
                   </a>
@@ -148,7 +153,7 @@ const Article = () => {
                       <SvgSelector svg={'share-desktop'}/>
                     </a>
                   </div>
-                  <p className={'normal_label'}>Поделитесь</p>
+                  <p className={`${sizeVersion}_label`}>Поделитесь</p>
                 </div>
               </div>
             </div>

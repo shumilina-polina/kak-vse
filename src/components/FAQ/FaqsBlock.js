@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import { GET_FAQS } from "@/services/gqlService";
 import { useQuery } from "@apollo/client";
 import Markdown from "react-markdown";
@@ -7,11 +7,14 @@ import s from "./faqs.module.scss";
 import SvgSelector from "@/components/SvgSelector";
 import cn from "classnames";
 import { useRouter } from "next/router";
+import {colorContext, sizeContext} from "@/components/Context";
 
 const FaqsBlock = ({ data }) => {
   const { pathname } = useRouter();
-  const [close, setClose] = useState(pathname === "/service" ? false : true);
-  console.log(data);
+  const [close, setClose] = useState(pathname !== "/service");
+  const [colorVersion, setColorVersion] = useContext(colorContext)
+  const [sizeVersion, setSizeVersion] = useContext(sizeContext)
+
   return (
     <div
       className={cn(
@@ -20,7 +23,7 @@ const FaqsBlock = ({ data }) => {
       )}
       onClick={() => setClose(!close)}
     >
-      <h2 className={"normal_h2"}>
+      <h2 className={`${sizeVersion}_h2`}>
         <Markdown>{data.title}</Markdown>
       </h2>
       <button
@@ -33,11 +36,11 @@ const FaqsBlock = ({ data }) => {
         {data.faqs.data.map((question, jndex) => (
           <Link
             href={`/answer/${question.attributes.slug}`}
-            className={"normal_t2"}
+            className={`${sizeVersion}_t2`}
             key={jndex}
             style={{ transitionDelay: `${jndex / 10}s` }}
           >
-            <p className={"normal_t2"}>{question.attributes.title}</p>
+            <p className={`${sizeVersion}_t2`}>{question.attributes.title}</p>
           </Link>
         ))}
       </div>

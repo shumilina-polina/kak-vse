@@ -60,7 +60,7 @@
       .link {
         display: flex;
         height: 40px;
-        padding: 0px 12px 0px 16px;
+        padding: 0 12px 0 16px;
         align-items: center;
         gap: 8px;
         white-space: nowrap;
@@ -69,7 +69,7 @@
         @include mobile {
           height: 30px;
           border-radius: 30px;
-          padding: 0px 9.6px 0 12.8px;
+          padding: 0 9.6px 0 12.8px;
 
         }
       }
@@ -79,7 +79,6 @@
 
   .content {
     display: flex;
-
     width: 100%;
     height: inherit;
     justify-content: space-between;
@@ -250,7 +249,7 @@
     }
     @include mobile {
       height: 64px;
-      padding: 22px 0px;
+      padding: 22px 0;
       border-radius: 32px;
     }
   }

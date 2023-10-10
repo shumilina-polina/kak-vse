@@ -1,32 +1,34 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import s from './toggleSwitch.module.scss'
 import cn from 'classnames'
-import {setSize, VersionContext} from "@/components/Context";
+import {sizeContext, colorContext} from "@/components/Context";
 export const ToggleSwitchColor = () => {
-  const [colorValue, setColorValue] = useState(false)
+  const [colorVersion, setColorVersion] = useContext(colorContext)
+
   return (
     <div
       className={s.label}
-      onClick={()=>{setColorValue(!colorValue)}}
+      onClick={()=>{
+        setColorVersion(colorVersion === 'color' ? 'grey' : 'color')
+      }}
     >
-      <div className={cn(s.slider, colorValue ? s.slider_left_color : s.slider_right_color)}/>
+      <div className={cn(s.slider, colorVersion === 'color' ? s.slider_left_color : s.slider_right_color)}/>
 
     </div>
   );
 };
 
 export const ToggleSwitchText = () => {
-  const [textValue, setTextValue] = useState(false)
+  const [sizeVersion, setSizeVersion] = useContext(sizeContext)
+
   return (
     <div
       className={s.label}
       onClick={()=>{
-        setTextValue(!textValue)
-        setSize(textValue)
-        //console.log(textValue)
+        setSizeVersion(sizeVersion === 'normal' ? 'large' : 'normal')
       }}
     >
-      <div className={cn(s.slider, textValue ? s.slider_left_text : s.slider_right_text)}/>
+      <div className={cn(s.slider, sizeVersion === 'normal' ? s.slider_left_text : s.slider_right_text)}/>
 
     </div>
   );

@@ -7,6 +7,7 @@ import FaqsBlock from "@/components/FAQ/FaqsBlock";
 const Faqs = () => {
   const { data, loading, error} = useQuery(GET_FAQS)
 
+
   return (
     <div className={s.faqs}>
       {loading ? (

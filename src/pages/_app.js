@@ -1,20 +1,26 @@
-import React, {createContext} from 'react';
+import React, {useState} from 'react';
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import {ApolloProvider} from "@apollo/client";
 import {client} from "@/services/gqlService";
 import '../styles/style.scss'
-import {VersionContext} from "@/components/Context";
+import {colorContext, sizeContext} from "@/components/Context";
 
 const _App = ({Component, pageProps}) => {
-
+  const [colorVersion, setColorVersion] = useState('color')
+  const [sizeVersion, setSizeVersion] = useState('normal')
   return (
     <>
-      <Header/>
-      <ApolloProvider client={client}>
-        <Component {...pageProps} />
-      </ApolloProvider>
-      <Footer/>
+      <colorContext.Provider value={[colorVersion, setColorVersion]}>
+        <sizeContext.Provider value={[sizeVersion, setSizeVersion]}>
+          <Header/>
+          <ApolloProvider client={client}>
+            <Component {...pageProps} />
+          </ApolloProvider>
+          <Footer/>
+        </sizeContext.Provider>
+      </colorContext.Provider>
+
     </>
   );
 };

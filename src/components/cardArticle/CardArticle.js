@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import s from './cardArticle.module.scss'
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
 import Markdown from "react-markdown";
+import {colorContext, sizeContext} from "@/components/Context";
 const CardArticle = ({Category, author, image, title, previewText, url, loaded}) => {
+  const [colorVersion, setColorVersion] = useContext(colorContext)
+  const [sizeVersion, setSizeVersion] = useContext(sizeContext)
   return (
     <div
       style={{
@@ -20,11 +23,11 @@ const CardArticle = ({Category, author, image, title, previewText, url, loaded})
           height={52}
         />
         <div className={s.title_text}>
-          <Markdown className={'normal_label'}>{author}</Markdown>
-          <h3><Markdown className={'normal_h3'}>{title}</Markdown></h3>
+          <Markdown className={`${sizeVersion}_label`}>{author}</Markdown>
+          <h3><Markdown className={`${sizeVersion}_h3`}>{title}</Markdown></h3>
         </div>
       </div>
-      <Markdown className={classNames(s.text, 'normal_t3')}>{previewText}</Markdown>
+      <Markdown className={classNames(s.text, `${sizeVersion}_t3`)}>{previewText}</Markdown>
       <Link
         href={`/articles/${url}`}
         className={s.button}
@@ -32,7 +35,7 @@ const CardArticle = ({Category, author, image, title, previewText, url, loaded})
           backgroundColor: Category === 0 ? "#FFADDE" : Category === 1 ? '#A7EAFF' : '#FFECA7',
         }}
       >
-        <p className={'normal_h3'}>Читать →</p>
+        <p className={`${sizeVersion}_h3`}>Читать →</p>
       </Link>
     </div>
   );
