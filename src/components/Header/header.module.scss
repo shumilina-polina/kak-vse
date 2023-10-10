@@ -167,10 +167,9 @@
         background-color: $KK;
         display: flex;
         align-items: center;
-        //width: fit-content;
+        width: fit-content;
         height: 100%;
         gap: 8px;
-
         @include laptop {
           gap: 0.63vw;
         }
