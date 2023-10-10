@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap');
+
 //---colors---\\
 
 $pink: #FFADDE;
@@ -29,6 +31,12 @@ $KK: #F7F7F7;
 }
 
 @font-face {
+  font-family: "Golos-Text";
+  src: url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap');
+  //src: url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap');;
+}
+
+@font-face {
   font-family: "Manrope";
   src: url("./fonts/Manrope-VariableFont_wght.ttf");
 }
@@ -38,7 +46,7 @@ $KK: #F7F7F7;
 }
 
 @mixin GolosText {
-  font-family: "GolosText", sans-serif;
+  font-family: "Golos Text", sans-serif;
 }
 
 @mixin Manrope {
