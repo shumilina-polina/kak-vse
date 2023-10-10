@@ -20,7 +20,7 @@ const Advices = () => {
       </Head>
       <Wrapper>
         <h1 className={`${sizeVersion}_title`}>
-          Познакомься с полезными<br/>советами от экспертов
+          Познакомься с полезными<br/>советами от экспертов
         </h1>
         <CategoryPage
           Category={1}

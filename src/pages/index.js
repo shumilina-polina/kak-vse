@@ -24,7 +24,6 @@ const Index = () => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
 
-
   return (
     <>
       <Head>

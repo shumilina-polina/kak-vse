@@ -3,7 +3,6 @@ import CardVideo from "@/components/cardVideo/CardVideo";
 import s from './mainPageVideos.module.scss'
 
 const MainPageVideos = ({videos, loaded}) => {
-  console.log(!loaded && videos[0]?.attributes);
   return (
     <div className={s.videos_main_wrapper}>
 
