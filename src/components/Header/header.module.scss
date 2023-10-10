@@ -152,7 +152,7 @@
         display: flex;
         width: 103px;
         height: 32px;
-        padding-bottom: 0px;
+        padding-bottom: 0;
         justify-content: center;
         align-items: center;
         gap: 8px;
@@ -163,10 +163,11 @@
       }
       .unvisible {
         @include hover();
+        box-sizing: content-box;
         background-color: $KK;
         display: flex;
         align-items: center;
-        width: fit-content;
+        //width: fit-content;
         height: 100%;
         gap: 8px;
 
