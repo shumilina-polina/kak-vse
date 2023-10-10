@@ -29,12 +29,22 @@ $KK: #F7F7F7;
 }
 
 @font-face {
+  font-family: "GolosText";
+  src: url("./fonts/GolosText-VariableFont_wght.ttf");
+  //src: url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap');;
+}
+
+@font-face {
   font-family: "Manrope";
   src: url("./fonts/Manrope-VariableFont_wght.ttf");
 }
 
 @mixin Golos {
   font-family: "Golos", sans-serif;
+}
+
+@mixin GolosText {
+  font-family: "GolosText", sans-serif;
 }
 
 @mixin Manrope {

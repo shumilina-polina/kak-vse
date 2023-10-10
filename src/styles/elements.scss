@@ -44,17 +44,17 @@
   }
   &_h2 {
     /* Desktop/h2 */
-    @include Golos();
+    @include GolosText();
     font-size: 20px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 24px; /* 120% */
-    filter:
-            drop-shadow(0.5px 0 0 $black)
-            drop-shadow(0 0.5px 0 $black)
-            drop-shadow(0.5px 0 0 $black)
-            drop-shadow(0 0.5px 0 $black)
-  ;
+  //  filter:
+  //          drop-shadow(0.5px 0 0 $black)
+  //          drop-shadow(0 0.5px 0 $black)
+  //          drop-shadow(0.5px 0 0 $black)
+  //          drop-shadow(0 0.5px 0 $black)
+  //;
     @include laptop {
       font-size: 1.79vw;
       line-height: 2.14vw;
@@ -243,7 +243,7 @@
   }
   &_h2 {
     /* Desktop/h2+ */
-    @include Golos();
+    @include GolosText();
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
