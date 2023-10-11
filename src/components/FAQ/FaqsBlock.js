@@ -9,8 +9,7 @@ import cn from "classnames";
 import { useRouter } from "next/router";
 import {colorContext, sizeContext} from "@/components/Context";
 import AnswerComponent from "@/components/answerComponent/Answer";
-import {Dialog} from "@mui/material";
-
+import {Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Popover} from "@mui/material";
 
 
 const FaqsBlock = ({ data, id }) => {
@@ -63,12 +62,37 @@ const FaqsBlock = ({ data, id }) => {
             </button>
           ))}
         </div>
+
       <Dialog
         open={openModal}
-        aria-labelledby="responsive-dialog-title"
         onClose={handleClose}
+        sx={{
+          backgroundColor: 'rgba(0, 0, 0, 0.35)',
+          transition: '0.5s',
+        }}
+        scroll={'paper'}
+        aria-labelledby="scroll-dialog-title"
+        aria-describedby="scroll-dialog-description"
       >
-        <AnswerComponent id={slugValue}/>
+        <DialogTitle id="scroll-dialog-title">
+          <Button
+            onClick={handleClose}
+            id={'closeModal'}
+          >
+            <SvgSelector svg={'modal-close'}/>
+          </Button>
+        </DialogTitle>
+        <DialogContent
+          dividers={false}
+        >
+          <DialogContentText
+            id="scroll-dialog-description"
+            //tabIndex={-1}
+          >
+            <AnswerComponent id={slugValue}/>
+          </DialogContentText>
+        </DialogContent>
+
       </Dialog>
 
     </div>
