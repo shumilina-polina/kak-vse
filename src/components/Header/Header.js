@@ -133,7 +133,7 @@ const Header = () => {
           <div className={s.wr}>
 
             <header>
-              <Link href={'/'} className={s.logo}>
+              <Link href={'/'} className={s.logo} onClick={() => setMenuOpen(false)}>
                 <SvgSelector svg={'logo'}/>
               </Link>
               <button
