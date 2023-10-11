@@ -21,7 +21,7 @@
     position: relative;
     width: 100%;
     padding: 28px 40px 40px 40px;
-
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -47,14 +47,16 @@
       gap: 10px;
     }
     &_close {
-      max-height: 80px;
+      //max-height: 80px;
+      padding: 28px 40px 8px 40px;
       @include laptop {
-        max-height: 7.14vw;
+        padding: 2.50vw 3.57vw 0.71vw 3.57vw;
       }
       @include mobile {
-        max-height: 87px;
+        padding: 24px 50px 10px 24px;
       }
       .categoryBlock_questions {
+        height: 0px;
         a{
           transition: 0.5s;
           opacity: 0;
@@ -62,14 +64,8 @@
       }
     }
     &_open {
-      max-height: 500px;
-      @include laptop {
-        max-height: 44.64vw;
-      }
-      @include mobile {
-        max-height: 400px;
-      }
       .categoryBlock_questions {
+        height: fit-content;
         a {
           transition: 0.5s;
           opacity: 1;

@@ -20,6 +20,7 @@ const Faqs = () => {
             <FaqsBlock
               data={elem.attributes}
               key={index}
+              id={index}
             />
           ))}
         </>

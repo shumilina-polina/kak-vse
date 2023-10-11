@@ -9,9 +9,9 @@ import cn from "classnames";
 import { useRouter } from "next/router";
 import {colorContext, sizeContext} from "@/components/Context";
 
-const FaqsBlock = ({ data }) => {
+const FaqsBlock = ({ data, id }) => {
   const { pathname } = useRouter();
-  const [close, setClose] = useState(pathname !== "/service");
+  const [close, setClose] = useState(pathname !== "/service" && id !== 0);
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
 
@@ -37,18 +37,21 @@ const FaqsBlock = ({ data }) => {
       >
         <SvgSelector svg={"arrow"} />
       </button>
-      <div className={s.categoryBlock_questions}>
-        {data.faqs.data.map((question, jndex) => (
-          <Link
-            href={`/answer/${question.attributes.slug}`}
-            className={`${sizeVersion}_t2`}
-            key={jndex}
-            style={{ transitionDelay: `${jndex / 10}s` }}
-          >
-            <p className={`${sizeVersion}_t2`}>{question.attributes.title}</p>
-          </Link>
-        ))}
-      </div>
+
+        <div className={s.categoryBlock_questions}>
+          {data.faqs.data.map((question, jndex) => (
+            <Link
+              href={`/answer/${question.attributes.slug}`}
+              className={`${sizeVersion}_t2`}
+              key={jndex}
+              style={{ transitionDelay: `${jndex / 10}s` }}
+            >
+              <p className={`${sizeVersion}_t2`}>{question.attributes.title}</p>
+            </Link>
+          ))}
+        </div>
+
+
     </div>
   );
 };
