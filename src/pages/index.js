@@ -2,9 +2,6 @@ import React, {useContext} from 'react';
 import s from '../styles/pages/index.module.scss'
 import {Wrapper} from "@/components/Wrapper/Wrapper";
 import SvgSelector from "@/components/SvgSelector";
-import CardVideo from "@/components/cardVideo/CardVideo";
-import {VIDEO, ARTICLE} from "@/shared/data";
-import CardArticle from "@/components/cardArticle/CardArticle";
 import CategoryBlock from "@/components/categoryBlock/CategoryBlock";
 import cs from 'classnames'
 import Head from "next/head";
@@ -12,11 +9,12 @@ import cn from "classnames";
 import {useQuery} from "@apollo/client";
 import {GET_DATA_INDEX} from "@/services/gqlService";
 import Faqs from "@/components/FAQ/FAQS";
-import {useMediaQuery} from "@mui/material";
+import {Dialog, useMediaQuery} from "@mui/material";
 import Link from "next/link";
-import Markdown from "react-markdown";
+
 import MainPageVideos from "@/components/mainPageVideos/MainPageVideos";
 import {colorContext, sizeContext} from "@/components/Context";
+
 
 const Index = () => {
   const {data, loading, error} = useQuery(GET_DATA_INDEX)

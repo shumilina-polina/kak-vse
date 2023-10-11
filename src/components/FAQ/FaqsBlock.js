@@ -7,18 +7,23 @@ import s from "./faqs.module.scss";
 import SvgSelector from "@/components/SvgSelector";
 import cn from "classnames";
 import { useRouter } from "next/router";
-import {colorContext, sizeContext, modalIsOpen, slugContext} from "@/components/Context";
+import {colorContext, sizeContext} from "@/components/Context";
+import AnswerComponent from "@/components/answerComponent/Answer";
+import {Dialog} from "@mui/material";
 
 
 
 const FaqsBlock = ({ data, id }) => {
   const { pathname } = useRouter();
-  const [close, setClose] = useState(pathname !== "/service" && id !== 0);
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
+  const [openModal, setOpenModal] = useState()
+  const [slugValue, setSlugValue] = useState()
+  const [close, setClose] = useState(pathname !== "/service" && id !== 0);
 
-  const [openModal, setOpenModal] = useContext(modalIsOpen)
-  const [slugValue, setSlugValue] = useContext(slugContext)
+  const handleClose = () => {
+    setOpenModal(false);
+  };
 
   return (
     <div
@@ -58,7 +63,13 @@ const FaqsBlock = ({ data, id }) => {
             </button>
           ))}
         </div>
-
+      <Dialog
+        open={openModal}
+        aria-labelledby="responsive-dialog-title"
+        onClose={handleClose}
+      >
+        <AnswerComponent id={slugValue}/>
+      </Dialog>
 
     </div>
   );
