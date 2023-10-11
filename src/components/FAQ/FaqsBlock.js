@@ -7,14 +7,18 @@ import s from "./faqs.module.scss";
 import SvgSelector from "@/components/SvgSelector";
 import cn from "classnames";
 import { useRouter } from "next/router";
-import {colorContext, sizeContext} from "@/components/Context";
-import {handleClickOpen} from "@/pages/service";
+import {colorContext, sizeContext, modalIsOpen, slugContext} from "@/components/Context";
+
+
 
 const FaqsBlock = ({ data, id }) => {
   const { pathname } = useRouter();
   const [close, setClose] = useState(pathname !== "/service" && id !== 0);
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
+
+  const [openModal, setOpenModal] = useContext(modalIsOpen)
+  const [slugValue, setSlugValue] = useContext(slugContext)
 
   return (
     <div
@@ -40,15 +44,18 @@ const FaqsBlock = ({ data, id }) => {
       </button>
         <div className={s.categoryBlock_questions}>
           {data.faqs.data.map((question, jndex) => (
-            <Link
-              href={`/answer/${question.attributes.slug}`}
+            <button
+              //href={`/answer/${question.attributes.slug}`}
               className={`${sizeVersion}_t2`}
               key={jndex}
               style={{ transitionDelay: `${jndex / 10}s` }}
-
+              onClick={()=>{
+                setOpenModal(!openModal)
+                setSlugValue(question.attributes.slug)
+              }}
             >
               <p className={`${sizeVersion}_t2`}>{question.attributes.title}</p>
-            </Link>
+            </button>
           ))}
         </div>
 

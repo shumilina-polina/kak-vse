@@ -1,20 +1,21 @@
-import React, {useContext} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import {Wrapper} from "@/components/Wrapper/Wrapper";
 import Head from "next/head";
-import FAQS from "@/components/FAQ/FaqsBlock";
 import Faqs from "@/components/FAQ/FAQS";
-import Header from "@/components/Header/Header";
-import ReactDOMServer from "react-dom/server";
-import {colorContext, sizeContext} from "@/components/Context";
-import {Dialog, useTheme} from "@mui/material";
+import {colorContext, sizeContext, modalIsOpen, slugContext} from "@/components/Context";
+import {Dialog} from "@mui/material";
+import AnswerComponent from "@/components/answerComponent/Answer";
+
 
 const Service = () => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
-  const [open, setOpen] = React.useState(false);
-  const theme = useTheme();
-
-
+  const [openModal, setOpenModal] = useContext(modalIsOpen)
+  const [slugValue, setSlugValue] = useContext(slugContext)
+  const handleClose = () => {
+    setOpenModal(false);
+  };
+  console.log(openModal, slugValue)
   return (
     <>
       <Head>
@@ -28,25 +29,14 @@ const Service = () => {
         <Faqs/>
       </Wrapper>
       <Dialog
-        open={open}
+        open={openModal}
         aria-labelledby="responsive-dialog-title"
+        onClose={handleClose}
       >
-        <h1>
-          Let Google help apps determine location. This means sending anonymous
-          location data to Google, even when no apps are running.
-        </h1>
-
-
-        {/*<button autoFocus onClick={handleClose}>*/}
-        {/*  Disagree*/}
-        {/*</button>*/}
-        {/*<button onClick={handleClose} autoFocus>*/}
-        {/*  Agree*/}
-        {/*</button>*/}
-
+        <AnswerComponent id={slugValue}/>
       </Dialog>
-    </>
 
+    </>
   );
 };
 
