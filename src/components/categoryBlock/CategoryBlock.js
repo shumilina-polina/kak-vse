@@ -8,13 +8,14 @@ import {useMediaQuery} from "@mui/material";
 import {apiUrl} from "@/shared/constants/config";
 import Markdown from "react-markdown";
 import {colorContext, sizeContext} from "@/components/Context";
+import cn from "classnames";
 
 const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
   const isMobile = useMediaQuery(`(max-width: 480px)`);
 
-  const category = Category === 0
+  const category = Category === 'opportunities'
     ? {
       color: "#FFADDE",
       colorLight: "#FFD8EF",
@@ -24,7 +25,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
       textTitle: 'Найди свой путь самореализации',
       svgIcon: 'opportunities-'
     }
-    : Category === 1
+    : Category === 'advices'
       ? {
         color: "#A7EAFF",
         colorLight: "#C4F1FF",
@@ -43,10 +44,6 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
         textTitle: 'Найди вдохновение в историях успеха',
         svgIcon: 'success-'
       };
-
-
-
-
   return (
     <>
       {
@@ -57,10 +54,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
               <div className={s.title}>
                 <div className={s.title_text}>
                   <Link
-                    style={{
-                      backgroundColor: category.colorLight
-                    }}
-                    className={s.link}
+                    className={cn(s.link, `${colorVersion}_${Category}_light`)}
                     href={category.link}
                   >
                     <p className={`${sizeVersion}_caption`}>{category.text1}</p>
@@ -89,10 +83,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                 <div className={s.content_article}>
                   <label><p className={`${sizeVersion}_label`}>Статьи</p></label>
                   <div
-                    className={s.content_article_wrapper}
-                    style={{
-                      borderColor: category.color,
-                    }}
+                    className={cn(s.content_article_wrapper, `${colorVersion}_${Category}_border`)}
                   >
                     <button className={s.articles} >
                       {ARTICLE_DATA?.map((path, i) => (
@@ -121,12 +112,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
 
                     <Link
                       href={category.link}
-                      className={s.link}
-                      style={{
-                        backgroundColor: category.colorLight,
-                        transition: '0.5s'
-                      }}
-
+                      className={cn(s.link, `${colorVersion}_${Category}_light`)}
                     >
                       <h3 className={`${sizeVersion}_h3`}>Читать все →</h3>
                     </Link>
@@ -135,13 +121,9 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
               </div>
 
               <Link
-                style={{
-                  backgroundColor: category.color,
-                  borderColor: category.colorDark
-                }}
 
                 href={category.link}
-                className={s.large_link}
+                className={cn(s.large_link, `${colorVersion}_${Category}_normal`, `${colorVersion}_${Category}_darkBorder`)}
               >
                 <h2 className={`${sizeVersion}_h2`}>Больше видео и статей →</h2>
               </Link>
@@ -153,10 +135,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
               <div className={s.title}>
                 <div className={s.title_text}>
                   <Link
-                    style={{
-                      backgroundColor: category.colorLight
-                    }}
-                    className={s.link}
+                    className={cn(s.link, `${colorVersion}_${Category}_light`)}
                     href={category.link}
                   >
                     <p className={`${sizeVersion}_caption`}>{category.text1}</p>
@@ -179,7 +158,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
 
 
                 <div
-                  className={s.content_article_wrapper}
+                  className={cn(s.content_article_wrapper, `${colorVersion}_${Category}_border`)}
                   style={{
                     borderColor: category.color,
                   }}
@@ -210,10 +189,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                   </div>
                   <Link
                     href={category.link}
-                    className={s.link}
-                    style={{
-                      backgroundColor: category.colorLight
-                    }}
+                    className={cn(s.link, `${colorVersion}_${Category}_light`)}
                   >
                     <h3 className={'normal_h3'}>Читать все →</h3>
                   </Link>
@@ -234,12 +210,9 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
 
 
               <Link
-                style={{
-                  backgroundColor: category.color,
-                  borderColor: category.colorDark
-                }}
+
                 href={category.link}
-                className={s.large_link}
+                className={cn(s.large_link, `${colorVersion}_${Category}_normal`, `${colorVersion}_${Category}_darkBorder`)}
               >
                 <h2 className={'normal_h2'}>Больше видео и статей →</h2>
               </Link>

@@ -3,6 +3,7 @@ import s from './cardVideo.module.scss'
 import SvgSelector from "@/components/SvgSelector";
 import Markdown from "react-markdown";
 import {colorContext, sizeContext} from "@/components/Context";
+import cn from "classnames";
 const CardVideo = ({Category, tags, title, url,  loaded}) => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
@@ -12,11 +13,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
   }
   return (
     <div
-      style={{
-        borderColor: Category === 0 ? "#FFADDE" : Category === 1 ? '#A7EAFF' : '#FFECA7',
-      }}
-      className={s.card}
-
+      className={cn(s.card, `${colorVersion}_${Category}_border`)}
     >
       <iframe
         id={"ytplayer"}

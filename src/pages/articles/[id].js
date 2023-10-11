@@ -98,7 +98,10 @@ const Article = () => {
 
                 <Markdown>{data?.articleID.data[0].attributes.content}</Markdown>
               </div>
-              <div className={s.label}>
+              <div
+                className={s.label}
+                style={{backgroundColor: colorVersion === 'color' ? '#FFF3C8' : '#DEDEDE'}}
+              >
                 <p className={`${sizeVersion}_t3`}>
                   <Markdown>
                     {data?.articleID.data[0].attributes.label_content.content}

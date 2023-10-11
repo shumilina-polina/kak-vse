@@ -19,7 +19,9 @@ const FaqsBlock = ({ data }) => {
     <div
       className={cn(
         s.categoryBlock,
-        close ? s.categoryBlock_close : s.categoryBlock_open
+        close ? s.categoryBlock_close : s.categoryBlock_open,
+        `${colorVersion}_service_darkBorder`,
+        `${colorVersion}_service_normal`
       )}
       onClick={() => setClose(!close)}
     >
@@ -28,7 +30,10 @@ const FaqsBlock = ({ data }) => {
       </h2>
       <button
         className={s.arrow}
-        style={{ transform: close ? "rotate(180deg)" : "rotate(0)" }}
+        style={{
+          transform: close ? "rotate(180deg)" : "rotate(0)",
+          filter: colorVersion === 'color' ? 'invert(0)' : 'invert(1)',
+      }}
       >
         <SvgSelector svg={"arrow"} />
       </button>

@@ -8,7 +8,7 @@ const MainPageVideos = ({videos, loaded}) => {
 
       <div className={s.video_0}>
         <CardVideo
-          Category={0}
+          Category={'opportunities'}
           tags={!loaded && videos[0].attributes.tags}
           title={!loaded && videos[0].attributes.title}
           url={!loaded && videos[0].attributes.urlEmbed}
@@ -17,7 +17,7 @@ const MainPageVideos = ({videos, loaded}) => {
       </div>
       <div className={s.video_1}>
         <CardVideo
-          Category={1}
+          Category={'advices'}
           tags={!loaded && videos[1]?.attributes.tags}
           title={!loaded && videos[1]?.attributes.title}
           url={!loaded && videos[1]?.attributes.urlEmbed}
@@ -26,7 +26,7 @@ const MainPageVideos = ({videos, loaded}) => {
       </div>
       <div className={s.video_2}>
         <CardVideo
-          Category={2}
+          Category={'success'}
           tags={!loaded && videos[2]?.attributes.tags}
           title={!loaded && videos[2]?.attributes.title}
           url={!loaded && videos[2]?.attributes.urlEmbed}

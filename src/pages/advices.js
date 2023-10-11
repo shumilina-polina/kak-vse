@@ -22,11 +22,19 @@ const Advices = () => {
         <h1 className={`${sizeVersion}_title`}>
           Познакомься с полезными<br/>советами от экспертов
         </h1>
-        <CategoryPage
-          Category={1}
-          VIDEO_DATA={data?.categoryVideos.data}
-          ARTICLE_DATA={data?.categoryArticles.data}
-        />
+        {
+          error ? (
+            <h1 className={`${sizeVersion}_h2`}>Возникла ошибка.<br/>перезагрузите страницу</h1>
+          ) : (
+            <CategoryPage
+              Category={'advices'}
+              VIDEO_DATA={data?.categoryVideos.data}
+              ARTICLE_DATA={data?.categoryArticles.data}
+              loaded={loading}
+            />
+          )
+        }
+
       </Wrapper>
     </>
 

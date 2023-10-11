@@ -60,21 +60,21 @@ const Index = () => {
           </div>
         </div>
         <CategoryBlock
-          Category={0}
+          Category={'opportunities'}
           VIDEO_DATA={data?.advicesVideos.data}
           ARTICLE_DATA={data?.advicesArticles.data}
           loaded={loading}
           error={error}
         />
         <CategoryBlock
-          Category={1}
+          Category={'advices'}
           VIDEO_DATA={data?.opportunitiesVideos.data}
           ARTICLE_DATA={data?.opportunitiesArticles.data}
           loaded={loading}
           error={error}
         />
         <CategoryBlock
-          Category={2}
+          Category={'success'}
           VIDEO_DATA={data?.successVideos.data}
           ARTICLE_DATA={data?.successArticles.data}
           loaded={loading}
@@ -84,15 +84,12 @@ const Index = () => {
           <div className={s.title}>
             <div className={s.title_text}>
               <Link
-                style={{
-                  backgroundColor: "#C3FFDB",
-                }}
-                className={s.link}
+                className={cn(s.link, `${colorVersion}_service_light`)}
                 href={"/service"}
               >
                 <p className={`${sizeVersion}_caption`}>Ответы на вопросы →</p>
               </Link>
-              <SvgSelector svg={"service-color"} />
+              <SvgSelector svg={`service-${colorVersion}`} />
             </div>
             <h1 className={`${sizeVersion}_h1`}>
               Полезная информация <br /> для достижения цели
@@ -102,10 +99,7 @@ const Index = () => {
           <div className={s.title}>
             <div className={s.title_text}>
               <Link
-                style={{
-                  backgroundColor: "#C3FFDB",
-                }}
-                className={s.link}
+                className={cn(s.link, `${colorVersion}_service_light`)}
                 href={"/service"}
               >
                 <p className={`${sizeVersion}_caption`}>Ответы на вопросы →</p>

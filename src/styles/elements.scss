@@ -390,5 +390,102 @@
 }
 
 //--buttons--\\
+.color {
+  &_opportunities {
+    &_light {
+      background-color: $light-pink;
+      transition: 0.5s;
+    }
+    &_normal {
+      background-color: $pink;
+      transition: 0.5s;
+    }
+    &_border {
+      border-color: $pink !important;
+      transition: 0.5s;
+    }
+    &_darkBorder {
+      border-color: $dark-pink !important;
+      transition: 0.5s;
+    }
+  }
+  &_advices {
+    &_light {
+      background-color: $light-blue;
+      transition: 0.5s;
+    }
+    &_normal {
+      background-color: $blue;
+      transition: 0.5s;
+    }
+    &_border {
+      border-color: $blue !important;
+      transition: 0.5s;
+    }
+    &_darkBorder {
+      border-color: $dark-blue !important;
+      transition: 0.5s;
+    }
+  }
+  &_success {
+    &_light {
+      background-color: $light-yellow;
+      transition: 0.5s;
+    }
+    &_normal {
+      background-color: $yellow;
+      transition: 0.5s;
+    }
+    &_border {
+      border-color: $yellow !important;
+      transition: 0.5s;
+    }
+    &_darkBorder {
+      border-color: $dark-yellow !important;
+      transition: 0.5s;
+    }
+  }
+  &_service {
+    &_light {
+      background-color: $light-green;
+      transition: 0.5s;
+    }
+    &_normal {
 
+      background-color: $green;
+      transition: 0.5s;
+    }
+    &_border {
+      border-color: $green !important;
+      transition: 0.5s;
+    }
+    &_darkBorder {
+      border-color: $dark-green !important;
+      transition: 0.5s;
+    }
+  }
+}
+.grey {
+  &_opportunities,
+  &_advices,
+  &_service,
+  &_success {
+    &_normal, &_light {
+      p{
+        color: $white !important;
+        transition: 0.5s;
+        transition-delay: 0s;
+      }
+
+      background-color: $black;
+      color: $white !important;
+      transition: 0.5s;
+    }
+    &_border {
+      border-color: $grey !important;
+      transition: 0.5s;
+    }
+
+  }
+}
 

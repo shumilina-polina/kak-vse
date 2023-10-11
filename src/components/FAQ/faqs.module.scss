@@ -29,14 +29,12 @@
     gap: 10px;
 
     border-radius: 40px;
-    border: 1px solid $dark-green;
-    background-color: $green;
+    border: 1px solid;
 
     overflow: hidden;
     transition: 0.5s ease-out;
     &:hover {
       cursor: pointer;
-      background-color: $light-green;
     }
     @include laptop {
       border-radius: 3.57vw;
