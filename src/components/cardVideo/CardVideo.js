@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import s from './cardVideo.module.scss'
 import SvgSelector from "@/components/SvgSelector";
 import Markdown from "react-markdown";
@@ -27,7 +27,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
         allowFullScreen
       /> */}
       <iframe
-        src="https://vk.com/video_ext.php?oid=-63758929&id=456283461&hd=2"
+        src={'https://vk.com/video_ext.php?oid=-63758929&id=456283461&hd=2'}
         allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
         frameBorder="0"
         allowFullScreen

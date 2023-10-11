@@ -6,11 +6,15 @@ import Faqs from "@/components/FAQ/FAQS";
 import Header from "@/components/Header/Header";
 import ReactDOMServer from "react-dom/server";
 import {colorContext, sizeContext} from "@/components/Context";
+import {Dialog, useTheme} from "@mui/material";
 
 const Service = () => {
-
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+
+
   return (
     <>
       <Head>
@@ -23,34 +27,24 @@ const Service = () => {
         </h1>
         <Faqs/>
       </Wrapper>
-      {/*<dialog*/}
-      {/*  style={{*/}
-      {/*    border:0,*/}
-      {/*    backgroundColor: 'rgba(0,0,0,0.35)',*/}
-      {/*    display: "flex",*/}
-      {/*    alignItems: "center",*/}
-      {/*    justifyContent: "center",*/}
-      {/*    position: "fixed",*/}
-      {/*    top: 0,*/}
-      {/*    left: 0,*/}
-      {/*    zIndex: 100,*/}
-      {/*    transition: '0.5s',*/}
-      {/*    width: '100vw',*/}
-      {/*    height: '100vh'*/}
-      {/*  }}*/}
-      {/*  open={false}*/}
-      {/*>*/}
-      {/*  <iframe*/}
-      {/*    src={``}*/}
-      {/*    width={'870px'}*/}
-      {/*    height={'570px'}*/}
-      {/*    style=*/}
-      {/*      {{*/}
-      {/*        borderRadius: '40px',*/}
-      {/*        border: '1px solid #797979',*/}
-      {/*      }}*/}
-      {/*  />*/}
-      {/*</dialog>*/}
+      <Dialog
+        open={open}
+        aria-labelledby="responsive-dialog-title"
+      >
+        <h1>
+          Let Google help apps determine location. This means sending anonymous
+          location data to Google, even when no apps are running.
+        </h1>
+
+
+        {/*<button autoFocus onClick={handleClose}>*/}
+        {/*  Disagree*/}
+        {/*</button>*/}
+        {/*<button onClick={handleClose} autoFocus>*/}
+        {/*  Agree*/}
+        {/*</button>*/}
+
+      </Dialog>
     </>
 
   );

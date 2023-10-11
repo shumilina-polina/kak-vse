@@ -8,6 +8,7 @@ import SvgSelector from "@/components/SvgSelector";
 import cn from "classnames";
 import { useRouter } from "next/router";
 import {colorContext, sizeContext} from "@/components/Context";
+import {handleClickOpen} from "@/pages/service";
 
 const FaqsBlock = ({ data, id }) => {
   const { pathname } = useRouter();
@@ -37,7 +38,6 @@ const FaqsBlock = ({ data, id }) => {
       >
         <SvgSelector svg={"arrow"} />
       </button>
-
         <div className={s.categoryBlock_questions}>
           {data.faqs.data.map((question, jndex) => (
             <Link
@@ -45,6 +45,7 @@ const FaqsBlock = ({ data, id }) => {
               className={`${sizeVersion}_t2`}
               key={jndex}
               style={{ transitionDelay: `${jndex / 10}s` }}
+
             >
               <p className={`${sizeVersion}_t2`}>{question.attributes.title}</p>
             </Link>

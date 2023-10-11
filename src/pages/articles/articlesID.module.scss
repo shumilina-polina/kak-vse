@@ -149,13 +149,33 @@
       gap: 10px;
 
       border-radius: 20px;
-
+      @include laptop {
+        padding: 2.14vw 3.21vw;
+      }
+      @include mobile {
+        padding: 32px 20px;
+      }
       .links {
         display: flex;
         gap: 20px;
+        svg {
+          width: 28px;
+          height: 29px;
+        }
+        @include laptop {
+          gap: 1.79vw;
+          svg {
+            width: 2.50vw;
+            height: 2.59vw;
+          }
+        }
         @include mobile {
           flex-direction: column;
-
+          gap: 20px;
+          svg {
+            width: 28px;
+            height: 28px;
+          }
         }
         a {
           @include hover();
@@ -163,6 +183,12 @@
           display: flex;
           align-items: center;
           justify-items: center;
+          @include laptop {
+            gap: 0.71vw;
+          }
+          @include mobile {
+            gap: 8px;
+          }
         }
       }
     }

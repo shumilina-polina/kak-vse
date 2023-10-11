@@ -140,7 +140,7 @@ const Header = () => {
                 className={s.menu}
                 onClick={() => setMenuOpen(!menuOpen)}
               >
-                <h4 className={'normal_h4'}>
+                <h4 className={`${sizeVersion}_h4`}>
                   {menuOpen ? 'Закрыть' : 'Меню'}
                 </h4>
               </button>
