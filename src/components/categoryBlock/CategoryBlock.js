@@ -22,7 +22,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
       link: '/opportunities',
       text1: 'Ваши возможности →',
       textTitle: 'Найди свой путь самореализации',
-      svgIcon: 'opportunities-color'
+      svgIcon: 'opportunities-'
     }
     : Category === 1
       ? {
@@ -32,7 +32,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
         link: '/advices',
         text1: 'Полезные советы →',
         textTitle: `Познакомься с полезными \n\n советами от экспертов`,
-        svgIcon: 'advices-color'
+        svgIcon: 'advices-'
       }
       : {
         color: "#FFECA7",
@@ -41,7 +41,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
         link: '/success',
         text1: 'Истории успеха →',
         textTitle: 'Найди вдохновение в историях успеха',
-        svgIcon: 'success-color'
+        svgIcon: 'success-'
       };
 
 
@@ -67,7 +67,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                   </Link>
                   <h1 className={`${sizeVersion}_h1`}><Markdown>{category.textTitle}</Markdown></h1>
                 </div>
-                <SvgSelector svg={category.svgIcon}/>
+                <SvgSelector svg={category.svgIcon + colorVersion}/>
               </div>
 
               <div className={s.content}>
@@ -161,7 +161,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                   >
                     <p className={`${sizeVersion}_caption`}>{category.text1}</p>
                   </Link>
-                  <SvgSelector svg={category.svgIcon}/>
+                  <SvgSelector svg={category.svgIcon + colorVersion}/>
                 </div>
                 <h1 className={`${sizeVersion}_h1`}>{category.textTitle}</h1>
               </div>

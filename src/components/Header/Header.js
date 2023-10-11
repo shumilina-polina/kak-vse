@@ -29,7 +29,7 @@ const Header = () => {
                 href={'/opportunities'}
                 className={s.link}
               >
-                <SvgSelector svg={`link-opportunities-color`}/>
+                <SvgSelector svg={`link-opportunities-${colorVersion}`}/>
                 <p className={`${sizeVersion}_h4`}>Ваши возможности</p>
               </Link>
 
@@ -37,7 +37,7 @@ const Header = () => {
                 href={'/advices'}
                 className={s.link}
               >
-                <SvgSelector svg={`link-advices-color`}/>
+                <SvgSelector svg={`link-advices-${colorVersion}`}/>
                 <p className={`${sizeVersion}_h4`}>Полезные советы</p>
               </Link>
 
@@ -45,7 +45,7 @@ const Header = () => {
                 href={'/success'}
                 className={s.link}
               >
-                <SvgSelector svg={`link-success-color`}/>
+                <SvgSelector svg={`link-success-${colorVersion}`}/>
                 <p className={`${sizeVersion}_h4`}>Истории успеха</p>
               </Link>
 
@@ -53,7 +53,7 @@ const Header = () => {
                 href={'/service'}
                 className={s.link}
               >
-                <SvgSelector svg={`link-service-color`}/>
+                <SvgSelector svg={`link-service-${colorVersion}`}/>
                 <p className={`${sizeVersion}_h4`}>Ответы на вопросы</p>
               </Link>
             </div>
@@ -98,7 +98,7 @@ const Header = () => {
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
-            <SvgSelector svg={`link-opportunities-color`}/>
+            <SvgSelector svg={`link-opportunities-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Ваши возможности</p>
           </Link>
 
@@ -107,7 +107,7 @@ const Header = () => {
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
-            <SvgSelector svg={`link-advices-color`}/>
+            <SvgSelector svg={`link-advices-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Полезные советы</p>
           </Link>
 
@@ -116,7 +116,7 @@ const Header = () => {
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
-            <SvgSelector svg={`link-success-color`}/>
+            <SvgSelector svg={`link-success-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Истории успеха</p>
           </Link>
 
@@ -125,7 +125,7 @@ const Header = () => {
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
-            <SvgSelector svg={`link-service-color`}/>
+            <SvgSelector svg={`link-service-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Ответы на вопросы</p>
           </Link>
         </div>

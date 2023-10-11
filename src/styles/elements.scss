@@ -343,12 +343,12 @@
   &_t4 {
     /* Desktop/t4+ */
     @include Golos();
-    font-size: 12px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     @include laptop {
-      font-size: 1.07vw;
+      font-size: 1.25vw;
     }
 
   }
@@ -388,7 +388,6 @@
     }
   }
 }
-
 
 //--buttons--\\
 

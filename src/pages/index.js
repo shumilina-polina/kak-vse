@@ -41,7 +41,7 @@ const Index = () => {
         />
         <div className={s.first_block}>
           <div className={s.first_block_left}>
-            <SvgSelector svg={"first-left-icon-color"} />
+            <SvgSelector svg={`first-left-icon-${colorVersion}`} />
             <p className={`${sizeVersion}_t1`}>
               Каждый человек, независимо от его особенностей, является
               полноценным членом общества. Однако многие люди с инвалидностью до
@@ -50,7 +50,7 @@ const Index = () => {
             </p>
           </div>
           <div className={s.first_block_right}>
-            <SvgSelector svg={"first-right-icon-color"} />
+            <SvgSelector svg={`first-right-icon-${colorVersion}`} />
             <p className={`${sizeVersion}_t1`}>
               В разделах сайта вы сможете найти примеры того, как реальные люди
               с особыми потребностями добились своих достижений, где они
@@ -114,7 +114,7 @@ const Index = () => {
                 Полезная информация <br /> для достижения цели
               </h1>
             </div>
-            <SvgSelector svg={"service-color"} />
+            <SvgSelector svg={`service-${colorVersion}`} />
           </div>
         )}
         <Faqs />
