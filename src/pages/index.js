@@ -59,15 +59,15 @@ const Index = () => {
         </div>
         <CategoryBlock
           Category={'opportunities'}
-          VIDEO_DATA={data?.advicesVideos.data}
-          ARTICLE_DATA={data?.advicesArticles.data}
+          VIDEO_DATA={data?.opportunitiesVideos.data}
+          ARTICLE_DATA={data?.opportunitiesArticles.data}
           loaded={loading}
           error={error}
         />
         <CategoryBlock
           Category={'advices'}
-          VIDEO_DATA={data?.opportunitiesVideos.data}
-          ARTICLE_DATA={data?.opportunitiesArticles.data}
+          VIDEO_DATA={data?.advicesVideos.data}
+          ARTICLE_DATA={data?.advicesArticles.data}
           loaded={loading}
           error={error}
         />

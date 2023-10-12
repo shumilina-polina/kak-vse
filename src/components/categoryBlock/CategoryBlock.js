@@ -15,7 +15,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
   const isMobile = useMediaQuery(`(max-width: 480px)`);
 
-  const category = Category === 'opportunities'
+  const category = Category === 'advices'
     ? {
       color: "#FFADDE",
       colorLight: "#FFD8EF",
@@ -25,7 +25,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
       textTitle: 'Найди свой путь самореализации',
       svgIcon: 'opportunities-'
     }
-    : Category === 'advices'
+    : Category === 'opportunities'
       ? {
         color: "#A7EAFF",
         colorLight: "#C4F1FF",
