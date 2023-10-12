@@ -127,6 +127,7 @@
           border-radius: 40px;
           border: 1px solid $grey;
           background: $white;
+          transition: 0.5s;
           @include laptop {
             gap: 0.71vw;
             padding: 0 0.94vw 0.16vw 0.63vw;
