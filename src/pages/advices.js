@@ -6,6 +6,9 @@ import CategoryPage from "@/components/CategoryPage/CategoryPage";
 import {useQuery} from "@apollo/client";
 import {GET_CATEGORY} from "@/services/gqlService";
 import {colorContext, sizeContext} from "@/components/Context";
+import s from "@/components/CategoryPage/categoryPage.module.scss";
+import CardArticle from "@/components/cardArticle/CardArticle";
+import CardVideo from "@/components/cardVideo/CardVideo";
 
 const Advices = () => {
   const { data, loading, error} = useQuery(GET_CATEGORY, {
@@ -23,7 +26,30 @@ const Advices = () => {
           Познакомься с полезными<br/>советами от экспертов
         </h1>
         {
-          error ? (
+          loading ? (
+            <div className={s.category}>
+              <div className={s.category_articles}>
+                {[1, 2, 3, 4, 5].map(
+                  (article, index) => (
+                    <CardArticle
+                      Category={'opportunities'}
+                      loaded={loading}
+                      key={`article${index}`}
+                    />
+                  ))}
+              </div>
+
+              <div className={s.category_videos}>
+                {[1, 2, 3, 4, 5].map((path, i) => (
+                  <CardVideo
+                    Category={'opportunities'}
+                    loaded={loading}
+                    key={i}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : error ? (
             <h1 className={`${sizeVersion}_h2`}>Возникла ошибка.<br/>перезагрузите страницу</h1>
           ) : (
             <CategoryPage

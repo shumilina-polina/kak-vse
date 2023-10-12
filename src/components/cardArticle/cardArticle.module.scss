@@ -53,6 +53,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 4px;
+      transition: 0.5s;
       @include laptop {
         gap: 0.36vw;
       }
@@ -67,6 +68,7 @@
       h3 {
         @include Golos();
         width: 100%;
+
         height: fit-content;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -78,6 +80,7 @@
         -moz-box-orient: vertical;
         -webkit-box-orient: vertical;
         box-orient: vertical;
+        transition: 0.5s;
       }
     }
   }
@@ -94,6 +97,7 @@
     -moz-box-orient: vertical;
     -webkit-box-orient: vertical;
     box-orient: vertical;
+    transition: 0.5s;
     & > p,
     blockquote,
     h2 {

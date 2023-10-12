@@ -41,11 +41,11 @@ const CardArticle = ({Category, author, image, title, previewText, url, loaded})
               height={52}
             />
             <div className={s.title_text}>
-              <Markdown className={`${sizeVersion}_label`}>{author}</Markdown>
+              <p className={`${sizeVersion}_label`}><Markdown>{author}</Markdown></p>
               <h3><Markdown className={`${sizeVersion}_h3`}>{title}</Markdown></h3>
             </div>
           </div>
-          <Markdown className={classNames(s.text, `${sizeVersion}_t3`)}>{previewText}</Markdown>
+          <p className={`${sizeVersion}_t3`}><Markdown className={classNames(s.text, )}>{previewText}</Markdown></p>
           <Link
             href={`/articles/${url}`}
             className={cn(s.button, `${colorVersion}_${Category}_light`)}

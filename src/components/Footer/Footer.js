@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import s from './footer.module.scss'
 import SvgSelector from "@/components/SvgSelector";
 import {colorContext, sizeContext} from "@/components/Context";
@@ -7,10 +7,16 @@ const Footer = () => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
 
+  const scrollToTop = () => (window.scrollTo(0, 0))
+
+
   return (
     <div className={s.wrapper}>
       <footer>
-        <SvgSelector svg={'footer-logo'}/>
+        <button onClick={()=>(scrollToTop())}>
+          <SvgSelector svg={'footer-logo'} />
+        </button>
+
         <div className={s.social}>
           <a href={'https://vk.com/kakvseinfo'} target={'_blank'}>
             <SvgSelector svg={'footer-vk'}/>

@@ -18,6 +18,7 @@ $dark-yellow: #F5DC85;
 $dark-green: #7BF0AA;
 
 $black: #232323;
+$dark-grey: #797979;
 $grey: #DEDEDE;
 $white: #FFFFFF;
 $KK: #F7F7F7;
@@ -80,6 +81,9 @@ $mobile-width: 480px;
 @mixin hover {
   transition: 0.5s;
   &:hover {
-    opacity: 0.9;
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
   }
 }

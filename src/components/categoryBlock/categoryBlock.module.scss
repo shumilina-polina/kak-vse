@@ -198,8 +198,17 @@
               }
             }
             &:hover {
+              p {
+                p {
+                  color: #B4B4B4;
+                }
+              }
+              h3 {
+                p {
+                  color: #797979 !important;
+                }
+              }
 
-              color: #797979;
             }
             .text {
               display: flex;

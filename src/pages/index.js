@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import s from '../styles/pages/index.module.scss'
 import {Wrapper} from "@/components/Wrapper/Wrapper";
 import SvgSelector from "@/components/SvgSelector";
@@ -22,6 +22,8 @@ const Index = () => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
 
+
+
   return (
     <>
       <Head>
@@ -41,19 +43,17 @@ const Index = () => {
           <div className={s.first_block_left}>
             <SvgSelector svg={`first-left-icon-${colorVersion}`} />
             <p className={`${sizeVersion}_t1`}>
-              Каждый человек, независимо от его особенностей, является
-              полноценным членом общества. Однако многие люди с инвалидностью до
-              сих пор сталкиваются с проблемами в социализации, обучении и
-              трудоустройстве.
+              Каждый человек, независимо от его особенностей, является полноценным членом общества. Однако многие
+              люди с инвалидностью до сих пор сталкиваются с проблемами в социализации, обучении
+              и трудоустройстве.
             </p>
           </div>
           <div className={s.first_block_right}>
             <SvgSelector svg={`first-right-icon-${colorVersion}`} />
             <p className={`${sizeVersion}_t1`}>
-              В разделах сайта вы сможете найти примеры того, как реальные люди
-              с особыми потребностями добились своих достижений, где они
-              учились, кто на этом пути их поддерживал и к кому вы можете
-              обратиться.
+              В разделах сайта вы сможете найти примеры того, как реальные люди с особыми потребностями
+              добились своих достижений, где они учились, кто на этом пути их поддерживал и к кому
+              вы можете обратиться.
             </p>
           </div>
         </div>
