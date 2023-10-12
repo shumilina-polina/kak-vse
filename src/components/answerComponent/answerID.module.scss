@@ -76,6 +76,7 @@
       p {
         /* Desktop/t content */
         //margin-top: 10px;
+
         @include Golos;
         font-size: 16px;
         font-style: normal;
@@ -98,7 +99,7 @@
         line-height: 20px;
         @include laptop {
           font-size: 1.43vw;
-          font-weight: 1.79vw;
+          font-height: 1.79vw;
         }
         @include mobile {
           font-size: 14px;

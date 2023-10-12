@@ -395,28 +395,42 @@
     &_light {
       background-color: $light-pink;
       transition: 0.5s;
+      &:hover {
+        background-color: $pink;
+      }
     }
     &_normal {
       background-color: $pink;
       transition: 0.5s;
+      &:hover {
+        background-color: $light-pink;
+      }
     }
     &_border {
       border-color: $pink !important;
       transition: 0.5s;
+
     }
     &_darkBorder {
       border-color: $dark-pink !important;
       transition: 0.5s;
+
     }
   }
   &_advices {
     &_light {
       background-color: $light-blue;
       transition: 0.5s;
+      &:hover {
+        background-color: $blue;
+      }
     }
     &_normal {
       background-color: $blue;
       transition: 0.5s;
+      &:hover {
+        background-color: $light-blue;
+      }
     }
     &_border {
       border-color: $blue !important;
@@ -431,10 +445,16 @@
     &_light {
       background-color: $light-yellow;
       transition: 0.5s;
+      &:hover {
+        background-color: $yellow;
+      }
     }
     &_normal {
       background-color: $yellow;
       transition: 0.5s;
+      &:hover {
+        background-color: $light-yellow;
+      }
     }
     &_border {
       border-color: $yellow !important;
@@ -449,11 +469,17 @@
     &_light {
       background-color: $light-green;
       transition: 0.5s;
+      &:hover {
+        background-color: $green;
+      }
     }
     &_normal {
 
       background-color: $green;
       transition: 0.5s;
+      &:hover {
+        background-color: $light-green;
+      }
     }
     &_border {
       border-color: $green !important;
