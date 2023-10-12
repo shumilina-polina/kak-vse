@@ -1,7 +1,8 @@
 import React from 'react';
 import CardVideo from "@/components/cardVideo/CardVideo";
 import s from './mainPageVideos.module.scss'
-
+import img1 from './Group 1.png'
+import img2 from './Group 2.png'
 const MainPageVideos = ({videos, loaded}) => {
   return (
     <div className={s.videos_main_wrapper}>
