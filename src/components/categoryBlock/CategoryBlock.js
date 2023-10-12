@@ -4,7 +4,7 @@ import CardVideo from "@/components/cardVideo/CardVideo";
 import SvgSelector from "@/components/SvgSelector";
 import Link from "next/link";
 import Image from "next/image";
-import {useMediaQuery} from "@mui/material";
+import {Skeleton, useMediaQuery} from "@mui/material";
 import {apiUrl} from "@/shared/constants/config";
 import Markdown from "react-markdown";
 import {colorContext, sizeContext} from "@/components/Context";
@@ -85,30 +85,54 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                   <div
                     className={cn(s.content_article_wrapper, `${colorVersion}_${Category}_border`)}
                   >
-                    <button className={s.articles} >
-                      {ARTICLE_DATA?.map((path, i) => (
-                        <div className={s.article_row} key={`row${i}`}>
-                          <Image
-                            src={apiUrl + path.attributes.author_photo.data.attributes.url}
-                            alt={'author'}
-                            className={s.image}
-                            key={`image${i}`}
-                            width={40}
-                            height={40}
-                            placeholder={'blur'}
-                            blurDataURL={path.attributes.author_photo.data.attributes.blurhash}
-                          />
-                          <div className={s.text} >
-                            <p className={`${sizeVersion}_label`} key={`author${i}`}>
-                              <Markdown>{path.attributes.author_name}</Markdown>
-                            </p>
-                            <h3 className={`${sizeVersion}_h3`} key={`title${i}`}>
-                              <Markdown>{path.attributes.title}</Markdown>
-                            </h3>
-                          </div>
-                        </div>
-                      ))}
-                    </button>
+                    <div className={s.articles}>
+                      {loaded ? (
+                        <>
+                          {[1, 2, 3].map((path, i) => (
+                            <div className={s.article_row} key={`row${i}`}>
+                              <Skeleton variant="circular" width={44} height={44}/>
+                              <div className={s.text}>
+                                <Skeleton variant="rounded" sx={{borderRadius: '12px', height: '12px', width: '35px'}}
+                                          animation="wave"/>
+
+                                <Skeleton variant="rounded" sx={{borderRadius: '16px', height: '12px', width: '80%'}}
+                                          animation="wave"/>
+                                <Skeleton variant="rounded" sx={{borderRadius: '16px', height: '12px', width: '60%'}}
+                                          animation="wave"/>
+                                <Skeleton variant="rounded" sx={{borderRadius: '16px', height: '12px', width: '247px'}}
+                                          animation="wave"/>
+                              </div>
+                            </div>
+                          ))}
+                        </>
+                      ) : (
+                        <>
+                          {ARTICLE_DATA?.map((path, i) => (
+                            <Link href={`/articles/${path.attributes.slug}`} className={s.article_row} key={`row${i}`}>
+                              <Image
+                                src={apiUrl + path.attributes.author_photo.data.attributes.url}
+                                alt={'author'}
+                                className={s.image}
+                                key={`image${i}`}
+                                width={40}
+                                height={40}
+                                placeholder={'blur'}
+                                blurDataURL={path.attributes.author_photo.data.attributes.blurhash}
+                              />
+                              <div className={s.text}>
+                                <p className={`${sizeVersion}_label`} key={`author${i}`}>
+                                  <Markdown>{path.attributes.author_name}</Markdown>
+                                </p>
+                                <h3 className={`${sizeVersion}_h3`} key={`title${i}`}>
+                                  <Markdown>{path.attributes.title}</Markdown>
+                                </h3>
+                              </div>
+                            </Link>
+                          ))}
+                        </>
+                      )}
+
+                    </div>
 
                     <Link
                       href={category.link}
@@ -163,6 +187,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                     borderColor: category.color,
                   }}
                 >
+
                   <div className={s.articles}>
                     {ARTICLE_DATA?.map((path, i) => (
                       <div className={s.article_row} key={`row${i}`}>
@@ -204,13 +229,8 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                     key={'video_2'}
                   />
                 }
-
-
               </div>
-
-
               <Link
-
                 href={category.link}
                 className={cn(s.large_link, `${colorVersion}_${Category}_normal`, `${colorVersion}_${Category}_darkBorder`)}
               >
