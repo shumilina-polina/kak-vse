@@ -12,7 +12,7 @@
     height: 44.64vw;
   }
   @include mobile {
-    height: 400px;
+    height: 125vw;
     background-size: 200%;
   }
   image {
@@ -71,8 +71,8 @@
       height: 6.43vw;
     }
     @include mobile {
-      width: 48px;
-      height: 48px;
+      width: 15vw;
+      height: 15vw;
     }
   }
 }
