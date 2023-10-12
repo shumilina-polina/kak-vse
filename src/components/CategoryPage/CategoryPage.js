@@ -57,7 +57,6 @@ const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
     return ( //-------------------------------------------------mobile
       <div className={s.category}>
         {arrayConcat(VIDEO_DATA, ARTICLE_DATA).map((elem, index) => {
-          console.log(elem.__typename);
           if (elem.__typename === 'VideoEntity') {
             return (
               <CardVideo

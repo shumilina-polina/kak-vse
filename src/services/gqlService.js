@@ -80,6 +80,7 @@ query ($slug: String) {
         title
         content 
         slug
+        category
         label_content {
           content
           link_vk

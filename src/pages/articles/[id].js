@@ -17,10 +17,12 @@ const Article = () => {
   const {data, loading, error} = useQuery(GET_ARTICLE, {
     variables: {slug: id}
   })
+  const Category = data?.articleID.data[0].attributes.category
+  console.log(Category);
   let linkTitle = data?.articleID.data[0].attributes.label_content.link_multicentr;
   if (!loading) {
-    linkTitle = linkTitle.replace(/https:/g, '');
-    linkTitle = linkTitle.replace(/[^a-zа-яё0-9\s]/gi, ' ');
+    linkTitle = linkTitle?.replace(/https:/g, '');
+    linkTitle = linkTitle?.replace(/[^a-zа-яё0-9\s]/gi, ' ');
   }
 
   const [colorVersion, setColorVersion] = useContext(colorContext)
@@ -100,7 +102,9 @@ const Article = () => {
               </div>
               <div
                 className={s.label}
-                style={{backgroundColor: colorVersion === 'color' ? '#FFF3C8' : '#DEDEDE'}}
+                style={{
+                  backgroundColor: colorVersion === 'grey' ? '#DEDEDE' : Category === 'opportunities' ? '#FFD8EF' : Category === 'advices' ? '#C4F1FF' : '#FFF3C8'
+              }}
               >
                 <p className={`${sizeVersion}_t3`}>
                   <Markdown>

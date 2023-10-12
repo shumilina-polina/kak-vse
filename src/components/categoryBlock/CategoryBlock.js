@@ -41,7 +41,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
         colorDark: "#F5DC85",
         link: '/success',
         text1: 'Истории успеха →',
-        textTitle: 'Найди вдохновение в историях успеха',
+        textTitle: 'Найди вдохновение \n\n в историях успеха',
         svgIcon: 'success-'
       };
   return (
