@@ -9,8 +9,13 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
 
-  const tag = tags?.split(', ');
-  console.log(tag);
+  let tag = [];
+
+  if (tags) {
+    tag = tags?.split(', ');
+  }
+
+  console.log(tags);
   const copy = () => {
     navigator.clipboard.writeText(url);
     alert("ссылка скопирована");
