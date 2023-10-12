@@ -93,10 +93,11 @@ h1 {
   max-width: 870px !important;
   width: 100% !important;
   height: 570px !important;
-  border: 1px solid $grey !important;
+  border: 1px solid $dark-grey !important;
   border-radius: 40px !important;
   background-color: $KK !important;
   color: $black !important;
+  font-weight: 500 !important;
   @include laptop {
     border-radius: 3.57vw !important;
     height: 100% !important;
@@ -112,11 +113,25 @@ h1 {
 #closeModal {
   //position: absolute;
   //top: 0px;
+
   right: 0;
   z-index: 1000;
   height: 40px;
   width: 40px;
   margin: 0;
+  svg {
+    circle {
+      transition: 0.5s;
+    }
+  }
+
+  &:hover {
+    svg {
+      circle {
+        fill: $grey;
+      }
+    }
+  }
 }
 
 #scroll-dialog-title {

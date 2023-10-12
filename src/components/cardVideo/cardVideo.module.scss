@@ -55,6 +55,16 @@
     @include mobile {
       gap: 3.75vw;
     }
+    .tags {
+      display: flex;
+      gap: 12px;
+      @include laptop {
+        gap: 1.07vw;
+      }
+      @include mobile {
+        gap: 9px;
+      }
+    }
 
     &_text {
       display: flex;

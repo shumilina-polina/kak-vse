@@ -87,7 +87,7 @@ const Article = () => {
                 </div>
               </div>
 
-              <div className={s.text}>
+              <div className={sizeVersion === 'normal' ? s.text_normal : s.text_large}>
                 <div className={s.author}>
                   <Image
                     src={apiUrl + data?.articleID.data[0].attributes.author_photo.data.attributes.url}

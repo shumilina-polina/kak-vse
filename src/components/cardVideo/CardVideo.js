@@ -8,6 +8,9 @@ import {Skeleton} from "@mui/material";
 const CardVideo = ({Category, tags, title, url,  loaded}) => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
+
+  const tag = tags?.split(', ');
+  console.log(tag);
   const copy = () => {
     navigator.clipboard.writeText(url);
     alert("ссылка скопирована");
@@ -46,7 +49,10 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
           />
           <div className={s.card_bottom}>
             <div className={s.card_bottom_text}>
-              <p className={`${sizeVersion}_label`}>{tags}</p>
+              <div className={s.tags}>{
+                tag.map((el, i)=>(<p className={`${sizeVersion}_label`} key={i}>{el}</p>))
+              }</div>
+
               <h2 className={`${sizeVersion}_h2`}><Markdown>{title}</Markdown></h2>
             </div>
             <div className={s.share}>
