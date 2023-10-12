@@ -1,36 +1,150 @@
 @import "../../styles/varibles/varible";
 
 .answerWrapper {
-  margin: 100px auto;
+  margin: 20px auto;
   max-width: 550px;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+    @include laptop {
+      margin-top: 1.79vw;
+      gap: 1.79vw;
+    }
+    @include mobile {
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .share {
+      display: flex;
+      width: fit-content;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+
+      &_links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @include laptop {
+          gap: 0.71vw;
+        }
+        a {@include hover();}
+
+        svg {
+          @include laptop {
+            width: 4.46vw;
+            height: 4.46vw;
+          }
+          @include mobile {
+            width: 38px;
+            height: 38px;
+          }
+        }
+      }
+      p {
+        margin: 0 10px;
+      }
+    }
+  }
   .content {
     .text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 56px;
+      max-width: 550px;
+      @include laptop {
+        padding-top: 5vw;
+        gap: 2.14vw;
+      }
+      @include mobile {
+        padding-top: 36px;
+      }
+      .author{
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        img {
+          border-radius: 100%;
+        }
+        p {margin-bottom: 0;}
+      }
+
       p {
-        margin-bottom: 24px;
+        /* Desktop/t content */
+        //margin-top: 10px;
+        @include Golos;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        @include laptop {
+          font-size: 1.43vw;
+          line-height: 1.79vw;
+        }
+        @include mobile {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      h2 {
+        /* Desktop/quote */
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        @include laptop {
+          font-size: 1.43vw;
+          font-weight: 1.79vw;
+        }
+        @include mobile {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      em {
+        text-decoration: underline;
+        font-style: normal;
+      }
+      li {
         /* Desktop/t content */
         @include Golos;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: 24px; /* 150% */
-      }
-      h2 {
-        margin-bottom: 24px;
-        /* Desktop/quote */
-        @include Golos;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 32px; /* 133.333% */
+        margin-left: 20px;
+        @include laptop {
+          font-size: 1.43vw;
+          line-height: 1.79vw;
+        }
+        @include mobile {
+          font-size: 14px;
+          line-height: 20px;
+        }
       }
       blockquote {
-        margin-bottom: 24px;
-        /* Desktop/quote */
-        @include Golos;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 32px; /* 133.333% */
+        p {
+          color: #757575;
+          /* Desktop/quote */
+          @include Golos;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 32px; /* 133.333% */
+          @include laptop {
+            font-size: 1.79vw;
+            line-height: 2.14vw;
+          }
+          @include mobile {
+            font-size: 20px;
+            line-height: 24px;
+          }
+        }
+
       }
     }
 
