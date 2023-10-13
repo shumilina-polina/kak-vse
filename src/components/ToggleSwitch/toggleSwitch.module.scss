@@ -15,6 +15,42 @@
   &:hover {
     cursor: pointer;
   }
+  .svg1 {
+    position: absolute;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: 0.5s;
+    top: 8px;
+    left: 11px;
+    svg {
+      height: 12px;
+    }
+
+    @include mobile {
+      left: 3px;
+      top: -1px;
+      svg {
+        height: 7px;
+      }
+    }
+
+  }
+  .svg2 {
+    position: absolute;
+    transition: 0.5s;
+    top: 7px;
+    right: 7px;
+    svg {
+      height: 18px;
+    }
+    @include mobile {
+      right: 0;
+      svg {
+        height: 11px;
+      }
+    }
+
+  }
   .slider {
     position: absolute;
     width: 28px;
@@ -23,6 +59,7 @@
     border-radius: 100%;
     background-color: $white;
     margin: 3px;
+
     @include mobile {
       width: 16px;
       height: 16px;
@@ -47,10 +84,13 @@
       }
     }
     &_left_text {
+      mix-blend-mode: exclusion;
       left: 0;
+
     }
     &_right_text {
       left: 33px;
+      mix-blend-mode: exclusion;
       @include mobile {
         left: 20px;
       }

@@ -1,6 +1,18 @@
 const SvgSelector = ({svg}) => {
   switch (svg) {
-
+    //---Swither---\\
+    case "size-small":
+      return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="9" viewBox="0 0 10 9" fill="none">
+          <path d="M6.48766 7.21195H3.2927L2.63891 8.97596H0.837891L4.04518 0.340942H5.89554L9.10283 8.97596H7.15379L6.48766 7.21195ZM3.86015 5.68231H5.93255L4.89635 2.68473L3.86015 5.68231Z" fill="white"/>
+        </svg>
+      );
+    case "size-large":
+      return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+          <path d="M12.2255 15.244H5.43366L4.04382 18.9939H0.21521L7.03328 0.637573H10.9668L17.7849 18.9939H13.6416L12.2255 15.244ZM6.63993 11.9923H11.0455L8.84269 5.62001L6.63993 11.9923Z" fill="white"/>
+        </svg>
+      );
     //---HEADER---\\
     case "logo":
       return (

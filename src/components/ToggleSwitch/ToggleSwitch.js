@@ -2,13 +2,15 @@ import React, {useContext, useState} from 'react';
 import s from './toggleSwitch.module.scss'
 import cn from 'classnames'
 import {sizeContext, colorContext} from "@/components/Context";
+import SvgSelector from "@/components/SvgSelector";
+
 export const ToggleSwitchColor = () => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
 
   return (
     <div
       className={s.label}
-      onClick={()=>{
+      onClick={() => {
         setColorVersion(colorVersion === 'color' ? 'grey' : 'color')
       }}
     >
@@ -22,15 +24,29 @@ export const ToggleSwitchText = () => {
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
 
   return (
-    <div
-      className={s.label}
-      onClick={()=>{
-        setSizeVersion(sizeVersion === 'normal' ? 'large' : 'normal')
-      }}
-    >
-      <div className={cn(s.slider, sizeVersion === 'normal' ? s.slider_left_text : s.slider_right_text)}/>
+    <>
+      <div
+        className={s.label}
+        onClick={() => {
+          setSizeVersion(sizeVersion === 'normal' ? 'large' : 'normal')
+        }}
+      >
 
-    </div>
+
+        <div className={s.svg1}>
+          <SvgSelector svg={'size-small'}/>
+        </div>
+        <div className={s.svg2}>
+          <SvgSelector svg={'size-large'}/>
+        </div>
+        <div className={cn(s.slider, sizeVersion === 'normal' ? s.slider_left_text : s.slider_right_text)}/>
+
+
+
+      </div>
+
+    </>
+
   );
 };
 
