@@ -56,7 +56,7 @@ const AnswerComponent = ({id}) => {
               <p className={`${sizeVersion}_label`}>Поделитесь</p>
             </div>
           </div>
-          <div className={s.text}>
+          <div className={sizeVersion === 'normal' ? s.text_normal : s.text_large}>
             <Markdown>{data?.answerID.data[0].attributes.content}</Markdown>
           </div>
           <div className={s.title}>

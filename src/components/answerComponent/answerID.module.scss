@@ -51,102 +51,142 @@
   }
   .content {
     .text {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      padding-top: 56px;
-      max-width: 550px;
-      @include laptop {
-        padding-top: 5vw;
-        gap: 2.14vw;
-      }
-      @include mobile {
-        padding-top: 36px;
-      }
-      .author{
+      &_normal {
         display: flex;
-        align-items: center;
-        gap: 9px;
-        img {
-          border-radius: 100%;
+        flex-direction: column;
+        gap: 24px;
+        padding-top: 16px;
+        max-width: 550px;
+        .author{
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          img {
+            border-radius: 100%;
+          }
+          p {margin-bottom: 0;}
         }
-        p {margin-bottom: 0;}
-      }
+        li {
 
-      p {
-        /* Desktop/t content */
-        //margin-top: 10px;
+        }
 
-        @include Golos;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 24px; /* 150% */
-        @include laptop {
-          font-size: 1.43vw;
-          line-height: 1.79vw;
-        }
-        @include mobile {
-          font-size: 14px;
-          line-height: 20px;
-        }
-      }
-      h2 {
-        /* Desktop/quote */
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 20px;
-        @include laptop {
-          font-size: 1.43vw;
-          font-height: 1.79vw;
-        }
-        @include mobile {
-          font-size: 14px;
-          line-height: 20px;
-        }
-      }
-      em {
-        text-decoration: underline;
-        font-style: normal;
-      }
-      li {
-        /* Desktop/t content */
-        @include Golos;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 24px; /* 150% */
-        margin-left: 20px;
-        @include laptop {
-          font-size: 1.43vw;
-          line-height: 1.79vw;
-        }
-        @include mobile {
-          font-size: 14px;
-          line-height: 20px;
-        }
-      }
-      blockquote {
         p {
-          color: #757575;
-          /* Desktop/quote */
+          /* Desktop/t content */
           @include Golos;
-          font-size: 24px;
+          font-size: 16px;
           font-style: normal;
           font-weight: 400;
-          line-height: 32px; /* 133.333% */
+          line-height: 24px; /* 150% */
           @include laptop {
-            font-size: 1.79vw;
-            line-height: 2.14vw;
+            font-size: 1.43vw;
+            line-height: 1.79vw;
           }
           @include mobile {
-            font-size: 20px;
-            line-height: 24px;
+            font-size: 14px;
+            line-height: 20px;
           }
         }
+        h2 {
+          /* Desktop/quote */
+          @include Golos;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 16px; /* 133.333% */
 
+        }
+        blockquote {
+          p {
+            color: #757575;
+            /* Desktop/quote */
+            @include Golos;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32px; /* 133.333% */
+            @include laptop {
+              font-size: 1.79vw;
+              line-height: 2.14vw;
+            }
+            @include mobile {
+              font-size: 20px;
+              line-height: 24px;
+            }
+          }
+
+        }
       }
+      &_large {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding-top: 16px;
+        max-width: 550px;
+
+        .author{
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          img {
+            border-radius: 100%;
+          }
+          p {margin-bottom: 0;}
+        }
+
+        p {
+          /* Desktop/t content */
+          @include Golos;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          @include laptop {
+            font-size: 1.79vw;
+            line-height: 2.50vw;
+          }
+          @include mobile {
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+        h2 {
+          /* Desktop/quote */
+          @include Golos;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 28px;
+          @include laptop {
+            font-size: 1.79vw;
+            line-height: 2.50vw;
+          }
+          @include mobile {
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+        blockquote {
+          p {
+            color: #757575;
+            /* Desktop/quote */
+            @include Golos;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 36px; /* 133.333% */
+            @include laptop {
+              font-size: 2.50vw;
+              line-height: 3.21vw;
+            }
+            @include mobile {
+              font-size: 24px;
+              line-height: 28px;
+            }
+          }
+
+        }
+      }
+
     }
 
   }

@@ -25,6 +25,10 @@ const Article = () => {
     linkTitle = linkTitle?.replace(/[^a-zа-яё0-9\s]/gi, ' ');
   }
 
+  const copy = () => {
+    navigator.clipboard.writeText(window.location.href);
+  }
+
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
 
@@ -52,22 +56,17 @@ const Article = () => {
               </div>
 
               <div className={s.title}>
-                <h1 className={`${sizeVersion}_h1`}>
-                  <Markdown>
-                    {data?.articleID.data[0].attributes.title}
-                  </Markdown>
-                </h1>
                 <div className={s.share}>
                   <div className={s.share_links}>
                     <a
                       target={'_blank'}
-                      href={"https://telegram.me/share/url?url=https://www.youtube.com/live/nwibL__1Ux4?si=D8RN7Kk2S6a65Sb1&text=Какой-то крутой текст"}
+                      href={`https://telegram.me/share/url?url=${window.location.href}`}
                     >
                       <SvgSelector svg={'tg-desktop'}/>
                     </a>
                     <a
                       target={'_blank'}
-                      href={'https://vk.com/share.php?url=https%3A//youtube.com/live/nwibL__1Ux4%3Fsi%3Dj3HTpRGqaiX_5Rq2'}
+                      href={`https://vk.com/share.php?url=${window.location.href}`}
                     >
                       <SvgSelector svg={'vk-desktop'}/>
                     </a>
@@ -95,7 +94,8 @@ const Article = () => {
                     width={52}
                     height={52}
                   />
-                  <Markdown className={`${sizeVersion}_label`}>{data?.articleID.data[0].attributes.author_name}</Markdown>
+                  <Markdown
+                    className={`${sizeVersion}_label`}>{data?.articleID.data[0].attributes.author_name}</Markdown>
                 </div>
 
                 <Markdown>{data?.articleID.data[0].attributes.content}</Markdown>
@@ -104,7 +104,7 @@ const Article = () => {
                 className={s.label}
                 style={{
                   backgroundColor: colorVersion === 'grey' ? '#DEDEDE' : Category === 'opportunities' ? '#FFD8EF' : Category === 'advices' ? '#C4F1FF' : '#FFF3C8'
-              }}
+                }}
               >
                 <p className={`${sizeVersion}_t3`}>
                   <Markdown>
@@ -138,13 +138,13 @@ const Article = () => {
                   <div className={s.share_links}>
                     <a
                       target={'_blank'}
-                      href={"https://telegram.me/share/url?url=https://www.youtube.com/live/nwibL__1Ux4?si=D8RN7Kk2S6a65Sb1&text=Какой-то крутой текст"}
+                      href={`https://telegram.me/share/url?url=${window.location.href}`}
                     >
                       <SvgSelector svg={'tg-desktop'}/>
                     </a>
                     <a
                       target={'_blank'}
-                      href={'https://vk.com/share.php?url=https%3A//youtube.com/live/nwibL__1Ux4%3Fsi%3Dj3HTpRGqaiX_5Rq2'}
+                      href={`https://vk.com/share.php?url=${window.location.href}`}
                     >
                       <SvgSelector svg={'vk-desktop'}/>
                     </a>

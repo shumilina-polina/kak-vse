@@ -1,14 +1,14 @@
 @import "src/styles/varibles/varible";
 
 .articlesWrapper {
-  margin: 100px auto;
+  margin: 0 auto;
   max-width: 622px;
   @include laptop {
 
     max-width: 55.54vw;
   }
   @include mobile {
-    margin: 60px auto;
+    margin: 0 auto;
     max-width: 95%;
   }
 
