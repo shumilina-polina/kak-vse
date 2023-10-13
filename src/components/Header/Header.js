@@ -23,73 +23,94 @@ const Header = () => {
 
   if (!isMobile) {
     return ( //-------------------------------------------------------------------------desktop
-      <div className={cn(s.wrapper, show && s.show)}>
-        <div className={s.wr}>
-          <header>
-            <Link href={'/'} className={s.logo}>
-              <SvgSelector svg={'logo'}/>
-            </Link>
+      <>
+        <div
+          className={s.null}
+          style={{
+            // marginTop: show ? '112px' : '60px',
+            height: show ? '180px' : '100px',
+            transition: '0.5s'
 
-            <div className={s.links}>
-              <CustomLink
-                href={'/opportunities'}
-                className={s.link}
-              >
-                <SvgSelector svg={`link-opportunities-${colorVersion}`}/>
-                <p className={`${sizeVersion}_h4`}>Ваши возможности</p>
-              </CustomLink>
+          }}
+        />
+        <div className={cn(s.wrapper, show && s.show)}>
+          <div className={s.wr}>
+            <header>
+              <Link href={'/'} className={s.logo}>
+                <SvgSelector svg={'logo'}/>
+              </Link>
 
-              <CustomLink
-                href={'/advices'}
-                className={s.link}
-              >
-                <SvgSelector svg={`link-advices-${colorVersion}`}/>
-                <p className={`${sizeVersion}_h4`}>Полезные советы</p>
-              </CustomLink>
+              <div className={s.links}>
+                <CustomLink
+                  href={'/opportunities'}
+                  className={s.link}
+                >
+                  <SvgSelector svg={`link-opportunities-${colorVersion}`}/>
+                  <p className={`${sizeVersion}_h4`}>Ваши возможности</p>
+                </CustomLink>
 
-              <CustomLink
-                href={'/success'}
-                className={s.link}
-              >
-                <SvgSelector svg={`link-success-${colorVersion}`}/>
-                <p className={`${sizeVersion}_h4`}>Истории успеха</p>
-              </CustomLink>
+                <CustomLink
+                  href={'/advices'}
+                  className={s.link}
+                >
+                  <SvgSelector svg={`link-advices-${colorVersion}`}/>
+                  <p className={`${sizeVersion}_h4`}>Полезные советы</p>
+                </CustomLink>
 
-              <CustomLink
-                href={'/service'}
-                className={s.link}
+                <CustomLink
+                  href={'/success'}
+                  className={s.link}
+                >
+                  <SvgSelector svg={`link-success-${colorVersion}`}/>
+                  <p className={`${sizeVersion}_h4`}>Истории успеха</p>
+                </CustomLink>
+
+                <CustomLink
+                  href={'/service'}
+                  className={s.link}
+                >
+                  <SvgSelector svg={`link-service-${colorVersion}`}/>
+                  <p className={`${sizeVersion}_h4`}>Ответы на вопросы</p>
+                </CustomLink>
+              </div>
+
+              <button
+                onClick={() => setShow(!show)}
+                className={s.unvisible}
               >
-                <SvgSelector svg={`link-service-${colorVersion}`}/>
-                <p className={`${sizeVersion}_h4`}>Ответы на вопросы</p>
-              </CustomLink>
+                <p className={`${sizeVersion}_t4`}>Версия для <br/>слабовидящих</p>
+                <SvgSelector svg={`unvisually-${show ? 'open' : 'close'}`}/>
+              </button>
+
+            </header>
+          </div>
+
+          <div className={s.die}>
+            <div className={s.switch}>
+              <p className={`${sizeVersion}_t1`}>Размер</p>
+              <ToggleSwitchText/>
             </div>
-
-            <button
-              onClick={() => setShow(!show)}
-              className={s.unvisible}
-            >
-              <p className={`${sizeVersion}_t4`}>Версия для <br/>слабовидящих</p>
-              <SvgSelector svg={`unvisually-${show ? 'open' : 'close'}`}/>
-            </button>
-
-          </header>
-        </div>
-
-        <div className={s.die}>
-          <div className={s.switch}>
-            <p className={`${sizeVersion}_t1`}>Размер</p>
-            <ToggleSwitchText/>
-          </div>
-          <div className={s.switch}>
-            <p className={`${sizeVersion}_t1`}>Цвет</p>
-            <ToggleSwitchColor/>
+            <div className={s.switch}>
+              <p className={`${sizeVersion}_t1`}>Цвет</p>
+              <ToggleSwitchColor/>
+            </div>
           </div>
         </div>
-      </div>
+      </>
+
     );
   } else {
     return ( //-------------------------------------------------------------------------mobile
       <>
+        <div
+          className={s.null}
+          style={{
+            // marginTop: show ? '112px' : '60px',
+            height: show ? '160px' : '100px',
+            transition: '0.5s'
+
+          }}
+        />
         <div
           className={s.menuLinks}
           style={{
@@ -97,12 +118,12 @@ const Header = () => {
             height: menuOpen ? '100vh' : '0vh',
             top: menuOpen ? '0' : '-220px',
 
-        }}
+          }}
         >
           <CustomLink
             href={'/opportunities'}
             className={s.link}
-            onClick={()=> setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-opportunities-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Ваши возможности</p>
@@ -111,7 +132,7 @@ const Header = () => {
           <CustomLink
             href={'/advices'}
             className={s.link}
-            onClick={()=> setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-advices-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Полезные советы</p>
@@ -120,7 +141,7 @@ const Header = () => {
           <CustomLink
             href={'/success'}
             className={s.link}
-            onClick={()=> setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-success-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Истории успеха</p>
@@ -129,7 +150,7 @@ const Header = () => {
           <CustomLink
             href={'/service'}
             className={s.link}
-            onClick={()=> setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-service-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Ответы на вопросы</p>
@@ -171,6 +192,7 @@ const Header = () => {
             </div>
           </div>
         </div>
+
       </>
     );
   }
