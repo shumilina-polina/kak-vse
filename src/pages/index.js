@@ -28,8 +28,8 @@ const Index = () => {
       </Head>
       <Wrapper>
         <h1 className={`${sizeVersion}_title`}>
-          Узнайте больше про обучение,
-          <br /> трудоустройство и социализацию людей с инвалидностью в России
+          Узнайте больше про обучение,
+          {!isMobile && <br/>} трудоустройство и социализацию людей с инвалидностью в России
         </h1>
         <MainPageVideos
           videos={data?.onMainPageVideos.data}

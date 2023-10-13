@@ -190,7 +190,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
 
                   <div className={s.articles}>
                     {ARTICLE_DATA?.map((path, i) => (
-                      <div className={s.article_row} key={`row${i}`}>
+                      <Link href={`/articles/${path.attributes.slug}`} className={s.article_row} key={`row${i}`}>
                         <Image
                           src={apiUrl + path.attributes.author_photo.data.attributes.url}
                           alt={'author'}
@@ -209,7 +209,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                             <Markdown>{path.attributes.title}</Markdown>
                           </h3>
                         </div>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                   <Link

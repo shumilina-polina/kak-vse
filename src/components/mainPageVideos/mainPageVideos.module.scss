@@ -6,7 +6,7 @@
   position: relative;
   margin-top: 20px;
 
-  background: url("./Group 1.png") no-repeat;
+  background: url("./Group 1.png") no-repeat ;
   background-size: 100%;
 
   @include laptop {
@@ -15,9 +15,11 @@
   @include mobile {
     background: url("./Group 2.png") no-repeat center center;
     background-position-y: 5vw;
-    height: 125vw;
+    height: 90vw;
     width: 100vw;
-    background-size: 120vw;
+    margin-top: 0;
+    margin-bottom: 60px;
+    background-size: 100vw;
     margin-left: -10vw;
   }
   image {
@@ -36,8 +38,9 @@
       transform: rotate(-16.844deg);
       top: 10%;
       @include mobile {
-        top: 10%;
-        left: -60%;
+        scale: 0.7;
+        top: 5%;
+        left: -35%;
       }
     }
     &_1 {
@@ -46,10 +49,11 @@
       display: block;
       position: absolute;
       transform:translate(-50%, -50%) rotate(15deg) ;
-      top:45%;
+      top:40%;
       left:50%;
       @include mobile {
-
+        left: 45%;
+        scale: 0.7;
       }
     }
     &_2 {
@@ -61,7 +65,9 @@
       top: 10%;
       right: 0;
       @include mobile {
-        right: -60%;
+        scale: 0.7;
+        top: -2%;
+        right: -50%;
       }
     }
   }
@@ -76,6 +82,7 @@
       height: 6.43vw;
     }
     @include mobile {
+      bottom: -30%;
       width: 15vw;
       height: 15vw;
     }
