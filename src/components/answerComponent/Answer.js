@@ -12,6 +12,10 @@ const AnswerComponent = ({id}) => {
   const {data, loading, error} = useQuery(GET_ANSWER, {
     variables: {slug: id}
   })
+
+  const copy = () => {
+    navigator.clipboard.writeText(`https://kak-vse.info/answer/${data?.answerID.data[0].attributes.slug}`);
+  }
   return (
     <div className={s.answerWrapper}>
       {loading ? (
@@ -31,13 +35,13 @@ const AnswerComponent = ({id}) => {
               <div className={s.share_links}>
                 <a
                   target={'_blank'}
-                  href={"https://telegram.me/share/url?url=https://www.youtube.com/live/nwibL__1Ux4?si=D8RN7Kk2S6a65Sb1&text=Какой-то крутой текст"}
+                  href={`https://telegram.me/share/url?url=https://kak-vse.info/answer/${data?.answerID.data[0].attributes.slug}`}
                 >
                   <SvgSelector svg={'tg-desktop'}/>
                 </a>
                 <a
                   target={'_blank'}
-                  href={'https://vk.com/share.php?url=https%3A//youtube.com/live/nwibL__1Ux4%3Fsi%3Dj3HTpRGqaiX_5Rq2'}
+                  href={`https://vk.com/share.php?url=https://kak-vse.info/answer/${data?.answerID.data[0].attributes.slug}`}
                 >
                   <SvgSelector svg={'vk-desktop'}/>
                 </a>
@@ -64,13 +68,13 @@ const AnswerComponent = ({id}) => {
               <div className={s.share_links}>
                 <a
                   target={'_blank'}
-                  href={"https://telegram.me/share/url?url=https://www.youtube.com/live/nwibL__1Ux4?si=D8RN7Kk2S6a65Sb1&text=Какой-то крутой текст"}
+                  href={`https://telegram.me/share/url?url=https://kak-vse.info/answer/${data?.answerID.data[0].attributes.slug}`}
                 >
                   <SvgSelector svg={'tg-desktop'}/>
                 </a>
                 <a
                   target={'_blank'}
-                  href={'https://vk.com/share.php?url=https%3A//youtube.com/live/nwibL__1Ux4%3Fsi%3Dj3HTpRGqaiX_5Rq2'}
+                  href={`https://vk.com/share.php?url=https://kak-vse.info/answer/${data?.answerID.data[0].attributes.slug}`}
                 >
                   <SvgSelector svg={'vk-desktop'}/>
                 </a>
