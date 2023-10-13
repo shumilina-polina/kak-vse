@@ -1,0 +1,13 @@
+@import "src/styles/varibles/varible";
+
+.customLink {
+  background-color: #F7F7F7 !important;
+  border: 0 !important;
+  filter: grayscale(1);
+  pointer-events: none;
+  p {
+    opacity: 0.8;
+  }
+
+
+}

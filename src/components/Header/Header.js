@@ -7,6 +7,8 @@ import {useMediaQuery} from "@mui/material";
 import cn from 'classnames'
 import {ToggleSwitchColor, ToggleSwitchText} from "@/components/ToggleSwitch/ToggleSwitch";
 import {colorContext, sizeContext} from "@/components/Context";
+import {useRouter} from "next/router";
+import {CustomLink} from "@/components/customLink/CustomLink";
 
 const Header = () => {
   const [show, setShow] = useState(false)
@@ -14,6 +16,10 @@ const Header = () => {
   const isMobile = useMediaQuery(`(max-width: 480px)`);
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
+
+  const router = useRouter();
+
+  const pathN = router.pathname.match(/^\/\w*/)[0];
 
   if (!isMobile) {
     return ( //-------------------------------------------------------------------------desktop
@@ -25,37 +31,37 @@ const Header = () => {
             </Link>
 
             <div className={s.links}>
-              <Link
+              <CustomLink
                 href={'/opportunities'}
                 className={s.link}
               >
                 <SvgSelector svg={`link-opportunities-${colorVersion}`}/>
                 <p className={`${sizeVersion}_h4`}>Ваши возможности</p>
-              </Link>
+              </CustomLink>
 
-              <Link
+              <CustomLink
                 href={'/advices'}
                 className={s.link}
               >
                 <SvgSelector svg={`link-advices-${colorVersion}`}/>
                 <p className={`${sizeVersion}_h4`}>Полезные советы</p>
-              </Link>
+              </CustomLink>
 
-              <Link
+              <CustomLink
                 href={'/success'}
                 className={s.link}
               >
                 <SvgSelector svg={`link-success-${colorVersion}`}/>
                 <p className={`${sizeVersion}_h4`}>Истории успеха</p>
-              </Link>
+              </CustomLink>
 
-              <Link
+              <CustomLink
                 href={'/service'}
                 className={s.link}
               >
                 <SvgSelector svg={`link-service-${colorVersion}`}/>
                 <p className={`${sizeVersion}_h4`}>Ответы на вопросы</p>
-              </Link>
+              </CustomLink>
             </div>
 
             <button
@@ -93,41 +99,41 @@ const Header = () => {
 
         }}
         >
-          <Link
+          <CustomLink
             href={'/opportunities'}
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-opportunities-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Ваши возможности</p>
-          </Link>
+          </CustomLink>
 
-          <Link
+          <CustomLink
             href={'/advices'}
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-advices-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Полезные советы</p>
-          </Link>
+          </CustomLink>
 
-          <Link
+          <CustomLink
             href={'/success'}
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-success-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Истории успеха</p>
-          </Link>
+          </CustomLink>
 
-          <Link
+          <CustomLink
             href={'/service'}
             className={s.link}
             onClick={()=> setMenuOpen(!menuOpen)}
           >
             <SvgSelector svg={`link-service-${colorVersion}`}/>
             <p className={`${sizeVersion}_h4`}>Ответы на вопросы</p>
-          </Link>
+          </CustomLink>
         </div>
         <div className={cn(s.wrapper, show && s.show)}>
           <div className={s.wr}>

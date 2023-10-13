@@ -21,9 +21,6 @@ const Index = () => {
   const isMobile = useMediaQuery(`(max-width: 480px)`);
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
-
-
-
   return (
     <>
       <Head>
