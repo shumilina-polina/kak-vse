@@ -24,10 +24,10 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
     >
       {loaded ? (
         <>
-          <Skeleton variant="rounded" sx={{borderRadius: '40px', height: '200px', width: '90vw' }} animation="wave"/>
+          <Skeleton variant="rounded" sx={{borderRadius: '40px', height: '200px', width: '100%' }} animation="wave"/>
           <div className={s.card_bottom}>
               <Skeleton variant="rounded" sx={{borderRadius: '20px', height: '12px', width: '30%', margin: 0}} animation="wave"/>
-              <Skeleton variant="rounded" sx={{borderRadius: '20px', height: '20px', width: '90vw', margin: 0}} animation="wave"/>
+              <Skeleton variant="rounded" sx={{borderRadius: '20px', height: '20px', width: '100%', margin: 0}} animation="wave"/>
               <Skeleton variant="rounded" sx={{borderRadius: '20px', height: '20px', width: '80%', margin: 0}} animation="wave"/>
             <div className={s.share}>
               <div className={s.share_links}>
@@ -51,7 +51,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
           <div className={s.card_bottom}>
             <div className={s.card_bottom_text}>
               <div className={s.tags}>{
-                tag.map((el, i)=>(<p className={`${sizeVersion}_label`} key={i}>{el}</p>))
+                tag.slice(0,3).map((el, i)=>(<p className={`${sizeVersion}_label`} key={i}>{el}</p>))
               }</div>
 
               <h2 className={`${sizeVersion}_h2`}><Markdown>{title}</Markdown></h2>
