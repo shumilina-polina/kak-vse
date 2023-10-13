@@ -44,8 +44,10 @@
       height: 18px;
     }
     @include mobile {
+      top: 0;
       right: 0;
       svg {
+        
         height: 11px;
       }
     }
