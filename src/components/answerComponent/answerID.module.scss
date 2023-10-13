@@ -85,6 +85,7 @@
         p {
           /* Desktop/t content */
           @include Golos;
+          color: red;
           font-size: 16px;
           font-style: normal;
           font-weight: 400;

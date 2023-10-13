@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  setkalavka:
-    image: pushkeen/setkalavka:latest
-    container_name: setkalavka
+  kakvse:
+    image: polinash22/kakvse:latest
+    container_name: kakvse
     restart: unless-stopped
     ports:
-      - 3100:3001
+      - 3001:3001
