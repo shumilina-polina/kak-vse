@@ -120,7 +120,7 @@ const Article = () => {
                     <SvgSelector svg={'label-vk'}/>
                     <p className={`${sizeVersion}_caption`}>Сообщество ВК</p>
                   </a>
-                  <a href={''} target={'_blank'}>
+                  <a href={`tel:${data?.articleID.data[0].attributes.label_content.phone}`} target={'_blank'}>
                     <SvgSelector svg={'label-phone'}/>
                     <p className={`${sizeVersion}_caption`}>
                       <Markdown>
