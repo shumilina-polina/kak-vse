@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {useQuery} from "@apollo/client";
 import {GET_ARTICLE} from "@/services/gqlService";
 import {useRouter} from "next/router";
@@ -18,7 +18,7 @@ const Article = () => {
     variables: {slug: id}
   })
   const Category = data?.articleID.data[0].attributes.category
-  console.log(Category);
+  const [titleShare, setTitleShare] = useState('Поделится')
   let linkTitle = data?.articleID.data[0].attributes.label_content.link_multicentr;
   if (!loading) {
     linkTitle = linkTitle?.replace(/https:/g, '');
@@ -27,6 +27,10 @@ const Article = () => {
 
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
+    setTitleShare('Ссылка \n\n скопирована')
+    setTimeout(() => {
+      setTitleShare('Поделится')
+    }, 1000);
   }
 
   const [colorVersion, setColorVersion] = useContext(colorContext)
@@ -82,7 +86,7 @@ const Article = () => {
                       <SvgSelector svg={'share-desktop'}/>
                     </a>
                   </div>
-                  <p className={`${sizeVersion}_label`}>Поделитесь</p>
+                  <p className={`${sizeVersion}_label`}><Markdown>{titleShare}</Markdown></p>
                 </div>
               </div>
 
@@ -160,7 +164,7 @@ const Article = () => {
                       <SvgSelector svg={'share-desktop'}/>
                     </a>
                   </div>
-                  <p className={`${sizeVersion}_label`}>Поделитесь</p>
+                  <p className={`${sizeVersion}_label`}><Markdown>{titleShare}</Markdown></p>
                 </div>
               </div>
             </div>

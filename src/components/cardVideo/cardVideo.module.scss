@@ -134,7 +134,9 @@
     p {
       width: 100%;
       text-align: center;
-
+      p {
+        text-align: start;
+      }
       @include laptop {
         margin: 0 0.89vw;
       }

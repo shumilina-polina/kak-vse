@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import s from './cardVideo.module.scss'
 import SvgSelector from "@/components/SvgSelector";
 import Markdown from "react-markdown";
@@ -8,7 +8,7 @@ import {Skeleton} from "@mui/material";
 const CardVideo = ({Category, tags, title, url,  loaded}) => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
-
+  const [titleShare, setTitleShare] = useState('Поделится')
   let tag = [];
 
   if (tags) {
@@ -16,8 +16,11 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
   }
   const copy = () => {
     navigator.clipboard.writeText(url);
-    alert("ссылка скопирована");
-  };
+    setTitleShare('Ссылка \n\n скопирована')
+    setTimeout(() => {
+      setTitleShare('Поделится')
+    }, 1000);
+  }
   return (
     <div
       className={cn(s.card, `${colorVersion}_${Category}_border`)}
@@ -86,7 +89,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
                   <SvgSelector svg={"share-desktop"} />
                 </a>
               </div>
-              <p className={`${sizeVersion}_label`}>Поделитесь</p>
+              <p className={`${sizeVersion}_label`}><Markdown>{titleShare}</Markdown></p>
             </div>
           </div>
         </>

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import Markdown from "react-markdown";
 import {colorContext, sizeContext} from "@/components/Context";
 import {useQuery} from "@apollo/client";
@@ -9,12 +9,16 @@ import SvgSelector from "@/components/SvgSelector";
 const AnswerComponent = ({id}) => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
+  const [titleShare, setTitleShare] = useState('Поделится')
   const {data, loading, error} = useQuery(GET_ANSWER, {
     variables: {slug: id}
   })
-
   const copy = () => {
     navigator.clipboard.writeText(`https://kak-vse.info/answer/${data?.answerID.data[0].attributes.slug}`);
+    setTitleShare('Ссылка \n\n скопирована')
+    setTimeout(() => {
+      setTitleShare('Поделится')
+    }, 1000);
   }
   return (
     <div className={s.answerWrapper}>
@@ -57,7 +61,7 @@ const AnswerComponent = ({id}) => {
                   <SvgSelector svg={'share-desktop'}/>
                 </a>
               </div>
-              <p className={`${sizeVersion}_label`}>Поделитесь</p>
+              <p className={`${sizeVersion}_label`}><Markdown>{titleShare}</Markdown></p>
             </div>
           </div>
           <div className={sizeVersion === 'normal' ? s.text_normal : s.text_large}>
@@ -90,7 +94,7 @@ const AnswerComponent = ({id}) => {
                   <SvgSelector svg={'share-desktop'}/>
                 </a>
               </div>
-              <p className={`${sizeVersion}_label`}>Поделитесь</p>
+              <p className={`${sizeVersion}_label`}><Markdown>{titleShare}</Markdown></p>
             </div>
           </div>
         </div>
