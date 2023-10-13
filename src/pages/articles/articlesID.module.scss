@@ -2,6 +2,7 @@
 
 .articlesWrapper {
   margin: 0 auto;
+  margin-bottom: 60px;
   max-width: 622px;
   @include laptop {
 
@@ -9,6 +10,7 @@
   }
   @include mobile {
     margin: 0 auto;
+    margin-bottom: 40px;
     max-width: 95%;
   }
 
@@ -257,7 +259,7 @@
         }
         @include mobile {
           flex-direction: column;
-          gap: 20px;
+          gap: 8px;
           svg {
             width: 28px;
             height: 28px;
