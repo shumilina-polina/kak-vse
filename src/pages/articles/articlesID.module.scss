@@ -220,6 +220,9 @@
       align-items: flex-start;
       flex-direction: column;
       gap: 10px;
+      p {
+        color: $black !important;
+      }
 
       border-radius: 20px;
       @include laptop {
