@@ -171,14 +171,14 @@
     color: $dark-grey;
     font-style: normal;
     font-weight: 400;
-    line-height: 12px; /* 100% */
+    line-height: 16px; /* 100% */
     @include laptop {
       font-size: 1.07vw;
-      line-height: 1.07vw;
+      line-height: 1.1vw;
     }
     @include mobile {
       font-size: 2.81vw;
-      line-height: 2.81vw; /* 100% */
+      line-height: 3vw; /* 100% */
     }
   }
   &_caption {
@@ -187,7 +187,7 @@
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 12px; /* 100% */
+    line-height: 14px; /* 100% */
     letter-spacing: 0.48px;
     text-transform: uppercase;
     @include laptop {
@@ -372,7 +372,7 @@
     color: $dark-grey;
     font-style: normal;
     font-weight: 400;
-    line-height: 14px; /* 100% */
+    line-height: 16px; /* 100% */
     @include laptop {
       font-size: 1.07vw;
       line-height: 1.07vw;

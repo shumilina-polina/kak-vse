@@ -185,11 +185,11 @@
           height: 64px;
           @include laptop {
             width: 5vw;
-            height: 5vw;
+            height: 5.2vw;
           }
           @include mobile {
             width: 40px;
-            height: 40px;
+            height: 42px;
           }
         }
       }

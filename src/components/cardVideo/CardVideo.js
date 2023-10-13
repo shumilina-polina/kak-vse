@@ -44,7 +44,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
         <>
           <iframe
             src={url}
-            allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
+            allow="encrypted-media; fullscreen; picture-in-picture;"
             frameBorder="0"
             allowFullScreen
           />

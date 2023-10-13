@@ -266,7 +266,7 @@ query {
       }
     }
   }
-  onMainPageVideos: videos (     
+  onMainPageVideos: videos ( 
     filters: {onMainPage : {eq: true}}
   ) { 
     data {
