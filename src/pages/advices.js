@@ -32,7 +32,7 @@ const Advices = () => {
                 {[1, 2, 3, 4, 5].map(
                   (article, index) => (
                     <CardArticle
-                      Category={'opportunities'}
+                      Category={'advices'}
                       loaded={loading}
                       key={`article${index}`}
                     />
@@ -42,7 +42,7 @@ const Advices = () => {
               <div className={s.category_videos}>
                 {[1, 2, 3, 4, 5].map((path, i) => (
                   <CardVideo
-                    Category={'opportunities'}
+                    Category={'advices'}
                     loaded={loading}
                     key={i}
                   />

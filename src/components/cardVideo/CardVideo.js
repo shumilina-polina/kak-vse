@@ -14,8 +14,6 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
   if (tags) {
     tag = tags?.split(', ');
   }
-
-  console.log(tags);
   const copy = () => {
     navigator.clipboard.writeText(url);
     alert("ссылка скопирована");
@@ -26,13 +24,11 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
     >
       {loaded ? (
         <>
-          <Skeleton variant="rounded" sx={{borderRadius: '40px', height: '200px', width: '100%' }} animation="wave"/>
+          <Skeleton variant="rounded" sx={{borderRadius: '40px', height: '200px', width: '90vw' }} animation="wave"/>
           <div className={s.card_bottom}>
-
               <Skeleton variant="rounded" sx={{borderRadius: '20px', height: '12px', width: '30%', margin: 0}} animation="wave"/>
-              <Skeleton variant="rounded" sx={{borderRadius: '20px', height: '20px', width: '328px', margin: 0}} animation="wave"/>
+              <Skeleton variant="rounded" sx={{borderRadius: '20px', height: '20px', width: '90vw', margin: 0}} animation="wave"/>
               <Skeleton variant="rounded" sx={{borderRadius: '20px', height: '20px', width: '80%', margin: 0}} animation="wave"/>
-
             <div className={s.share}>
               <div className={s.share_links}>
                 <Skeleton variant="circular" width={48} height={48}/>
@@ -47,7 +43,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
       ) : (
         <>
           <iframe
-            src={'https://vk.com/video_ext.php?oid=-63758929&id=456283461&hd=2'}
+            src={url}
             allow="autoplay; encrypted-media; fullscreen; picture-in-picture;"
             frameBorder="0"
             allowFullScreen
