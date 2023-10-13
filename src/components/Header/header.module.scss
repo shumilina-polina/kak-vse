@@ -227,6 +227,6 @@
 .show {
   height: 180px;
   @include mobile {
-    height: 120px;
+    height: 35vw;
   }
 }

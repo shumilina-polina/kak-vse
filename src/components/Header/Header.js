@@ -105,8 +105,7 @@ const Header = () => {
         <div
           className={s.null}
           style={{
-            // marginTop: show ? '112px' : '60px',
-            height: show ? '160px' : '100px',
+            height: show ? '35vw' : '60px',
             transition: '0.5s'
 
           }}
