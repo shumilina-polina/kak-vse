@@ -190,7 +190,11 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
 
                   <div className={s.articles}>
                     {ARTICLE_DATA?.map((path, i) => (
-                      <Link href={`/articles/${path.attributes.slug}`} className={s.article_row} key={`row${i}`}>
+                      <Link
+                        href={`/articles/${path.attributes.slug}`}
+                        className={s.article_row} key={`row${i}`}
+                        onClick={()=>(windows.ym(95261427,'reachGoal','OpenArticle'))}
+                      >
                         <Image
                           src={apiUrl + path.attributes.author_photo.data.attributes.url}
                           alt={'author'}

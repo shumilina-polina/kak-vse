@@ -49,6 +49,7 @@ const CardArticle = ({Category, author, image, title, previewText, url, loaded})
           <Link
             href={`/articles/${url}`}
             className={cn(s.button, `${colorVersion}_${Category}_light`)}
+            onClick={()=>(windows.ym(95261427,'reachGoal','OpenArticle'))}
           >
             <p className={`${sizeVersion}_h3`}>Читать →</p>
           </Link>

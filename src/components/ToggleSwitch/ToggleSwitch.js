@@ -12,6 +12,7 @@ export const ToggleSwitchColor = () => {
       className={s.label}
       onClick={() => {
         setColorVersion(colorVersion === 'color' ? 'grey' : 'color')
+        window.ym(95261427,'reachGoal','SwichColor')
       }}
     >
       <div className={cn(s.slider, colorVersion === 'color' ? s.slider_left_color : s.slider_right_color)}/>
@@ -29,6 +30,7 @@ export const ToggleSwitchText = () => {
         className={s.label}
         onClick={() => {
           setSizeVersion(sizeVersion === 'normal' ? 'large' : 'normal')
+          window.ym(95261427,'reachGoal','SwichSize')
         }}
       >
 

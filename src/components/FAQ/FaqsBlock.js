@@ -56,6 +56,7 @@ const FaqsBlock = ({ data, id }) => {
               onClick={()=>{
                 setOpenModal(!openModal)
                 setSlugValue(question.attributes.slug)
+                window.ym(95261427,'reachGoal','OpenAnswer')
               }}
             >
               <p className={`${sizeVersion}_t2`}>{question.attributes.title}</p>
