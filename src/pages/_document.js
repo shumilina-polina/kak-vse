@@ -102,6 +102,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{display: 'none', visibility: 'hidden'}}>
           </iframe>
         </noscript>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYK7KN5C0S"></script>
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-NYK7KN5C0S');
+          `,
+          }}
+        >
+
+        </script>
         </body>
       </Html>
     );
