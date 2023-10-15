@@ -49,7 +49,7 @@ const FaqsBlock = ({ data, id }) => {
         <div className={s.categoryBlock_questions}>
           {data.faqs.data.map((question, jndex) => (
             <button
-              //href={`/answer/${question.attributes.slug}`}
+
               className={`${sizeVersion}_t2`}
               key={jndex}
               style={{ transitionDelay: `${jndex / 10}s` }}
@@ -58,6 +58,7 @@ const FaqsBlock = ({ data, id }) => {
                 setSlugValue(question.attributes.slug)
                 window.ym(95261427,'reachGoal','OpenAnswer')
               }}
+              id={'question'}
             >
               <p className={`${sizeVersion}_t2`}>{question.attributes.title}</p>
             </button>

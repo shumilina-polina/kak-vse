@@ -77,6 +77,7 @@ const Header = () => {
               <button
                 onClick={() => setShow(!show)}
                 className={s.unvisible}
+                id={'unvisible'}
               >
                 <p className={`${sizeVersion}_t4`}>Версия для <br/>слабовидящих</p>
                 <SvgSelector svg={`unvisually-${show ? 'open' : 'close'}`}/>
@@ -173,6 +174,7 @@ const Header = () => {
               <button
                 onClick={() => setShow(!show)}
                 className={s.unvisible}
+                id={'unvisible'}
               >
                 <SvgSelector svg={`unvisually-${show ? 'open' : 'close'}`}/>
               </button>
