@@ -58,9 +58,8 @@ const FaqsBlock = ({ data, id }) => {
                 setSlugValue(question.attributes.slug)
                 window.ym(95261427,'reachGoal','OpenAnswer')
               }}
-              id={'question'}
             >
-              <p className={`${sizeVersion}_t2`}>{question.attributes.title}</p>
+              <p className={`${sizeVersion}_t2`} id={'question'}>{question.attributes.title}</p>
             </button>
           ))}
         </div>
