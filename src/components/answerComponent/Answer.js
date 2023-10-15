@@ -5,6 +5,7 @@ import {useQuery} from "@apollo/client";
 import {GET_ANSWER} from "@/services/gqlService";
 import s from './answerID.module.scss'
 import SvgSelector from "@/components/SvgSelector";
+import {Skeleton} from "@mui/material";
 
 const AnswerComponent = ({id}) => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
@@ -24,7 +25,14 @@ const AnswerComponent = ({id}) => {
     <div className={s.answerWrapper}>
       {loading ? (
         <>
-          <h1>loading</h1>
+          {[3,8,9,7,8,6,7,8,9,4].map((elem, i) => (
+            <Skeleton
+              variant="rounded"
+              sx={{borderRadius: '20px', height: '12px', width: `${elem}0%`, marginTop: '20px'}}
+              animation="wave"
+              key={i}
+            />
+          ))}
         </>
       ) : error ? (
         <>

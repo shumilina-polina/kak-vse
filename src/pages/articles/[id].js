@@ -10,6 +10,7 @@ import Markdown from "react-markdown";
 import Head from "next/head";
 import SvgSelector from "@/components/SvgSelector";
 import {colorContext, sizeContext} from "@/components/Context";
+import {Skeleton} from "@mui/material";
 
 const Article = () => {
   const router = useRouter();
@@ -44,7 +45,16 @@ const Article = () => {
       <div className={s.articlesWrapper}>
         {
           loading ? (
-            <><h1>loading</h1></>
+            <>
+              {[3,8,9,7,8,6,7,8,9,4].map((elem, i) => (
+                <Skeleton
+                  variant="rounded"
+                  sx={{borderRadius: '20px', height: '12px', width: `${elem}0%`, marginTop: '20px'}}
+                  animation="wave"
+                  key={i}
+                />
+              ))}
+            </>
           ) : error ? (
             <><h1>error</h1></>
           ) : (
