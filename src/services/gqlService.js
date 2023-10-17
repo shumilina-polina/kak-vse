@@ -9,7 +9,8 @@ export const client = new ApolloClient({
 
 export const GET_CATEGORY = gql`
 query ($category: String) {  
-  categoryVideos: videos (     
+  categoryVideos: videos (  
+    sort: "createdAt:desc"   
     filters: {category: {eq: $category}}
    ) { 
     data {
@@ -22,7 +23,8 @@ query ($category: String) {
       }
     }
   }
-  categoryArticles: articles (     
+  categoryArticles: articles (    
+    sort: "createdAt:desc" 
     filters: {category: {eq: $category}}
    ) { 
     data {      
@@ -56,7 +58,7 @@ query ($category: String) {
 
 export const GET_ARTICLE = gql `
 query ($slug: String) {  
-  articleID: articles (
+  articleID: articles (    
     filters: {slug: {eq: $slug}}
   ) {
     data {

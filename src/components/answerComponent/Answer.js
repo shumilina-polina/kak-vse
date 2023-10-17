@@ -10,7 +10,7 @@ import {Skeleton} from "@mui/material";
 const AnswerComponent = ({id}) => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
-  const [titleShare, setTitleShare] = useState('Поделится')
+  const [titleShare, setTitleShare] = useState('Поделиться')
   const {data, loading, error} = useQuery(GET_ANSWER, {
     variables: {slug: id}
   })
@@ -18,7 +18,7 @@ const AnswerComponent = ({id}) => {
     navigator.clipboard.writeText(`https://kak-vse.info/answer/${data?.answerID.data[0].attributes.slug}`);
     setTitleShare('Ссылка \n\n скопирована')
     setTimeout(() => {
-      setTitleShare('Поделится')
+      setTitleShare('Поделиться')
     }, 1000);
   }
   return (

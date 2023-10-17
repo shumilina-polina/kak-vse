@@ -19,7 +19,7 @@ const Article = () => {
     variables: {slug: id}
   })
   const Category = data?.articleID.data[0].attributes.category
-  const [titleShare, setTitleShare] = useState('Поделится')
+  const [titleShare, setTitleShare] = useState('Поделиться')
   let linkTitle = data?.articleID.data[0].attributes.label_content.link_multicentr;
   if (!loading) {
     linkTitle = linkTitle?.replace(/https:/g, '');
@@ -30,7 +30,7 @@ const Article = () => {
     navigator.clipboard.writeText(window.location.href);
     setTitleShare('Ссылка \n\n скопирована')
     setTimeout(() => {
-      setTitleShare('Поделится')
+      setTitleShare('Поделиться')
     }, 1000);
   }
 
