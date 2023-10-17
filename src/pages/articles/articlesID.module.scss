@@ -277,6 +277,20 @@
           @include mobile {
             gap: 8px;
           }
+          p {
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            display: -moz-box;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+            -moz-box-orient: vertical;
+            -webkit-box-orient: vertical;
+            box-orient: vertical;
+            transition: 0.5s;
+          }
         }
       }
     }
