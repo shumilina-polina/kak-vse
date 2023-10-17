@@ -25,7 +25,7 @@ const Article = () => {
     linkTitle = linkTitle?.replace(/https:/g, '');
     linkTitle = linkTitle?.replace(/[^a-zа-яё0-9\s]/gi, ' ');
   }
-  console.log(data?.articleID.data[0].attributes.label_content.content)
+
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
     setTitleShare('Ссылка \n\n скопирована')
