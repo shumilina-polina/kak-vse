@@ -4,12 +4,13 @@ import s from './mainPageVideos.module.scss'
 import img1 from './Group 1.png'
 import img2 from './Group 2.png'
 const MainPageVideos = ({videos, loaded}) => {
+  console.log(videos[0]?.attributes.category)
   return (
     <div className={s.videos_main_wrapper}>
 
       <div className={s.video_0}>
         <CardVideo
-          Category={'opportunities'}
+          Category={!loaded && videos[0]?.attributes.category}
           tags={!loaded && videos[0].attributes.tags}
           title={!loaded && videos[0].attributes.title}
           url={!loaded && videos[0].attributes.urlEmbed}
@@ -18,7 +19,7 @@ const MainPageVideos = ({videos, loaded}) => {
       </div>
       <div className={s.video_1}>
         <CardVideo
-          Category={'advices'}
+          Category={!loaded && videos[1]?.attributes.category}
           tags={!loaded && videos[1]?.attributes.tags}
           title={!loaded && videos[1]?.attributes.title}
           url={!loaded && videos[1]?.attributes.urlEmbed}
@@ -27,7 +28,7 @@ const MainPageVideos = ({videos, loaded}) => {
       </div>
       <div className={s.video_2}>
         <CardVideo
-          Category={'success'}
+          Category={!loaded && videos[2]?.attributes.category}
           tags={!loaded && videos[2]?.attributes.tags}
           title={!loaded && videos[2]?.attributes.title}
           url={!loaded && videos[2]?.attributes.urlEmbed}
