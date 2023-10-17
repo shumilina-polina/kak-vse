@@ -58,7 +58,7 @@ query ($category: String) {
 
 export const GET_ARTICLE = gql `
 query ($slug: String) {  
-  articleID: articles (    
+  articleID: articles (      
     filters: {slug: {eq: $slug}}
   ) {
     data {
@@ -117,7 +117,7 @@ query {
     data {
       attributes {
         title
-        faqs {
+        faqs (sort: "createdAt:desc") {
           data {
             attributes {
               title 
@@ -133,7 +133,8 @@ query {
 
 export const GET_DATA_INDEX = gql`
 query {  
-  advicesVideos: videos ( 
+  advicesVideos: videos (
+    sort: "createdAt:desc"
     pagination: {limit: 2}   
     filters: {category: {eq: "advices"}}
   ) { 
@@ -149,6 +150,7 @@ query {
     }
   }
   advicesArticles: articles ( 
+    sort: "createdAt:desc"
     pagination: {limit: 3}   
     filters: {category: {eq: "advices"}}
   ) { 
@@ -179,6 +181,7 @@ query {
     }
   }
   opportunitiesVideos: videos ( 
+    sort: "createdAt:desc"
     pagination: {limit: 2}   
     filters: {category: {eq: "opportunities"}}
   ) { 
@@ -194,6 +197,7 @@ query {
     }
   }
   opportunitiesArticles: articles ( 
+    sort: "createdAt:desc"
     pagination: {limit: 3}   
     filters: {category: {eq: "opportunities"}}
   ) { 
@@ -223,7 +227,8 @@ query {
       }
     }
   }
-  successVideos: videos ( 
+  successVideos: videos (
+    sort: "createdAt:desc" 
     pagination: {limit: 2}   
     filters: {category: {eq: "success"}}
   ) { 
@@ -238,7 +243,8 @@ query {
       }
     }
   }
-  successArticles: articles ( 
+  successArticles: articles (
+    sort: "createdAt:desc"
     pagination: {limit: 3}   
     filters: {category: {eq: "success"}}
   ) { 
@@ -268,7 +274,8 @@ query {
       }
     }
   }
-  onMainPageVideos: videos ( 
+  onMainPageVideos: videos (
+    
     filters: {onMainPage : {eq: true}}
   ) { 
     data {
