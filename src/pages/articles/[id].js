@@ -25,7 +25,7 @@ const Article = () => {
     linkTitle = linkTitle?.replace(/https:/g, '');
     linkTitle = linkTitle?.replace(/[^a-zа-яё0-9\s]/gi, ' ');
   }
-
+  console.log(data?.articleID.data[0].attributes.label_content.content)
   const copy = () => {
     navigator.clipboard.writeText(window.location.href);
     setTitleShare('Ссылка \n\n скопирована')
@@ -68,7 +68,7 @@ const Article = () => {
                   priority={false}
                 />
               </div>
-
+              <h1 className={`${sizeVersion}_h1`}><Markdown>{data?.articleID.data[0].attributes.title}</Markdown></h1>
               <div className={s.title}>
                 <div className={s.share}>
                   <div className={s.share_links}>
@@ -114,23 +114,38 @@ const Article = () => {
 
                 <Markdown>{data?.articleID.data[0].attributes.content}</Markdown>
               </div>
-              <div
+              {(data?.articleID.data[0].attributes.label_content.content ||
+                data?.articleID.data[0].attributes.label_content.link_vk ||
+                data?.articleID.data[0].attributes.label_content.phone ||
+                data?.articleID.data[0].attributes.label_content.link_multicentr) &&
+                <div
                 className={s.label}
                 style={{
-                  backgroundColor: colorVersion === 'grey' ? '#DEDEDE' : Category === 'opportunities' ? '#FFD8EF' : Category === 'advices' ? '#C4F1FF' : '#FFF3C8'
+                  backgroundColor: colorVersion === 'grey'
+                    ? '#DEDEDE'
+                    : Category === 'opportunities'
+                      ? '#FFD8EF'
+                      : Category === 'advices'
+                        ? '#C4F1FF'
+                        : '#FFF3C8'
                 }}
               >
-                <p className={`${sizeVersion}_t3`}>
-                  <Markdown>
-                    {data?.articleID.data[0].attributes.label_content.content}
-                  </Markdown>
-                </p>
+                  {data?.articleID.data[0].attributes.label_content.content &&
+                    <p className={`${sizeVersion}_t3`}>
+                    <Markdown>
+                      {data?.articleID.data[0].attributes.label_content.content}
+                    </Markdown>
+                  </p>
+                  }
                 <div className={s.links}>
-                  <a href={data?.articleID.data[0].attributes.label_content.link_vk} target={'_blank'}>
+                  {data?.articleID.data[0].attributes.label_content.link_vk &&
+                    <a href={data?.articleID.data[0].attributes.label_content.link_vk} target={'_blank'}>
                     <SvgSelector svg={'label-vk'}/>
                     <p className={`${sizeVersion}_caption`}>Сообщество ВК</p>
                   </a>
-                  <a href={`tel:${data?.articleID.data[0].attributes.label_content.phone}`} target={'_blank'}>
+                  }
+                  {data?.articleID.data[0].attributes.label_content.phone &&
+                    <a href={`tel:${data?.articleID.data[0].attributes.label_content.phone}`} target={'_blank'}>
                     <SvgSelector svg={'label-phone'}/>
                     <p className={`${sizeVersion}_caption`}>
                       <Markdown>
@@ -138,15 +153,18 @@ const Article = () => {
                       </Markdown>
                     </p>
                   </a>
-                  <a href={data?.articleID.data[0].attributes.label_content.link_multicentr} target={'_blank'}>
+                  }
+                  {data?.articleID.data[0].attributes.label_content.link_multicentr &&
+                    <a href={data?.articleID.data[0].attributes.label_content.link_multicentr} target={'_blank'}>
                     <SvgSelector svg={'label-brower'}/>
                     <p className={`${sizeVersion}_caption`}><Markdown>
                       {linkTitle}
                     </Markdown></p>
                   </a>
+                  }
                 </div>
 
-              </div>
+              </div>}
               <div className={s.title}>
                 <div className={s.share}>
                   <div className={s.share_links}>
