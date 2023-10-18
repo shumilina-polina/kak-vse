@@ -14,6 +14,7 @@ const MainPageVideos = ({videos, loaded}) => {
           tags={!loaded && videos[0].attributes.tags}
           title={!loaded && videos[0].attributes.title}
           url={!loaded && videos[0].attributes.urlEmbed}
+          urlShare={!loaded && videos[0].attributes.urlShare}
           loaded={loaded}
         />
       </div>
@@ -23,6 +24,7 @@ const MainPageVideos = ({videos, loaded}) => {
           tags={!loaded && videos[1]?.attributes.tags}
           title={!loaded && videos[1]?.attributes.title}
           url={!loaded && videos[1]?.attributes.urlEmbed}
+          urlShare={!loaded && videos[1].attributes.urlShare}
           loaded={loaded}
         />
       </div>
@@ -32,6 +34,7 @@ const MainPageVideos = ({videos, loaded}) => {
           tags={!loaded && videos[2]?.attributes.tags}
           title={!loaded && videos[2]?.attributes.title}
           url={!loaded && videos[2]?.attributes.urlEmbed}
+          urlShare={!loaded && videos[2].attributes.urlShare}
           loaded={loaded}
         />
       </div>

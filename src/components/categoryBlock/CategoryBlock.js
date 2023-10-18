@@ -74,6 +74,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                         tags={path.attributes.tags}
                         title={path.attributes.title}
                         url={path.attributes.urlEmbed}
+                        urlShare={path.attributes.urlShare}
                         loaded={loaded}
                         key={i}
                       />
@@ -176,6 +177,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                   tags={!loaded && VIDEO_DATA[0]?.attributes.tags}
                   title={!loaded && VIDEO_DATA[0]?.attributes.title}
                   url={!loaded && VIDEO_DATA[0]?.attributes.urlEmbed}
+                  urlShare={!loaded && VIDEO_DATA[0]?.attributes.urlShare}
                   loaded={loaded}
                   key={'video_1'}
                 />
@@ -229,6 +231,7 @@ const CategoryBlock = ({Category, VIDEO_DATA, ARTICLE_DATA, error, loaded}) => {
                     tags={VIDEO_DATA[1]?.attributes.tags}
                     title={VIDEO_DATA[1]?.attributes.title}
                     url={VIDEO_DATA[1]?.attributes.urlEmbed}
+                    urlShare={VIDEO_DATA[1]?.attributes.urlShare}
                     loaded={loaded}
                     key={'video_2'}
                   />

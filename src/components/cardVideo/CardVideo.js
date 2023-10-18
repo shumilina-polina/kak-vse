@@ -5,7 +5,7 @@ import Markdown from "react-markdown";
 import {colorContext, sizeContext} from "@/components/Context";
 import cn from "classnames";
 import {Skeleton} from "@mui/material";
-const CardVideo = ({Category, tags, title, url,  loaded}) => {
+const CardVideo = ({Category, tags, title, url, urlShare, loaded}) => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
   const [titleShare, setTitleShare] = useState('Поделиться')
@@ -15,7 +15,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
     tag = tags?.split(', ');
   }
   const copy = () => {
-    navigator.clipboard.writeText(url);
+    navigator.clipboard.writeText(urlShare);
     setTitleShare('Ссылка \n\n скопирована')
     setTimeout(() => {
       setTitleShare('Поделиться')
@@ -64,7 +64,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
                 <a
                   target={"_blank"}
                   href={
-                    "https://telegram.me/share/url?url=https://www.youtube.com/live/nwibL__1Ux4?si=D8RN7Kk2S6a65Sb1&text=Какой-то крутой текст"
+                    `https://telegram.me/share/url?url=${urlShare}`
                   }
                 >
                   <SvgSelector svg={"tg-desktop"} />
@@ -72,7 +72,7 @@ const CardVideo = ({Category, tags, title, url,  loaded}) => {
                 <a
                   target={"_blank"}
                   href={
-                    "https://vk.com/share.php?url=https%3A//youtube.com/live/nwibL__1Ux4%3Fsi%3Dj3HTpRGqaiX_5Rq2"
+                    `https://vk.com/share.php?url=${urlShare}`
                   }
                 >
                   <SvgSelector svg={"vk-desktop"} />
