@@ -57,6 +57,18 @@
       @include laptop {
         gap: 0.36vw;
       }
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        display: -moz-box;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -moz-box-orient: vertical;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+      }
 
       @include mobile {
         display: flex;
