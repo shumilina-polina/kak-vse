@@ -128,7 +128,7 @@
             line-height: 20px;
           }
         }
-        h2 {
+        h1, h2, h3, h4, h5, h6 {
           /* Desktop/quote */
           @include Golos;
           font-size: 12px;
@@ -214,7 +214,7 @@
             line-height: 22px;
           }
         }
-        h2 {
+        h1, h2, h3, h4, h5, h6 {
           @include Golos();
           font-size: 14px;
           color: $black;

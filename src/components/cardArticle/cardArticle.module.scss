@@ -100,7 +100,15 @@
     transition: 0.5s;
     & > p,
     blockquote,
-    h2 {
+    ul,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+    {
       display: none;
     }
     & > p:first-child {
