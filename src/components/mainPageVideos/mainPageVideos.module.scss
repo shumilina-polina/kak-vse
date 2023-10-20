@@ -15,7 +15,6 @@
     background: url("./Group 2.png") no-repeat top center;
     background-position-y: 5vw;
     height: 90vw;
-    border: 1px red solid;
     width: 100%;
     margin-top: -10vw;
     margin-bottom: 60px;
@@ -46,11 +45,11 @@
     &_1 {
       display: block;
       position: absolute;
-      transform:translate(-50%, -50%) rotate(-2.736deg) ;
-      top:52%;
-      left:50%;
+      transform: translate(-50%, -50%) rotate(-2.736deg);
+      top: 52%;
+      left: 50%;
       @include mobile {
-        transform: translate(-50%, -50%) rotate(15deg) ;
+        transform: translate(-50%, -50%) rotate(15deg);
         top: 35%;
         left: 35%;
         scale: 0.65;
@@ -73,8 +72,8 @@
   .svg {
     display: block;
     position: absolute;
-    transform:translate(-50%, -50%);
-    left:50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
     bottom: -10%;
     @include laptop {
       width: 6.43vw;

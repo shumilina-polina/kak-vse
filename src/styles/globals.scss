@@ -5,8 +5,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  //-webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-  //border: 1px solid red;
 }
 
 h1,
@@ -15,7 +13,6 @@ h3,
 h4,
 p,
 br {
-
   &::selection {
     background-color: rgba(123, 240, 170, 0.67);
   }
@@ -57,7 +54,7 @@ a {
 button {
   border-style: none;
   color: inherit;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   text-align: inherit;
   &:hover {
     cursor: pointer;
@@ -65,7 +62,7 @@ button {
 }
 
 h1 {
-  margin: 0
+  margin: 0;
 }
 
 .MuiDialog-paper {
@@ -73,7 +70,7 @@ h1 {
   max-width: 870px !important;
   width: 100% !important;
 
-  background-color: rgba(0,0,0,0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
   //overflow: visible !important;
   @include laptop {
     border-radius: 3.57vw !important;
@@ -89,9 +86,7 @@ h1 {
   ::-webkit-scrollbar {
     width: 0;
   }
-
 }
-
 
 .MuiDialogContent-root {
   max-width: 870px !important;
@@ -147,21 +142,17 @@ h1 {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   @include mobile {
     background-color: $KK !important;
-
   }
 }
 .MuiButton-root {
-  color: rgba(0,0,0,0) !important;
-  background-color: rgba(0,0,0,0) !important;
+  color: rgba(0, 0, 0, 0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
   &:hover {
-    background-color: rgba(0,0,0,0) !important;
-    color: rgba(0,0,0,0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: rgba(0, 0, 0, 0) !important;
   }
 }
 
 .MuiDialogContentText-root {
-
   color: $black !important;
-
 }
-
