@@ -8,7 +8,7 @@ import {Skeleton} from "@mui/material";
 const CardVideo = ({Category, tags, title, url, urlShare, loaded}) => {
   const [colorVersion, setColorVersion] = useContext(colorContext)
   const [sizeVersion, setSizeVersion] = useContext(sizeContext)
-  const [titleShare, setTitleShare] = useState('Поделиться')
+  const [titleShare, setTitleShare] = useState('Поделитесь')
   let tag = [];
 
   if (tags) {
@@ -18,7 +18,7 @@ const CardVideo = ({Category, tags, title, url, urlShare, loaded}) => {
     navigator.clipboard.writeText(urlShare);
     setTitleShare('Ссылка \n\n скопирована')
     setTimeout(() => {
-      setTitleShare('Поделиться')
+      setTitleShare('Поделитесь')
     }, 1000);
   }
   return (
