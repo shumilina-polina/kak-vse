@@ -54,6 +54,7 @@ const CardArticle = ({Category, author, image, title, previewText, url, loaded})
             <p className={`${sizeVersion}_h3`}>Читать →</p>
           </Link>
         </>
+
       )}
     </div>
   );
