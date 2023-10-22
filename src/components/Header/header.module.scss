@@ -140,7 +140,10 @@
             height: 3.13vw;
           }
           p {
-            //white-space: nowrap;
+            white-space: nowrap;
+            //@include laptop {
+            //  white-space: normal;
+            //}
           }
           svg {
             flex-shrink: 0;

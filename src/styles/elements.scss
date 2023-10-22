@@ -292,8 +292,8 @@
     font-weight: 500;
     line-height: 18px; /* 100% */
     @include laptop {
-      font-size: 1.41vw;
-      line-height: 1.41vw;
+      font-size: 1.31vw;
+      line-height: 1.31vw;
     }
     @include mobile {
       font-size: 5.63vw;
@@ -361,7 +361,7 @@
     font-weight: 500;
     line-height: normal;
     @include laptop {
-      font-size: 1.61vw;
+      font-size: 1.35vw;
     }
 
   }
