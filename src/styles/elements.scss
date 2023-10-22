@@ -254,14 +254,14 @@
     font-size: 28px;
     font-style: normal;
     font-weight: 600;
-    line-height: 28px; /* 100% */
+    line-height: 30px; /* 100% */
     @include laptop {
       font-size: 2.50vw;
-      line-height: 2.50vw;
+      line-height: 2.80vw;
     }
     @include mobile {
       font-size: 6.56vw;
-      line-height: 6.56vw; /* 100% */
+      line-height: 6.7vw; /* 100% */
     }
   }
   &_h3 {
