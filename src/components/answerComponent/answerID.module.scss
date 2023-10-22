@@ -155,32 +155,32 @@
         li {
           /* Desktop/t content */
           @include Golos;
-          font-size: 20px;
+          font-size: 26px;
           font-style: normal;
           font-weight: 400;
-          line-height: 28px;
+          line-height: 32px;
           @include laptop {
-            font-size: 1.79vw;
-            line-height: 2.50vw;
+            font-size: 2.32vw;
+            line-height: 2.86vw;
           }
           @include mobile {
-            font-size: 16px;
+            font-size: 20px;
             line-height: 22px;
           }
         }
         p {
           /* Desktop/t content */
           @include Golos;
-          font-size: 20px;
+          font-size: 26px;
           font-style: normal;
           font-weight: 400;
-          line-height: 28px;
+          line-height: 32px;
           @include laptop {
-            font-size: 1.79vw;
-            line-height: 2.50vw;
+            font-size: 2.32vw;
+            line-height: 2.86vw;
           }
           @include mobile {
-            font-size: 16px;
+            font-size: 20px;
             line-height: 22px;
           }
         }
@@ -196,8 +196,8 @@
             line-height: 2.50vw;
           }
           @include mobile {
-            font-size: 16px;
-            line-height: 22px;
+            font-size: 20px;
+            line-height: 24px;
           }
         }
         blockquote {
@@ -205,16 +205,16 @@
             color: #757575;
             /* Desktop/quote */
             @include Golos;
-            font-size: 28px;
+            font-size: 36px;
             font-style: normal;
             font-weight: 400;
-            line-height: 36px; /* 133.333% */
+            line-height: 40px; /* 133.333% */
             @include laptop {
-              font-size: 2.50vw;
-              line-height: 3.21vw;
+              font-size: 3.21vw;
+              line-height: 3.57vw;
             }
             @include mobile {
-              font-size: 24px;
+              font-size: 28px;
               line-height: 28px;
             }
           }

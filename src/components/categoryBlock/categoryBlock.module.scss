@@ -216,6 +216,21 @@
               align-items: flex-start;
               gap: 4px;
               flex: 1 0 0;
+              p{
+                p {
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+
+                  display: -moz-box;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 1;
+                  line-clamp: 1;
+                  -moz-box-orient: vertical;
+                  -webkit-box-orient: vertical;
+                  box-orient: vertical;
+                }
+              }
+
               h3 {
                 overflow: hidden;
                 text-overflow: ellipsis;
