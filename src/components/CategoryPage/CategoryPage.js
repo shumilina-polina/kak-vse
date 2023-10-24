@@ -19,7 +19,6 @@ const CategoryPage = ({Category, VIDEO_DATA, ARTICLE_DATA, loaded}) => {
     }
     return result;
   }
-
   if (!isMobile) {
     return ( //-------------------------------------------------desktop
       <div className={s.category}>
