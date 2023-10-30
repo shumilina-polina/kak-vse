@@ -12,12 +12,12 @@
     height: 50vw;
   }
   @include mobile {
-    background: url("./Group 2.png") no-repeat top center;
+    background: url("./mobile-bg.png") no-repeat top center;
     background-position-y: 5vw;
-    height: 90vw;
+    height: 140vw;
     width: 100%;
-    margin-top: -10vw;
-    margin-bottom: 60px;
+    margin-top: -5vw;
+    margin-bottom: 7vw;
     background-size: 100%;
     //margin-left: -10vw;
   }
@@ -36,10 +36,10 @@
       left: 5%;
       top: 15%;
       @include mobile {
-        transform: rotate(-16.844deg);
+        transform: rotate(-10.77deg);
         scale: 0.65;
-        top: 5%;
-        left: -50%;
+        top: -7%;
+        left: -23%;
       }
     }
     &_1 {
@@ -49,9 +49,9 @@
       top: 52%;
       left: 50%;
       @include mobile {
-        transform: translate(-50%, -50%) rotate(15deg);
-        top: 35%;
-        left: 35%;
+        transform: translate(-50%, -50%) rotate(11.9deg);
+        top: 40%;
+        left: 60%;
         scale: 0.65;
       }
     }
@@ -62,10 +62,10 @@
       top: 20%;
       right: 4%;
       @include mobile {
-        transform: rotate(-16.633deg);
-        scale: 0.65;
-        top: 5%;
-        right: -50%;
+        transform: rotate(-8.8deg);
+        scale: 0.67;
+        top: 55%;
+        right: 23%;
       }
     }
   }
